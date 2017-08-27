@@ -22,6 +22,7 @@ ALLOWED_HOSTS = ['192.168.99.100', '35.182.176.4', '127.0.0.1', 'localhost']
 # Application definition
 INSTALLED_APPS = [
     'rest_framework',
+    'rest_framework_gis',
     'django.contrib.gis',
     'web.apps.WebConfig',
 

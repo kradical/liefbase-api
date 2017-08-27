@@ -9,6 +9,8 @@ from django.conf.urls import url, include
 router = DefaultRouter()
 router.register(r'reliefmaps', views.ReliefMapViewSet)
 router.register(r'users', views.UserViewSet)
+router.register(r'mapitemtemplates', views.MapItemTemplateViewSet)
+router.register(r'mapitems', views.MapItemViewSet)
 
 # Additionally, we include the login URLs for the browsable API.
 urlpatterns = [
