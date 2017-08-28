@@ -1,3 +1,5 @@
+from web.models import MapItem
+
 from django.db import models
 
 
@@ -13,6 +15,9 @@ class ReliefMap(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_map_items(self):
+        return MapItem.objects.filter(relief_map=self)
 
     def __str__(self):
         return 'name: {0}, owner: {1}'.format(self.name, self.owner)

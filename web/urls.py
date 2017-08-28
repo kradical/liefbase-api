@@ -7,7 +7,7 @@ from django.conf.urls import url, include
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
-router.register(r'reliefmaps', views.ReliefMapViewSet)
+router.register(r'reliefmaps', views.ReliefMapViewSet, base_name='reliefmaps')
 router.register(r'users', views.UserViewSet)
 router.register(r'mapitemtemplates', views.MapItemTemplateViewSet)
 router.register(r'mapitems', views.MapItemViewSet)

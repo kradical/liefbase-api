@@ -1,18 +1,17 @@
 from web.models import ReliefMap
 from web.serializers import ReliefMapSerializer
-from web.permissions import IsOwnerOrReadOnly
+from web.permissions import IsOwner
 
 from rest_framework import permissions
 from rest_framework import viewsets
 
 
 class ReliefMapViewSet(viewsets.ModelViewSet):
-    queryset = ReliefMap.objects.all()
     serializer_class = ReliefMapSerializer
-    permission_classes = (
-        permissions.IsAuthenticatedOrReadOnly,
-        IsOwnerOrReadOnly,
-    )
+    permission_classes = (IsOwner,)
+
+    def get_queryset(self):
+        return ReliefMap.objects.filter(owner=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

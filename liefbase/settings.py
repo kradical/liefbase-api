@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+import datetime
+
 from .secret_settings import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -23,6 +25,7 @@ ALLOWED_HOSTS = ['192.168.99.100', '35.182.176.4', '127.0.0.1', 'localhost']
 INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_gis',
+    'rest_framework_jwt',
     'django.contrib.gis',
     'web.apps.WebConfig',
 
@@ -71,11 +74,11 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
     ),
 }
 
 JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=30),
 }
