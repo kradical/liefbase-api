@@ -11,5 +11,8 @@ class MapItem(models.Model):
     relief_map = models.ForeignKey('ReliefMap', on_delete=models.CASCADE)
     template = models.ForeignKey('MapItemTemplate', on_delete=models.CASCADE)
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return 'quantity: {0}, point: {1}, relief_map: {2}, template: {3}'.format(self.quantity, self.point, self.relief_map.id, self.template.id)

@@ -10,5 +10,9 @@ class MapItemTemplate(models.Model):
     category = models.CharField(max_length=120, default='Other')
     sub_category = models.CharField(max_length=120, default='Other')
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
     def __str__(self):
         return 'name: {0}, category: {1}, sub_category: {2}'.format(self.name, self.category, self.sub_category)

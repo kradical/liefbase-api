@@ -1,0 +1,373 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2017-08-29T05:29:58.582Z",
+	"__export_source": "insomnia.desktop.app:v5.7.14",
+	"resources": [
+		{
+			"_id": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
+			"parentId": null,
+			"modified": 1503944131571,
+			"created": 1503883059159,
+			"name": "Liefbase",
+			"description": "",
+			"certificates": [],
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_c767bab7aa9547b0915c5374d7ce2263",
+			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
+			"modified": 1503883353376,
+			"created": 1503883137796,
+			"name": "Base Environment",
+			"data": {},
+			"color": null,
+			"isPrivate": false,
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_2fd427cf438a4601b1f9497e201ec6f7",
+			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
+			"modified": 1503883227530,
+			"created": 1503883227530,
+			"name": "Default Jar",
+			"cookies": [],
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
+			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
+			"modified": 1503980641180,
+			"created": 1503884042603,
+			"name": "api-token",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1503884042603,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_e24e310b8ef64a509ec21c8e097624d4",
+			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
+			"modified": 1503980595780,
+			"created": 1503884061371,
+			"name": "reliefmaps",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1503884061371,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_c9bc810d685b43b4a393f4de361cb015",
+			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
+			"modified": 1503980583038,
+			"created": 1503980583038,
+			"name": "users",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1503980583038,
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_c99f81ae1b18421aa20b6525f1c5aa8d",
+			"parentId": "env_c767bab7aa9547b0915c5374d7ce2263",
+			"modified": 1503984539754,
+			"created": 1503883451119,
+			"name": "liefbase_dev",
+			"data": {
+				"base_url": "http://localhost:8000/",
+				"jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MDQwNzAxMjEsIm9yaWdfaWF0IjoxNTAzOTgzNzIxLCJ1c2VybmFtZSI6Imx1bEBsdWwubHVscyIsInVzZXJfaWQiOjksImVtYWlsIjoiIn0.-bOpDLJ0Oa5fdmgnQFheej3jXG_b3aUKNRYRFnMnsVQ"
+			},
+			"color": "#7d69cb",
+			"isPrivate": false,
+			"_type": "environment"
+		},
+		{
+			"_id": "req_aa13a3c8a1f94ec597f4bd75c97d72cb",
+			"parentId": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
+			"modified": 1503983718894,
+			"created": 1503883162272,
+			"url": "{{ base_url  }}api-token-auth/",
+			"name": "-auth",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"username\": \"lul@lul.luls\",\n\t\"password\": \"test\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_e57f260271644f96bcb249e99ecf1502"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503884186262,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_b5da2c047d834808818f9fa897c0ab21",
+			"parentId": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
+			"modified": 1503980655303,
+			"created": 1503884186212,
+			"url": "{{ base_url  }}api-token-refresh/",
+			"name": "-refresh",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"token\": \"{{ jwt_token  }}\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_a36be780ef8f4db8a2e79f898cb75ac0"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503884186212,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_5ad908e989e542db954de6d6863d4b33",
+			"parentId": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
+			"modified": 1503980661466,
+			"created": 1503884205429,
+			"url": "{{ base_url  }}api-token-verify/",
+			"name": "-verify",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"token\": \"{{ jwt_token  }}\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_6487bd1fe2244046be1e58b8977e4541"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503883822470.25,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_6341f3f68803426ea85ed725b4001df2",
+			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
+			"modified": 1503984574465,
+			"created": 1503884460897,
+			"url": "{{ base_url  }}reliefmaps/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_662ab84747b84e68b2d8e854a9bc8017"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503884460897,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_1d2e846844474c25bcf1d474e83dd0d6",
+			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
+			"modified": 1503984570714,
+			"created": 1503886792726,
+			"url": "{{ base_url  }}reliefmaps/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Test Relief Map\",\n\t\"description\": \"Test description.\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_0b60bb1cc0cb4a708aa0033f55ac9ce3"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503884460847,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_7e81242e33ac4c94ab52deb2ec0a3934",
+			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
+			"modified": 1503984566971,
+			"created": 1503887035029,
+			"url": "{{ base_url  }}reliefmaps/5/",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503884460822,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_e4473cc00b764ceba94e28e26f946824",
+			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
+			"modified": 1503984562688,
+			"created": 1503887094832,
+			"url": "{{ base_url  }}reliefmaps/4/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Test Relief Map\",\n\t\"description\": \"Test description lul.\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_a6e8693e47ad481fa445143c1c6d09f5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503884323542,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_acf13ed25f4f4f218068cd4fb8d4703b",
+			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
+			"modified": 1503984557617,
+			"created": 1503887096908,
+			"url": "{{ base_url  }}reliefmaps/4/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503884254902,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_f109b748602a4509ae544669b79b13d2",
+			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
+			"modified": 1503984579517,
+			"created": 1503980672904,
+			"url": "{{ base_url  }}users/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_be70a8c14d8243cda69b719ec5c85b3c"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503980672904,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_3d99e899278f4e5f92c4983e8e46cae0",
+			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
+			"modified": 1503984328280,
+			"created": 1503980688630,
+			"url": "{{ base_url  }}users/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"username\": \"lul@lul.lulsss\",\n\t\"password\": \"test\",\n\t\"first_name\": \"LOL\",\n\t\"last_name\": \"TEST\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_813a8795cc4a464294f3d8dcee7f9852"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503980688630,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		}
+	]
+}

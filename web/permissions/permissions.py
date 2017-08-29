@@ -1,27 +1,14 @@
 from rest_framework import permissions
 
-
-class IsOwnerOrReadOnly(permissions.BasePermission):
+class IsStaffOrCreate(permissions.BasePermission):
     """
-    Custom permission to only allow owners of an object to edit it.
+    Custom permission for user creation when not authenticated.
     """
 
-    def has_object_permission(self, request, view, obj):
+    def has_permission(self, request, view):
         # Read permissions are allowed to any request,
         # so we'll always allow GET, HEAD or OPTIONS requests.
-        if request.method in permissions.SAFE_METHODS:
+        if request.method == 'POST':
             return True
 
-        # Write permissions are only allowed to the owner of the snippet.
-        return obj.owner == request.user
-
-class IsOwner(permissions.BasePermission):
-    """
-    Custom permission to only allow owners of an object to see/edit.
-    """
-
-    def has_object_permission(self, request, view, obj):
-        # Write permissions are only allowed to the owner of the snippet.
-        print(request.user)
-        print(obj.owner)
-        return request.user and obj.owner and obj.owner == request.user
+        return request.user.is_staff
