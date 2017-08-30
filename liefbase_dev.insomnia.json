@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-08-30T07:24:29.790Z",
+	"__export_date": "2017-08-30T08:21:25.995Z",
 	"__export_source": "insomnia.desktop.app:v5.7.14",
 	"resources": [
 		{
@@ -79,14 +79,29 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "fld_de2f613615c241d79c98656617ce6556",
+			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
+			"modified": 1504080366440,
+			"created": 1504080366440,
+			"name": "teams",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504080366440,
+			"_type": "request_group"
+		},
+		{
 			"_id": "env_c99f81ae1b18421aa20b6525f1c5aa8d",
 			"parentId": "env_c767bab7aa9547b0915c5374d7ce2263",
-			"modified": 1504074938366,
+			"modified": 1504081278105,
 			"created": 1503883451119,
 			"name": "liefbase_dev",
 			"data": {
 				"base_url": "http://localhost:8000/",
-				"jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmlnX2lhdCI6MTUwNDA3NDkwOSwiZW1haWwiOiIiLCJ1c2VyX2lkIjoxLCJleHAiOjE1MDQxNjEzMDksInVzZXJuYW1lIjoibHVsQGx1bGFhLmx1bHNzcyJ9.ozipEdbp1eSGwOT5R7pWFE8N59s_08KSZT6Ec_meRX0"
+				"jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmlnX2lhdCI6MTUwNDA4MDMyNiwiZXhwIjoxNTA0MTY2NzI2LCJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Imx1bEBsdWxhYS5sdWxzc3MiLCJlbWFpbCI6IiJ9.CBT9zoI8dmm8ANxD4zt-cXIRuuQRBZ3yy653_xkrbec",
+				"user_id": 1,
+				"relief_map_id": 1,
+				"organization_id": 1,
+				"team_id": 1
 			},
 			"color": "#7d69cb",
 			"isPrivate": false,
@@ -242,9 +257,9 @@
 		{
 			"_id": "req_7e81242e33ac4c94ab52deb2ec0a3934",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1503984566971,
+			"modified": 1504080902953,
 			"created": 1503887035029,
-			"url": "{{ base_url  }}reliefmaps/5/",
+			"url": "{{ base_url  }}reliefmaps/{{relief_map_id}}/",
 			"name": "/:id",
 			"description": "",
 			"method": "GET",
@@ -268,9 +283,9 @@
 		{
 			"_id": "req_e4473cc00b764ceba94e28e26f946824",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1503984562688,
+			"modified": 1504080906720,
 			"created": 1503887094832,
-			"url": "{{ base_url  }}reliefmaps/4/",
+			"url": "{{ base_url  }}reliefmaps/{{relief_map_id}}/",
 			"name": "/:id",
 			"description": "",
 			"method": "PUT",
@@ -302,9 +317,9 @@
 		{
 			"_id": "req_acf13ed25f4f4f218068cd4fb8d4703b",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1503984557617,
+			"modified": 1504080911322,
 			"created": 1503887096908,
-			"url": "{{ base_url  }}reliefmaps/4/",
+			"url": "{{ base_url  }}reliefmaps/{{relief_map_id}}/",
 			"name": "/:id",
 			"description": "",
 			"method": "DELETE",
@@ -319,6 +334,40 @@
 			],
 			"authentication": {},
 			"metaSortKey": -1503884254902,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_6c1a7819ae314ce3baab7ab7293f7199",
+			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
+			"modified": 1504080895744,
+			"created": 1504080866007,
+			"url": "{{ base_url  }}reliefmaps/{{relief_map_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"description\": \"whooooooops.\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_a6e8693e47ad481fa445143c1c6d09f5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503884289222,
 			"settingStoreCookies": true,
 			"settingSendCookies": true,
 			"settingDisableRenderRequestBody": false,
@@ -381,6 +430,126 @@
 			"_type": "request"
 		},
 		{
+			"_id": "req_cac3271c3d0a46298b745eb2212af607",
+			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
+			"modified": 1504080607069,
+			"created": 1504080534426,
+			"url": "{{ base_url  }}users/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503980672854,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_52d39d07867341f2809cf739f30a50da",
+			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
+			"modified": 1504080955179,
+			"created": 1504080541895,
+			"url": "{{ base_url  }}users/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"username\": \"lul@lulaa.lulsss\",\n\t\"password\": \"test\",\n\t\"first_name\": \"LOL\",\n\t\"last_name\": \"TEST\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_a6e8693e47ad481fa445143c1c6d09f5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503980672804,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_1b31423a24034d7eae0962fe84c60c24",
+			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
+			"modified": 1504080644760,
+			"created": 1504080546300,
+			"url": "{{ base_url  }}users/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503980672754,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_b8824d84e2024893bf02b9de00811642",
+			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
+			"modified": 1504080855676,
+			"created": 1504080838799,
+			"url": "{{ base_url  }}users/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"last_name\": \"oopsie\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_a6e8693e47ad481fa445143c1c6d09f5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1503980672791.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
 			"_id": "req_5a8513fea1c64dc1a0a7bbcbeb75c000",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
 			"modified": 1504075554843,
@@ -434,6 +603,306 @@
 			],
 			"authentication": {},
 			"metaSortKey": -1504067065345,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_2bd001a676e94ef1b0ff2e2b7077c6c9",
+			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"modified": 1504081002943,
+			"created": 1504080551119,
+			"url": "{{ base_url  }}organizations/{{organization_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067053307,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_90b3a6fdeb2b4b8d8f6d386e1e278e91",
+			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"modified": 1504081056369,
+			"created": 1504080553517,
+			"url": "{{ base_url  }}organizations/{{organization_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"lul overwritten\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_a6e8693e47ad481fa445143c1c6d09f5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067053257,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_911460dec07844dcb823a39719f89c34",
+			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"modified": 1504081011091,
+			"created": 1504080556705,
+			"url": "{{ base_url  }}organizations/{{organization_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067053207,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_574d4d99cdc548c6a42a41939428727e",
+			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"modified": 1504081086249,
+			"created": 1504081076161,
+			"url": "{{ base_url  }}organizations/{{organization_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"lul overwritten\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_a6e8693e47ad481fa445143c1c6d09f5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067053232,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_59007949089c40f4b9376d21ced5c056",
+			"parentId": "fld_de2f613615c241d79c98656617ce6556",
+			"modified": 1504081134042,
+			"created": 1504080369692,
+			"url": "{{ base_url  }}teams/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"name\": \"tester121\",\n\t\"parent_organization\": 3\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_189772fbb750469ead2268cfe5c68de7"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_e07ae9ff7a124000ae740f9353fbc8e5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067059351,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_2710fb23257648469af63f5b09f305d5",
+			"parentId": "fld_de2f613615c241d79c98656617ce6556",
+			"modified": 1504080396863,
+			"created": 1504080378121,
+			"url": "{{ base_url  }}teams/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_5e23e9ba83e64631afc17b50a715329f"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067059301,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_7946bc0afd114f408624e98952c298bc",
+			"parentId": "fld_de2f613615c241d79c98656617ce6556",
+			"modified": 1504081160560,
+			"created": 1504080570167,
+			"url": "{{ base_url  }}teams/{{team_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067059251,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_061e44b848de4ca3bb5db12a7a3d3ef3",
+			"parentId": "fld_de2f613615c241d79c98656617ce6556",
+			"modified": 1504081213411,
+			"created": 1504080572952,
+			"url": "{{ base_url  }}teams/{{team_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"wow overwritten\",\n\t\"parent_organization\": 3\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_a6e8693e47ad481fa445143c1c6d09f5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067059201,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_73d9537253f840f0ac4bfae5c54219d3",
+			"parentId": "fld_de2f613615c241d79c98656617ce6556",
+			"modified": 1504081254458,
+			"created": 1504080575695,
+			"url": "{{ base_url  }}teams/{{team_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067059151,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_974f02e2fce141949477387ad2c67ad0",
+			"parentId": "fld_de2f613615c241d79c98656617ce6556",
+			"modified": 1504081239571,
+			"created": 1504081223554,
+			"url": "{{ base_url  }}teams/{{team_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"wow overwritten again\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_50e0a94644fd40a7a5ac7246795f3029"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_a6e8693e47ad481fa445143c1c6d09f5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067059176,
 			"settingStoreCookies": true,
 			"settingSendCookies": true,
 			"settingDisableRenderRequestBody": false,

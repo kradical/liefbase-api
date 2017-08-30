@@ -12,6 +12,7 @@ router.register(r'users', views.UserViewSet)
 router.register(r'mapitemtemplates', views.MapItemTemplateViewSet)
 router.register(r'mapitems', views.MapItemViewSet)
 router.register(r'organizations', views.OrganizationViewSet)
+router.register(r'teams', views.TeamViewSet)
 
 # Additionally, we include the login URLs for the browsable API.
 urlpatterns = [

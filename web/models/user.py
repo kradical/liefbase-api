@@ -1,30 +1,38 @@
-from django.contrib.auth import models
-from django.db.models import Model, IntegerField, CharField, ForeignKey, CASCADE
+from django.contrib.auth import models as authModels
+from django.db import models
 from django.conf import settings
 
-class User(models.User):
+class User(authModels.User):
     pass
 
-class Memberable(Model):
+class Memberable(models.Model):
     pass
 
-class Group(Memberable):
-    GROUP_TYPES = (
-        ('organization', 'organization'),
-        ('team', 'team'),
-    )
+class Organization(Memberable):
+    name = models.CharField(max_length=100, unique=True)
 
-    name = CharField(max_length=100, null=False, blank=False)
-    type = CharField(max_length=32, choices=GROUP_TYPES, null=False, blank=False)
-    parent = ForeignKey('Group', on_delete=CASCADE, null=True, default=None)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
-class Membership(Model):
+class Team(Memberable):
+    name = models.CharField(max_length=100, null=False, blank=False)
+    parent_organization = models.ForeignKey(Organization, on_delete=models.CASCADE, null=False)
+
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class Membership(models.Model):
     MEMBERSHIP_TYPES = (
         ('admin', 'admin'),
         ('member', 'member'),
     )
 
-    type = CharField(max_length=32, choices=MEMBERSHIP_TYPES, null=False, blank=False)
-    memberable = ForeignKey(Memberable, on_delete=CASCADE)
-    user = ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE)
+    type = models.CharField(max_length=32, choices=MEMBERSHIP_TYPES, null=False, blank=False)
+    memberable = models.ForeignKey(Memberable, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 

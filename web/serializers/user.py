@@ -1,4 +1,4 @@
-from web.models import Group, User, Membership, ReliefMap
+from web.models import Team, Organization, User, Membership, ReliefMap
 
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
@@ -21,19 +21,29 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'first_name', 'last_name', 'password')
 
 class OrganizationSerializer(serializers.ModelSerializer):
-    type = serializers.HiddenField(default='organization')
-    name = serializers.CharField(
-        validators=[UniqueValidator(queryset=Group.objects.filter(type='organization'))],   
-    )
-
     def create(self, validated_data):
-        group = Group.objects.create(**validated_data)
-        current_user = self.context['request'].user
+        org = Organization.objects.create(**validated_data)
+        user = self.context['request'].user
         
-        Membership.objects.create(type='admin', memberable=group, user=current_user)
+        Membership.objects.create(type='admin', memberable=org, user=user)
         
-        return group
+        return org
 
     class Meta:
-        model = Group
-        fields = ('id', 'name', 'type')
+        model = Organization
+        fields = ('id', 'name')
+
+class TeamSerializer(serializers.ModelSerializer):
+    parent_organization = serializers.PrimaryKeyRelatedField(queryset=Organization.objects.all())
+    
+    def create(self, validated_data):
+        team = Team.objects.create(**validated_data)
+        user = self.context['request'].user
+
+        Membership.objects.create(type='admin', memberable=team, user=user)
+
+        return team
+
+    class Meta:
+        model = Team
+        fields = ('id', 'name', 'parent_organization')

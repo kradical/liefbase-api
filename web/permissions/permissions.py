@@ -1,6 +1,6 @@
 from rest_framework import permissions
 
-class IsStaffOrCreate(permissions.BasePermission):
+class IsAuthorizedOrCreate(permissions.BasePermission):
     """
     Custom permission for user creation when not authenticated.
     """
@@ -11,4 +11,4 @@ class IsStaffOrCreate(permissions.BasePermission):
         if request.method == 'POST':
             return True
 
-        return request.user.is_staff
+        return request.user.is_authenticated()
