@@ -2,19 +2,18 @@ from django.conf import settings
 from django.db import models
 
 
-class MapItemTemplate(models.Model):
+class FilterPreset(models.Model):
     """
-    A template created by an organization. Ex. Blanket, Bucket of Water, Oil Spill
+    A filter preset saved for a team or a user. Ex. A fireman wants to see his teams, the fires, and freshwater with one click
     """
 
     name = models.CharField(max_length=120)
-    category = models.CharField(max_length=120, default='Other')
-    sub_category = models.CharField(max_length=120, default='Other')
     relief_map = models.ForeignKey('ReliefMap', on_delete=models.CASCADE)
+    templates = models.ManyToManyField('MapItemTemplate')
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return 'name: {0}, category: {1}, sub_category: {2}'.format(self.name, self.category, self.sub_category)
+        return 'name: {0}, relief map: {1}'.format(self.name, self.relief_map)

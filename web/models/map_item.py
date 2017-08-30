@@ -9,9 +9,8 @@ class MapItem(models.Model):
 
     quantity = models.FloatField()
     point = models.PointField()
-    relief_map = models.ForeignKey('ReliefMap', on_delete=models.CASCADE)
     template = models.ForeignKey('MapItemTemplate', on_delete=models.CASCADE)
-    
+
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
