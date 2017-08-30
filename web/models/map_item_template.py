@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -10,6 +11,7 @@ class MapItemTemplate(models.Model):
     category = models.CharField(max_length=120, default='Other')
     sub_category = models.CharField(max_length=120, default='Other')
 
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

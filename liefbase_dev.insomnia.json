@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-08-29T05:29:58.582Z",
+	"__export_date": "2017-08-30T07:24:29.790Z",
 	"__export_source": "insomnia.desktop.app:v5.7.14",
 	"resources": [
 		{
@@ -68,14 +68,25 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
+			"modified": 1504076720887,
+			"created": 1504067045555,
+			"name": "organizations",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067045555,
+			"_type": "request_group"
+		},
+		{
 			"_id": "env_c99f81ae1b18421aa20b6525f1c5aa8d",
 			"parentId": "env_c767bab7aa9547b0915c5374d7ce2263",
-			"modified": 1503984539754,
+			"modified": 1504074938366,
 			"created": 1503883451119,
 			"name": "liefbase_dev",
 			"data": {
 				"base_url": "http://localhost:8000/",
-				"jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MDQwNzAxMjEsIm9yaWdfaWF0IjoxNTAzOTgzNzIxLCJ1c2VybmFtZSI6Imx1bEBsdWwubHVscyIsInVzZXJfaWQiOjksImVtYWlsIjoiIn0.-bOpDLJ0Oa5fdmgnQFheej3jXG_b3aUKNRYRFnMnsVQ"
+				"jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmlnX2lhdCI6MTUwNDA3NDkwOSwiZW1haWwiOiIiLCJ1c2VyX2lkIjoxLCJleHAiOjE1MDQxNjEzMDksInVzZXJuYW1lIjoibHVsQGx1bGFhLmx1bHNzcyJ9.ozipEdbp1eSGwOT5R7pWFE8N59s_08KSZT6Ec_meRX0"
 			},
 			"color": "#7d69cb",
 			"isPrivate": false,
@@ -84,7 +95,7 @@
 		{
 			"_id": "req_aa13a3c8a1f94ec597f4bd75c97d72cb",
 			"parentId": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
-			"modified": 1503983718894,
+			"modified": 1504074907331,
 			"created": 1503883162272,
 			"url": "{{ base_url  }}api-token-auth/",
 			"name": "-auth",
@@ -92,7 +103,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"username\": \"lul@lul.luls\",\n\t\"password\": \"test\"\n}"
+				"text": "{\n  \"username\": \"lul@lulaa.lulsss\",\n\t\"password\": \"test\",\n\t\"first_name\": \"LOL\",\n\t\"last_name\": \"TEST\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -343,7 +354,7 @@
 		{
 			"_id": "req_3d99e899278f4e5f92c4983e8e46cae0",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1503984328280,
+			"modified": 1504068489019,
 			"created": 1503980688630,
 			"url": "{{ base_url  }}users/",
 			"name": "/",
@@ -351,7 +362,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"username\": \"lul@lul.lulsss\",\n\t\"password\": \"test\",\n\t\"first_name\": \"LOL\",\n\t\"last_name\": \"TEST\"\n}"
+				"text": "{\n  \"username\": \"lul@lulaa.lulsss\",\n\t\"password\": \"test\",\n\t\"first_name\": \"LOL\",\n\t\"last_name\": \"TEST\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -363,6 +374,66 @@
 			],
 			"authentication": {},
 			"metaSortKey": -1503980688630,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_5a8513fea1c64dc1a0a7bbcbeb75c000",
+			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"modified": 1504075554843,
+			"created": 1504067053356,
+			"url": "{{ base_url  }}organizations/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_5e23e9ba83e64631afc17b50a715329f"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067053357,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_242462312c784d4bbec0d46fc332d1da",
+			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"modified": 1504077663361,
+			"created": 1504067065345,
+			"url": "{{ base_url  }}organizations/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"name\": \"tester121\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_189772fbb750469ead2268cfe5c68de7"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_e07ae9ff7a124000ae740f9353fbc8e5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504067065345,
 			"settingStoreCookies": true,
 			"settingSendCookies": true,
 			"settingDisableRenderRequestBody": false,
