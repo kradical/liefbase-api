@@ -1,10 +1,10 @@
-from web.models import MapItemTemplate
+from web.models import MapItemTemplate, Memberable
 
 from django.db import models
 
 import json
 
-class ReliefMap(models.Model):
+class ReliefMap(Memberable):
     """
     A general relief map created by a user. Each map has many resources
     """

@@ -1,6 +1,6 @@
 from web.serializers import MapItemTemplateSerializer
 
-from web.models import ReliefMap
+from web.models import ReliefMap, Membership
 
 from rest_framework import serializers
 
@@ -10,7 +10,11 @@ class ReliefMapSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = self.context['request'].user
-        return FilterPreset.objects.create(owner=user, **validated_data)
+        relief_map = ReliefMap.objects.create(owner=user, **validated_data)
+
+        Membership.objects.create(type='admin', memberable=relief_map, user=user)
+
+        return relief_map
 
     class Meta:
         model = ReliefMap

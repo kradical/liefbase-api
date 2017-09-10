@@ -9,7 +9,7 @@ class MapItemTemplateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = self.context['request'].user
-        return FilterPreset.objects.create(owner=user, **validated_data)
+        return MapItemTemplate.objects.create(owner=user, **validated_data)
 
     class Meta:
         model = MapItemTemplate

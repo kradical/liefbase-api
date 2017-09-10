@@ -7,7 +7,7 @@ from rest_framework_gis.serializers import GeoFeatureModelSerializer
 class MapItemSerializer(GeoFeatureModelSerializer):
     def create(self, validated_data):
         user = self.context['request'].user
-        return FilterPreset.objects.create(owner=user, **validated_data)
+        return MapItem.objects.create(owner=user, **validated_data)
 
     class Meta:
         model = MapItem
