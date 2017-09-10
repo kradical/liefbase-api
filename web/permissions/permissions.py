@@ -1,14 +1,17 @@
 from rest_framework import permissions
 
-class IsAuthorizedOrCreate(permissions.BasePermission):
-    """
-    Custom permission for user creation when not authenticated.
-    """
-
+class UserPermission(permissions.BasePermission):
     def has_permission(self, request, view):
-        # Read permissions are allowed to any request,
-        # so we'll always allow GET, HEAD or OPTIONS requests.
         if request.method == 'POST':
             return True
 
         return request.user.is_authenticated()
+
+    def has_object_permission(self, request, view, obj):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+        
+        return obj == request.user
+
+
+
