@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-09-10T22:54:49.595Z",
+	"__export_date": "2017-09-10T23:00:15.808Z",
 	"__export_source": "insomnia.desktop.app:v5.7.14",
 	"resources": [
 		{
@@ -125,7 +125,7 @@
 		{
 			"_id": "env_c99f81ae1b18421aa20b6525f1c5aa8d",
 			"parentId": "env_c767bab7aa9547b0915c5374d7ce2263",
-			"modified": 1505083954619,
+			"modified": 1505084276867,
 			"created": 1503883451119,
 			"name": "liefbase_dev",
 			"data": {
@@ -134,7 +134,7 @@
 				"user_id": 2,
 				"relief_map_id": 1,
 				"organization_id": 1,
-				"team_id": 1,
+				"team_id": 2,
 				"map_item_template_id": 1,
 				"map_item_id": 1,
 				"membership_id": 1
@@ -788,9 +788,31 @@
 			"_type": "request"
 		},
 		{
+			"_id": "fld_93e2bbb217ed4a8a99b72239ecaf4395",
+			"parentId": "fld_de2f613615c241d79c98656617ce6556",
+			"modified": 1505084331406,
+			"created": 1505084183147,
+			"name": "/:id/members",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067059101,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_0bfa01b7646a46569fd82c635c9c7084",
+			"parentId": "fld_de2f613615c241d79c98656617ce6556",
+			"modified": 1505084357579,
+			"created": 1505084191916,
+			"name": "/:id/admins",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067059051,
+			"_type": "request_group"
+		},
+		{
 			"_id": "req_59007949089c40f4b9376d21ced5c056",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1505073768182,
+			"modified": 1505084226258,
 			"created": 1504080369692,
 			"url": "{{ base_url  }}teams/",
 			"name": "/",
@@ -798,7 +820,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"name\": \"tester121\",\n\t\"parent_organization\": 2\n}"
+				"text": "{\n  \"name\": \"tester121\",\n\t\"parent_organization\": 1\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -1564,9 +1586,9 @@
 		{
 			"_id": "req_e3871e0b8cfc49f38d16f386ab10fc28",
 			"parentId": "fld_018d8e8d6a7c4f3f82b30417dcd37ec1",
-			"modified": 1505081810373,
+			"modified": 1505084205744,
 			"created": 1505081777946,
-			"url": "{{base_url}}organizations/{{organization_id}}/members/",
+			"url": "{{base_url}}teams/{{team_id}}/members/",
 			"name": "/",
 			"description": "",
 			"method": "GET",
@@ -1605,6 +1627,114 @@
 					"name": "Authorization",
 					"value": "jwt {{ jwt_token  }}",
 					"id": "pair_8948a44a71e0497385604eb058b22b2b"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505040247540.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_49d1bee7093545b88532827c8dd0fa9b",
+			"parentId": "fld_93e2bbb217ed4a8a99b72239ecaf4395",
+			"modified": 1505084255013,
+			"created": 1505084183152,
+			"url": "{{base_url}}teams/{{team_id}}/members/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1505079437605,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_852ba6047e314ce0b66d0b5c3c4c3c19",
+			"parentId": "fld_93e2bbb217ed4a8a99b72239ecaf4395",
+			"modified": 1505084303952,
+			"created": 1505084183154,
+			"url": "{{base_url}}teams/{{team_id}}/members/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"user\": 2\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b93a228df544404db93182ae3f411288"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_8948a44a71e0497385604eb058b22b2b"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505040247540.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_03d443d59f5141f58d36e785fd6a5c5b",
+			"parentId": "fld_0bfa01b7646a46569fd82c635c9c7084",
+			"modified": 1505084345930,
+			"created": 1505084191920,
+			"url": "{{base_url}}teams/{{team_id}}/admins/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1505079437605,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_4ed6d12805a4471b98b855925b77ad54",
+			"parentId": "fld_0bfa01b7646a46569fd82c635c9c7084",
+			"modified": 1505084372859,
+			"created": 1505084191926,
+			"url": "{{base_url}}teams/{{team_id}}/admins/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"user\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b93a228df544404db93182ae3f411288"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
 				}
 			],
 			"authentication": {},
