@@ -1,3 +1,5 @@
+from web.models import Membership
+
 from rest_framework import permissions
 
 class UserPermission(permissions.BasePermission):
@@ -13,5 +15,12 @@ class UserPermission(permissions.BasePermission):
         
         return obj == request.user
 
+class OrganizationPermission(permissions.BasePermission):
+    def has_object_permission(self, request, view, obj):
+        if request.method in permissions.SAFE_METHODS:
+            return True
 
-
+        admin_memberships = Membership.objects.filter(user=request.user, memberable=obj, type='admin')
+        is_admin = len(admin_memberships) > 0
+        
+        return is_admin

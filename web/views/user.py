@@ -1,5 +1,5 @@
 from web.serializers import UserSerializer, OrganizationSerializer, TeamSerializer
-from web.permissions import UserPermission
+from web.permissions import UserPermission, OrganizationPermission
 from web.models import User, Organization, Team
 
 from rest_framework import viewsets
@@ -13,6 +13,7 @@ class UserViewSet(viewsets.ModelViewSet):
 class OrganizationViewSet(viewsets.ModelViewSet):
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
+    permission_classes = (OrganizationPermission,)
 
 class TeamViewSet(viewsets.ModelViewSet):
     queryset = Team.objects.all()
