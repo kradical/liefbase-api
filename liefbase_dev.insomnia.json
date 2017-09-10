@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-09-10T01:47:25.565Z",
+	"__export_date": "2017-09-10T22:54:49.595Z",
 	"__export_source": "insomnia.desktop.app:v5.7.14",
 	"resources": [
 		{
@@ -112,20 +112,32 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "fld_47848356c17d4c7faa4e60bcc05f2599",
+			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
+			"modified": 1505074829299,
+			"created": 1505074037782,
+			"name": "memberships",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067045567.5,
+			"_type": "request_group"
+		},
+		{
 			"_id": "env_c99f81ae1b18421aa20b6525f1c5aa8d",
 			"parentId": "env_c767bab7aa9547b0915c5374d7ce2263",
-			"modified": 1505007915331,
+			"modified": 1505083954619,
 			"created": 1503883451119,
 			"name": "liefbase_dev",
 			"data": {
 				"base_url": "http://localhost:8000/",
-				"jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1bEBsdWxhYS5sdWxzc3MiLCJ1c2VyX2lkIjoxLCJleHAiOjE1MDU2MDQ2NzMsIm9yaWdfaWF0IjoxNTA0OTk5ODczLCJlbWFpbCI6IiJ9.MTDcYKwFkfeSUdsfBoND0O926z00As0eVQf1C0cV0k8",
-				"user_id": 1,
+				"jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmlnX2lhdCI6MTUwNTA4Mzk0MywiZW1haWwiOiIiLCJ1c2VybmFtZSI6InRlc3QyQHRlYXNhcy5jb20iLCJ1c2VyX2lkIjoyLCJleHAiOjE1MDU2ODg3NDN9.rDxSAA6PHIB88nQg_VeDlW_GGpjrWfc0ag5EWGVPrVw",
+				"user_id": 2,
 				"relief_map_id": 1,
 				"organization_id": 1,
 				"team_id": 1,
 				"map_item_template_id": 1,
-				"map_item_id": 2
+				"map_item_id": 1,
+				"membership_id": 1
 			},
 			"color": "#7d69cb",
 			"isPrivate": false,
@@ -134,7 +146,7 @@
 		{
 			"_id": "req_aa13a3c8a1f94ec597f4bd75c97d72cb",
 			"parentId": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
-			"modified": 1504074907331,
+			"modified": 1505083942182,
 			"created": 1503883162272,
 			"url": "{{ base_url  }}api-token-auth/",
 			"name": "-auth",
@@ -142,7 +154,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"username\": \"lul@lulaa.lulsss\",\n\t\"password\": \"test\",\n\t\"first_name\": \"LOL\",\n\t\"last_name\": \"TEST\"\n}"
+				"text": "{\n  \"username\": \"test2@teasas.com\",\n\t\"password\": \"password\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -307,7 +319,7 @@
 		{
 			"_id": "req_e4473cc00b764ceba94e28e26f946824",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1505002461865,
+			"modified": 1505078030134,
 			"created": 1503887094832,
 			"url": "{{ base_url  }}reliefmaps/{{relief_map_id}}/",
 			"name": "/:id",
@@ -315,7 +327,7 @@
 			"method": "PUT",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"name\": \"Test Relief Map\",\n\t\"description\": \"Test description lul.\"\n}"
+				"text": "{\n\t\"name\": \"Test Relief Map\",\n\t\"description\": \"Test description lul.\"\n\t\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -367,7 +379,7 @@
 		{
 			"_id": "req_6c1a7819ae314ce3baab7ab7293f7199",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1504080895744,
+			"modified": 1505078221143,
 			"created": 1504080866007,
 			"url": "{{ base_url  }}reliefmaps/{{relief_map_id}}/",
 			"name": "/:id",
@@ -427,7 +439,7 @@
 		{
 			"_id": "req_3d99e899278f4e5f92c4983e8e46cae0",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1505000067410,
+			"modified": 1505082184165,
 			"created": 1503980688630,
 			"url": "{{ base_url  }}users/",
 			"name": "/",
@@ -435,7 +447,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"username\": \"lul1@lulaa.lulsss\",\n\t\"password\": \"test\",\n\t\"first_name\": \"LOL\",\n\t\"last_name\": \"TEST\"\n}"
+				"text": "{\n  \"username\": \"test2@teasas.com\",\n\t\"password\": \"password\",\n\t\"first_name\": \"LOL\",\n\t\"last_name\": \"TEST\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -574,6 +586,28 @@
 			"_type": "request"
 		},
 		{
+			"_id": "fld_d0b2f9e2130345948a8d354070bed9bb",
+			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"modified": 1505084033732,
+			"created": 1505079428832,
+			"name": "/:id/admins",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067053157,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_018d8e8d6a7c4f3f82b30417dcd37ec1",
+			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"modified": 1505084039078,
+			"created": 1505081777934,
+			"name": "/:id/members",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067053182,
+			"_type": "request_group"
+		},
+		{
 			"_id": "req_5a8513fea1c64dc1a0a7bbcbeb75c000",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
 			"modified": 1505007322181,
@@ -602,7 +636,7 @@
 		{
 			"_id": "req_242462312c784d4bbec0d46fc332d1da",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1504077663361,
+			"modified": 1505076406443,
 			"created": 1504067065345,
 			"url": "{{ base_url  }}organizations/",
 			"name": "/",
@@ -610,7 +644,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"name\": \"tester121\"\n}"
+				"text": "{\n  \"name\": \"tester1212\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -662,7 +696,7 @@
 		{
 			"_id": "req_90b3a6fdeb2b4b8d8f6d386e1e278e91",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1504081056369,
+			"modified": 1505010481722,
 			"created": 1504080553517,
 			"url": "{{ base_url  }}organizations/{{organization_id}}/",
 			"name": "/:id",
@@ -670,7 +704,7 @@
 			"method": "PUT",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"name\": \"lul overwritten\"\n}"
+				"text": "{\n\t\"name\": \"lul as\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -756,7 +790,7 @@
 		{
 			"_id": "req_59007949089c40f4b9376d21ced5c056",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1504081134042,
+			"modified": 1505073768182,
 			"created": 1504080369692,
 			"url": "{{ base_url  }}teams/",
 			"name": "/",
@@ -764,7 +798,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"name\": \"tester121\",\n\t\"parent_organization\": 3\n}"
+				"text": "{\n  \"name\": \"tester121\",\n\t\"parent_organization\": 2\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -1287,6 +1321,294 @@
 			],
 			"authentication": {},
 			"metaSortKey": -1505001057429.9062,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_8c3b9fc98315422f9fa831d314cf53fb",
+			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
+			"modified": 1505074079870,
+			"created": 1505074064147,
+			"url": "{{ base_url  }}memberships/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_e07ae9ff7a124000ae740f9353fbc8e5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504552301533.25,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_8ad3addff14f4e4ab7c72aa288b25769",
+			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
+			"modified": 1505077118975,
+			"created": 1505074117520,
+			"url": "{{ base_url  }}memberships/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"member\",\n\t\"memberable\": 4,\n\t\"user\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_e07ae9ff7a124000ae740f9353fbc8e5"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_0a46edfd8acd44f0af250393d8331b06"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504543181453.125,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_aa7bf50a9a0e4517a0bfad82b67c0622",
+			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
+			"modified": 1505078382328,
+			"created": 1505074239639,
+			"url": "{{ base_url  }}memberships/{{membership_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"member\",\n\t\"memberable\": 4,\n\t\"user\": 1\n}\n"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_e07ae9ff7a124000ae740f9353fbc8e5"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_0a46edfd8acd44f0af250393d8331b06"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504538621413.0625,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_9d66438c478f4888ae37cdfdca08b2d3",
+			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
+			"modified": 1505074817438,
+			"created": 1505074257016,
+			"url": "{{ base_url  }}memberships/{{membership_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"admin\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_e07ae9ff7a124000ae740f9353fbc8e5"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_0a46edfd8acd44f0af250393d8331b06"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504536341393.0312,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_9e4af398602b480f9d0265fbbc73685d",
+			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
+			"modified": 1505074298506,
+			"created": 1505074285612,
+			"url": "{{ base_url  }}memberships/{{membership_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_e07ae9ff7a124000ae740f9353fbc8e5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504540901433.0938,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_a0d8dce164c943ba88cd06188453bf3b",
+			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
+			"modified": 1505078234424,
+			"created": 1505074672782,
+			"url": "{{ base_url  }}memberships/{{membership_id}}",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_e07ae9ff7a124000ae740f9353fbc8e5"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504536341343.0312,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_974aaa1b63214bdaabde4435e5f464a8",
+			"parentId": "fld_d0b2f9e2130345948a8d354070bed9bb",
+			"modified": 1505080558558,
+			"created": 1505079437605,
+			"url": "{{base_url}}organizations/{{organization_id}}/admins/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1505079437605,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_a05ed9fac20f4f07a46742ea7bbc266a",
+			"parentId": "fld_d0b2f9e2130345948a8d354070bed9bb",
+			"modified": 1505082327722,
+			"created": 1505080584428,
+			"url": "{{base_url}}organizations/{{organization_id}}/admins/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"user\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b93a228df544404db93182ae3f411288"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505040247540.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_e3871e0b8cfc49f38d16f386ab10fc28",
+			"parentId": "fld_018d8e8d6a7c4f3f82b30417dcd37ec1",
+			"modified": 1505081810373,
+			"created": 1505081777946,
+			"url": "{{base_url}}organizations/{{organization_id}}/members/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1505079437605,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_d14dd66aaa9c471e93e47d7145d825ff",
+			"parentId": "fld_018d8e8d6a7c4f3f82b30417dcd37ec1",
+			"modified": 1505082318245,
+			"created": 1505081777960,
+			"url": "{{base_url}}organizations/{{organization_id}}/members/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"user\": 2\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b93a228df544404db93182ae3f411288"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_8948a44a71e0497385604eb058b22b2b"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505040247540.5,
 			"settingStoreCookies": true,
 			"settingSendCookies": true,
 			"settingDisableRenderRequestBody": false,

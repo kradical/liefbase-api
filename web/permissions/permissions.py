@@ -1,6 +1,7 @@
 from web.models import Membership, Memberable
 
 from rest_framework import permissions
+from rest_framework.exceptions import NotFound
 
 class UserPermission(permissions.BasePermission):
     def has_permission(self, request, view):
@@ -25,23 +26,37 @@ class OrganizationPermission(permissions.BasePermission):
         
         return is_admin
 
+def is_admin_of(pk, user):
+    try:
+        memberable = Memberable.objects.get(pk=pk)
+    except Memberable.DoesNotExist:
+        raise NotFound()
+    
+    is_admin = Membership.objects.filter(user=user, memberable=memberable, type='admin').exists()
+    return is_admin
+
+class AddMemberPermission(permissions.BasePermission):
+    def has_permission(self, request, view):
+        if request.method != 'POST':
+            return True
+
+        # this permission works for urls like "../memberable/{pk}/membertype"
+        memberable_id = request.resolver_match.kwargs['pk']
+        return is_admin_of(memberable_id, request.user)
+
+
+
 class MembershipPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.method != 'POST':
             return True
 
-        has_memberable = request.data and 'memberable' in request.data
-
-        if not has_memberable:
-            return False
-
         try:
-            memberable = Memberable.objects.get(id=request.data['memberable'])
-        except Memberable.DoesNotExist:
-            return False
-        
-        is_admin = Membership.objects.filter(user=request.user, memberable=memberable, type='admin').exists()
-        return is_admin
+            memberable_id = request.data['memberable']
+        except KeyError:
+            raise NotFound()
+
+        return is_admin_of(memberable_id, request.user)
 
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
