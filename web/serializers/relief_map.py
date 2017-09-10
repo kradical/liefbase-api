@@ -6,7 +6,6 @@ from rest_framework import serializers
 
 
 class ReliefMapSerializer(serializers.ModelSerializer):
-    owner = serializers.SlugRelatedField(read_only=True, slug_field='username')
     map_item_templates = MapItemTemplateSerializer(read_only=True, many=True, source='mapitemtemplate_set')
 
     def create(self, validated_data):
@@ -15,4 +14,4 @@ class ReliefMapSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ReliefMap
-        fields = ('id', 'name', 'description', 'owner', 'map_item_templates')
+        fields = ('id', 'name', 'description', 'map_item_templates')

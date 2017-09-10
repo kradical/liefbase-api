@@ -8,10 +8,6 @@ from django.contrib.contenttypes.models import ContentType
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(required=True, write_only=True)
-    username = serializers.EmailField(
-        required=True,
-        validators=[UniqueValidator(queryset=User.objects.all())]
-    )
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
@@ -34,8 +30,6 @@ class OrganizationSerializer(serializers.ModelSerializer):
         fields = ('id', 'name')
 
 class TeamSerializer(serializers.ModelSerializer):
-    parent_organization = serializers.PrimaryKeyRelatedField(queryset=Organization.objects.all())
-    
     def create(self, validated_data):
         user = self.context['request'].user
         team = Team.objects.create(owner=user, **validated_data)

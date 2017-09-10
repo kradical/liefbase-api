@@ -1,4 +1,4 @@
-from .user import User, Organization, Team, Membership
+from .user import *
 from .map_item import MapItem
 from .map_item_template import MapItemTemplate
 from .relief_map import ReliefMap

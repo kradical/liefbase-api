@@ -4,6 +4,8 @@ from django.db import models
 import json
 
 class User(AbstractUser):
+    username = models.EmailField(unique=True)
+
     # utility method for printing
     def to_dict(self):
         return {
@@ -92,6 +94,9 @@ class Membership(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = ('type', 'memberable', 'user')
 
     # utility method for printing
     def to_dict(self):
