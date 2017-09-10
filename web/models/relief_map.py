@@ -1,4 +1,4 @@
-from web.models import MapItem
+from web.models import MapItem, MapItemTemplate
 
 from django.conf import settings
 from django.db import models
@@ -17,7 +17,11 @@ class ReliefMap(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def get_map_items(self):
-        return MapItem.objects.filter(relief_map=self)
+        print(self.get_templates()[0].mapitem_set.all())
+        return []
+
+    def get_templates(self):
+        return MapItemTemplate.objects.filter(relief_map=self)
 
     def __str__(self):
         return 'name: {0}, owner: {1}'.format(self.name, self.owner)
