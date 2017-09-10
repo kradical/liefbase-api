@@ -1,6 +1,6 @@
-from web.serializers import UserSerializer, OrganizationSerializer, TeamSerializer
+from web.serializers import UserSerializer, OrganizationSerializer, TeamSerializer, MembershipSerializer
 from web.permissions import UserPermission, OrganizationPermission
-from web.models import User, Organization, Team
+from web.models import User, Organization, Team, Membership
 
 from rest_framework import viewsets
 
@@ -18,3 +18,7 @@ class OrganizationViewSet(viewsets.ModelViewSet):
 class TeamViewSet(viewsets.ModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
+
+class MembershipViewSet(viewsets.ModelViewSet):
+    queryset = Membership.objects.all()
+    serializer_class = MembershipSerializer

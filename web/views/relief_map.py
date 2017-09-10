@@ -6,11 +6,6 @@ from rest_framework import viewsets
 
 
 class ReliefMapViewSet(viewsets.ModelViewSet):
+    queryset = ReliefMap.objects.all()
     serializer_class = ReliefMapSerializer
     permission_classes = (permissions.IsAuthenticated,)
-
-    def get_queryset(self):
-        return ReliefMap.objects.filter(owner=self.request.user)
-
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)

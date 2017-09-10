@@ -15,6 +15,7 @@ router.register(r'organizations', views.OrganizationViewSet)
 router.register(r'teams', views.TeamViewSet)
 router.register(r'filterpresets', views.FilterPresetViewSet)
 router.register(r'templatepresets', views.TemplatePresetViewSet)
+router.register(r'memberships', views.MembershipViewSet)
 
 # Additionally, we include the login URLs for the browsable API.
 urlpatterns = [

@@ -1,6 +1,6 @@
 from .relief_map import ReliefMapViewSet
 from .map_item_template import MapItemTemplateViewSet
 from .map_item import MapItemViewSet
-from .user import UserViewSet, OrganizationViewSet, TeamViewSet
+from .user import UserViewSet, OrganizationViewSet, TeamViewSet, MembershipViewSet
 from .filter_preset import FilterPresetViewSet
 from .template_preset import TemplatePresetViewSet

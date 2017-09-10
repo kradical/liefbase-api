@@ -22,8 +22,8 @@ class UserSerializer(serializers.ModelSerializer):
 
 class OrganizationSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
-        org = Organization.objects.create(**validated_data)
         user = self.context['request'].user
+        org = Organization.objects.create(owner=user, **validated_data)
         
         Membership.objects.create(type='admin', memberable=org, user=user)
         
@@ -37,8 +37,8 @@ class TeamSerializer(serializers.ModelSerializer):
     parent_organization = serializers.PrimaryKeyRelatedField(queryset=Organization.objects.all())
     
     def create(self, validated_data):
-        team = Team.objects.create(**validated_data)
         user = self.context['request'].user
+        team = Team.objects.create(owner=user, **validated_data)
 
         Membership.objects.create(type='admin', memberable=team, user=user)
 
@@ -47,3 +47,8 @@ class TeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
         fields = ('id', 'name', 'parent_organization')
+
+class MembershipSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Membership
+        fields = ('id', 'type', 'memberable', 'user')
