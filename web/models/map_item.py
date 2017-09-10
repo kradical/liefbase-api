@@ -1,5 +1,6 @@
-from django.conf import settings
 from django.contrib.gis.db import models
+
+import json
 
 
 class MapItem(models.Model):
@@ -11,9 +12,26 @@ class MapItem(models.Model):
     point = models.PointField()
     template = models.ForeignKey('MapItemTemplate', on_delete=models.CASCADE)
 
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
+    owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    # utility method for printing
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'type': 'Feature',
+            'properties': {
+                'quantity': self.quantity,
+                'template': self.template.id,
+                'owner': self.owner.id,
+            },
+            'point': {
+                'type': 'Point',
+                'coordinates': [self.point.x, self.point.y]
+            },
+        }
+
     def __str__(self):
-        return 'quantity: {0}, point: {1}, relief_map: {2}, template: {3}'.format(self.quantity, self.point, self.relief_map.id, self.template.id)
+        return json.dumps(self.to_dict(), sort_keys=True, indent=2)
+

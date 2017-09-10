@@ -1,6 +1,6 @@
-from django.conf import settings
 from django.db import models
 
+import json
 
 class MapItemTemplate(models.Model):
     """
@@ -12,9 +12,22 @@ class MapItemTemplate(models.Model):
     sub_category = models.CharField(max_length=120, default='Other')
     relief_map = models.ForeignKey('ReliefMap', on_delete=models.CASCADE)
 
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
+    owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    # utility method for printing
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'category': self.category,
+            'sub_category': self.sub_category,
+            'relief_map': self.relief_map.id,
+            'map_items': [x.to_dict() for x in self.mapitem_set.all()],
+            'owner': self.owner.id,
+        }
+
     def __str__(self):
-        return 'name: {0}, category: {1}, sub_category: {2}'.format(self.name, self.category, self.sub_category)
+        return json.dumps(self.to_dict(), sort_keys=True, indent=2)
+

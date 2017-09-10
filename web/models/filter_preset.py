@@ -1,5 +1,6 @@
-from django.conf import settings
 from django.db import models
+
+import json
 
 
 class FilterPreset(models.Model):
@@ -11,9 +12,19 @@ class FilterPreset(models.Model):
     relief_map = models.ForeignKey('ReliefMap', on_delete=models.CASCADE)
     templates = models.ManyToManyField('MapItemTemplate')
 
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
+    owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    # utility method for printing
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'relief_map': self.relief_map.id,
+            'owner': self.owner.id,
+            'templates': [x.id for x in self.templates]
+        }
+
     def __str__(self):
-        return 'name: {0}, relief map: {1}'.format(self.name, self.relief_map)
+        return json.dumps(self.to_dict(), sort_keys=True, indent=2)

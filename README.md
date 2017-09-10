@@ -47,3 +47,5 @@
   * `$ python3 manage.py populate`
 * Run the server
   * `$ python manage.py runserver`
+* Or run the tests
+  * `$ python manage.py test`

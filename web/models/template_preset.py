@@ -1,7 +1,7 @@
-from django.conf import settings
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 
+import json
 
 class TemplatePreset(models.Model):
     """
@@ -11,9 +11,20 @@ class TemplatePreset(models.Model):
     name = models.CharField(max_length=120)
     raw_templates = JSONField()
 
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
+    owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    # utility method for printing
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'raw_templates': self.raw_templates,
+            'owner': self.owner.id,
+        }
+
     def __str__(self):
-        return 'name: {0}, raw templates: {1}'.format(self.name, self.raw_templates)
+        return json.dumps(self.to_dict(), sort_keys=True, indent=2)
+
+

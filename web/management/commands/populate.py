@@ -3,225 +3,129 @@ from django.db.utils import IntegrityError
 
 from django.contrib.gis.geos import GEOSGeometry
 
-from meteor.models import User, UserAccountManager, Organization, ReliefMap, HazardTemplate, ResourceTemplate, HazardInstance, ResourceInstance
+from web.models import User, Organization, Membership, Team, MapItemTemplate, MapItem, ReliefMap
 
 class Command(BaseCommand):
     help = "Populates a basic set of test data"
 
     def handle(self, *args, **options):
+        user_data = {
+            'username': 'test@liefbase.io',
+            'password': 'password',
+            'first_name': 'tester',
+            'last_name': 'liefbase',
+        }
         try:
-            liefbase = Organization.objects.get(name="Liefbase")
-        except Organization.DoesNotExist:
-            liefbase = Organization(name="Liefbase")
-            liefbase.save()
-            print("Created ", end='')
-
-        print("Test Organization")
-        print(liefbase.to_dict())
-        print()
-
-        try:
-            user = User.objects.get(email='test@test.test')
+            user = User.objects.get(username=user_data['username'])
+            created = False
         except User.DoesNotExist:
-            user = UserAccountManager().create_user(first_name='test', last_name='test', org_id=liefbase.id, email='test@test.test', password='testpassword')
-            print("Created ", end='')
+            user = User.objects.create_user(**user_data)
+            created = True
+        print("Test User{} Created".format('' if created else ' Not'))
+        print(user)
+        print()        
 
-        print("Test User")
-        print(user.to_dict())
-        print("password: testpassword")
+        organization_data = {
+            'name': 'Liefbase',
+            'owner': user,
+        }
+        liefbase, created = Organization.objects.get_or_create(**organization_data)
+        print("Test Organization{} Created".format('' if created else ' Not'))
+        print(liefbase)
         print()
 
-        try:
-            relief_map = ReliefMap.objects.get(name='TestMap')
-        except ReliefMap.DoesNotExist:
-            relief_map = ReliefMap(name='TestMap', description='This is a test relief map.', created_by=user)
-            relief_map.save()
-            print("Created ", end='')
-
-        print("Test ReliefMap")
-        print(relief_map.to_dict())
+        membership_data = {
+            'type': 'admin', 
+            'memberable': liefbase, 
+            'user': user,
+        }
+        membership, created = Membership.objects.get_or_create(**membership_data)
+        print("Test Organization Admin{} Created".format('' if created else ' Not'))
+        print(membership)
         print()
 
-        for name in ['Sinkhole', 'Collapsed Powerline', 'Gas leak', 'Oil Spill', 'Collapsed Road', 'Blocked Road', 'Flooded Area']:
-            try:
-                hazard_template = HazardTemplate.objects.get(name=name, relief_map=relief_map)
-            except HazardTemplate.DoesNotExist:
-                hazard_template = HazardTemplate(name=name, relief_map=relief_map)
-                hazard_template.save()
-                print("Created ", end='')
+        map_data = {
+            'name': 'TestMap',
+            'description': 'Test description.',
+            'owner': user,
+        }
+        relief_map, created = ReliefMap.objects.get_or_create(**map_data)
+        print("Test Relief Map{} Created".format('' if created else ' Not'))
+        print(relief_map)
+        print()
 
-            print("Test HazardTemplate")
-            print(hazard_template.to_dict())
-            print()
+        template_data = {
+            'category': 'Resource',
+            'relief_map': relief_map,
+            'owner': user,
+        }
 
         for name in ['Water Well', 'Resevoir', 'Water Main', 'Water Purification Pill', 'Soap', 'Toothbrush']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Water, Sanitation, and Hygiene', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
-
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
+            self.create_map_item_template(name=name, sub_category='Water, Sanitation, and Hygiene', **template_data)
 
         for name in ['Evacuation Bus', 'ADRA Management Tent', 'Check In Tent']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Logistics', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
-
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
+            self.create_map_item_template(name=name, sub_category='Logistics', **template_data)
 
         for name in ['Malaria Kit', 'Vaccination Tent']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Health', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
-
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
+            self.create_map_item_template(name=name, sub_category='Health', **template_data)
 
         for name in ['Vitamins']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Nutrition', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
-
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
-
+            self.create_map_item_template(name=name, sub_category='Nutrition', **template_data)
 
         for name in ['Evacuation Safe Zone', 'Missing Person Tent']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Protection', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
-
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
+            self.create_map_item_template(name=name, sub_category='Protection', **template_data)
 
         for name in ['Blanket', 'Mosquito Net']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Shelter', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
-
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
-
+            self.create_map_item_template(name=name, sub_category='Shelter', **template_data)
 
         for name in ['Refugee Camp', 'Camp Washroom', 'Camp Showers']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Camp Coordination and Camp Management', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
-
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
+            self.create_map_item_template(name=name, sub_category='Camp Coordination and Camp Management', **template_data)
 
         for name in ['Debris Dump', 'Field Hospital']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Early Recovery', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
-
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
+            self.create_map_item_template(name=name, sub_category='Early Recovery', **template_data)
 
         for name in ['School']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Education', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
-
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
+            self.create_map_item_template(name=name, sub_category='Education', **template_data)
 
         for name in ['Food Rations', 'Community Farm']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Food & Security', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
-
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
+            self.create_map_item_template(name=name, sub_category='Food & Security', **template_data)
 
         for name in ['Wireless Tower', 'Public Phone']:
-            try:
-                resource_template = ResourceTemplate.objects.get(name=name, relief_map=relief_map)
-            except ResourceTemplate.DoesNotExist:
-                resource_template = ResourceTemplate(name=name, category='Emergency Telecommunications', relief_map=relief_map)
-                resource_template.save()
-                print("Created ", end='')
+            resource_template = self.create_map_item_template(name=name, sub_category='Emergency Telecommunications', **template_data)
 
-            print("Test ResourceTemplate")
-            print(resource_template.to_dict())
-            print()
+        template_data['category'] = 'Hazard'
+        for name in ['Sinkhole', 'Collapsed Powerline', 'Gas leak', 'Oil Spill', 'Collapsed Road', 'Blocked Road', 'Flooded Area']:
+            hazard_template = self.create_map_item_template(name=name, **template_data)
 
-        if len(HazardInstance.objects.filter(relief_map=relief_map)) >= 3:
-            for hazard in HazardInstance.objects.filter(relief_map=relief_map):
-                print("Test HazardInstance")
-                print(hazard.to_dict())
-                print()
+        map_item_data = {
+            'quantity': 3,
+            'owner': user,
+            'template': resource_template,
+        }
 
         lat = 48.4284210
         lng = -123.3656440
-        while len(HazardInstance.objects.filter(relief_map=relief_map)) < 3:
-            geocoords = GEOSGeometry("POINT(%(lat)f %(lng)f)" % locals())
-            hazard = HazardInstance(location=geocoords, relief_map=relief_map, template=hazard_template)
-            hazard.save()
 
-            print("Created Test HazardInstance")
-            print(hazard.to_dict())
-            print()
+        for i in range(3):
+            map_item_data['point'] = GEOSGeometry("POINT({} {})".format(lat + 0.01 * i, lng + 0.01 * i))
+            self.create_map_item(**map_item_data)
 
-            lat += 0.01
-            lng += 0.01
+        map_item_data['template'] = hazard_template
+        for i in range(3):
+            map_item_data['point'] = GEOSGeometry("POINT({} {})".format(lat - 0.01 * i, lng - 0.01 * i))
+            self.create_map_item(**map_item_data)
 
-        if len(ResourceInstance.objects.filter(relief_map=relief_map)) >= 3:
-            for resource in ResourceInstance.objects.filter(relief_map=relief_map):
-                print("Test ResourceInstance")
-                print(resource.to_dict())
-                print()
+    def create_map_item(self, **kwargs):
+        map_item, created = MapItem.objects.get_or_create(**kwargs)
+        print("Test Map Item{} Created".format('' if created else ' Not'))
+        print(map_item)
+        print()
 
-        while len(ResourceInstance.objects.filter(relief_map=relief_map)) < 3:
-            geocoords = GEOSGeometry("POINT(%(lat)f %(lng)f)" % locals())
-            resource = ResourceInstance(location=geocoords, quantity=1, relief_map=relief_map, template=resource_template)
-            resource.save()
+    def create_map_item_template(self, **kwargs):
+        template, created = MapItemTemplate.objects.get_or_create(**kwargs)
 
-            print("Created Test ResourceInstance")
-            print(resource.to_dict())
-            print()
+        print("Test Template{} Created".format('' if created else ' Not'))
+        print(template)
+        print()
 
-            lat += 0.01
-            lng += 0.01
+        return template

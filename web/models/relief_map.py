@@ -1,8 +1,8 @@
-from web.models import MapItem, MapItemTemplate
+from web.models import MapItemTemplate
 
-from django.conf import settings
 from django.db import models
 
+import json
 
 class ReliefMap(models.Model):
     """
@@ -12,16 +12,20 @@ class ReliefMap(models.Model):
     name = models.CharField(max_length=120, null=False, blank=False)
     description = models.CharField(max_length=1000, default="")
 
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
+    owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def get_map_items(self):
-        print(self.get_templates()[0].mapitem_set.all())
-        return []
-
-    def get_templates(self):
-        return MapItemTemplate.objects.filter(relief_map=self)
+    # utility method for printing
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'templates': [x.to_dict() for x in self.mapitemtemplate_set.all()],
+            'owner': self.owner.id,
+        }
 
     def __str__(self):
-        return 'name: {0}, owner: {1}'.format(self.name, self.owner)
+        return json.dumps(self.to_dict(), sort_keys=True, indent=2)
+
