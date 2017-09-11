@@ -12,14 +12,14 @@ class UserPermission(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
-            return True
+            return request.user.is_authenticated()
         
         return obj == request.user
 
 class OrganizationPermission(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
-            return True
+            return request.user.is_authenticated()
 
         admin_memberships = Membership.objects.filter(user=request.user, memberable=obj, type='admin')
         is_admin = len(admin_memberships) > 0
@@ -37,11 +37,13 @@ def is_admin_of(pk, user):
 
 class AddMemberPermission(permissions.BasePermission):
     def has_permission(self, request, view):
-        if request.method != 'POST':
-            return True
+        if request.method in permissions.SAFE_METHODS:
+            print('we in')
+            return request.user.is_authenticated()
 
-        # this permission works for urls like "../memberable/{pk}/membertype"
-        memberable_id = request.resolver_match.kwargs['pk']
+        # this permission works for urls like "../memberable/{memberable_pk}/membertype..."
+        memberable_id = request.resolver_match.kwargs['memberable_pk']
+
         return is_admin_of(memberable_id, request.user)
 
 
@@ -49,7 +51,7 @@ class AddMemberPermission(permissions.BasePermission):
 class MembershipPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.method != 'POST':
-            return True
+            return request.user.is_authenticated()
 
         try:
             memberable_id = request.data['memberable']
@@ -60,7 +62,7 @@ class MembershipPermission(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
-            return True
+            return request.user.is_authenticated()
 
         # must be an admin of the "targeted" organization
         if request.data and 'memberable' in request.data:

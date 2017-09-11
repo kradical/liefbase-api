@@ -31,7 +31,7 @@ class MembershipViewSet(viewsets.ModelViewSet):
     permission_classes = (MembershipPermission,)
 
 class AdminViewSet(viewsets.ModelViewSet):
-    permission_classes = (UserPermission,)
+    permission_classes = (AddMemberPermission,)
 
     def list(self, request, memberable_pk):
         try:
@@ -108,7 +108,7 @@ class AdminViewSet(viewsets.ModelViewSet):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class MemberViewSet(viewsets.ModelViewSet):
-    permission_classes = (UserPermission,)
+    permission_classes = (AddMemberPermission,)
 
     def list(self, request, memberable_pk):
         try:
