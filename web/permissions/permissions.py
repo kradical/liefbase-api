@@ -1,4 +1,4 @@
-from web.models import Membership, Memberable
+from web.models import ReliefMap, Membership, Memberable, MapItemTemplate
 
 from rest_framework import permissions
 from rest_framework.exceptions import NotFound
@@ -35,10 +35,9 @@ def is_admin_of(pk, user):
     is_admin = Membership.objects.filter(user=user, memberable=memberable, type='admin').exists()
     return is_admin
 
-class AddMemberPermission(permissions.BasePermission):
+class IsAdminOfPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.method in permissions.SAFE_METHODS:
-            print('we in')
             return request.user.is_authenticated()
 
         # this permission works for urls like "../memberable/{memberable_pk}/membertype..."
@@ -46,6 +45,43 @@ class AddMemberPermission(permissions.BasePermission):
 
         return is_admin_of(memberable_id, request.user)
 
+class TemplateReliefMapPermission(permissions.BasePermission):
+    def has_permission(self, request, view):
+        if request.method != 'POST':
+            return request.user.is_authenticated()
+
+        try:
+            relief_map_id = request.data['relief_map']
+            relief_map = ReliefMap.objects.get(id=relief_map_id)
+        except (ReliefMap.DoesNotExist, KeyError):
+            raise NotFound()
+
+        # has any sort of membership to the relief map
+        is_member_or_admin = Membership.objects.filter(user=request.user, memberable=relief_map).exists()
+        return is_member_or_admin
+
+    def has_object_permission(self, request, view, obj):
+        is_member_or_admin = Membership.objects.filter(user=request.user, memberable=obj.relief_map).exists()
+        return is_member_or_admin
+
+class ItemReliefMapPermission(permissions.BasePermission):
+    def has_permission(self, request, view):
+        if request.method != 'POST':
+            return request.user.is_authenticated()
+
+        try:
+            template_id = request.data['properties']['template']
+            template = MapItemTemplate.objects.get(id=template_id)
+        except (MapItemTemplate.DoesNotExist, KeyError):
+            raise NotFound()
+
+        # has any sort of membership to the relief map
+        is_member_or_admin = Membership.objects.filter(user=request.user, memberable=template.relief_map).exists()
+        return is_member_or_admin
+
+    def has_object_permission(self, request, view, obj):
+        is_member_or_admin = Membership.objects.filter(user=request.user, memberable=obj.template.relief_map).exists()
+        return is_member_or_admin
 
 
 class MembershipPermission(permissions.BasePermission):

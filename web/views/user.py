@@ -1,11 +1,11 @@
 from web.serializers import UserSerializer, OrganizationSerializer, TeamSerializer, MembershipSerializer
-from web.permissions import UserPermission, OrganizationPermission, MembershipPermission, AddMemberPermission
+from web.permissions import UserPermission, OrganizationPermission, MembershipPermission, IsAdminOfPermission
 from web.models import User, Organization, Team, Membership, Memberable
 
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
-from rest_framework.exceptions import NotFound, MethodNotAllowed, APIException
+from rest_framework.exceptions import NotFound
 from rest_framework import status
 
 from django.db.utils import IntegrityError
@@ -31,7 +31,7 @@ class MembershipViewSet(viewsets.ModelViewSet):
     permission_classes = (MembershipPermission,)
 
 class AdminViewSet(viewsets.ModelViewSet):
-    permission_classes = (AddMemberPermission,)
+    permission_classes = (IsAdminOfPermission,)
 
     def list(self, request, memberable_pk):
         try:
@@ -108,7 +108,7 @@ class AdminViewSet(viewsets.ModelViewSet):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class MemberViewSet(viewsets.ModelViewSet):
-    permission_classes = (AddMemberPermission,)
+    permission_classes = (IsAdminOfPermission,)
 
     def list(self, request, memberable_pk):
         try:

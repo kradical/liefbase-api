@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-09-11T03:24:57.124Z",
+	"__export_date": "2017-09-11T05:48:28.285Z",
 	"__export_source": "insomnia.desktop.app:v5.7.14",
 	"resources": [
 		{
@@ -59,12 +59,12 @@
 		{
 			"_id": "fld_c9bc810d685b43b4a393f4de361cb015",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1503980583038,
+			"modified": 1505104697686,
 			"created": 1503980583038,
 			"name": "users",
 			"description": "",
 			"environment": {},
-			"metaSortKey": -1503980583038,
+			"metaSortKey": -1504002198617.25,
 			"_type": "request_group"
 		},
 		{
@@ -125,18 +125,18 @@
 		{
 			"_id": "env_c99f81ae1b18421aa20b6525f1c5aa8d",
 			"parentId": "env_c767bab7aa9547b0915c5374d7ce2263",
-			"modified": 1505099707528,
+			"modified": 1505108482154,
 			"created": 1503883451119,
 			"name": "liefbase_dev",
 			"data": {
 				"base_url": "http://localhost:8000/",
-				"jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MDU2OTE0OTEsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoidGVzdDJAdGVhc2FzLmNvbSIsImVtYWlsIjoiIiwib3JpZ19pYXQiOjE1MDUwODY2OTF9.oa7gbXt5OiMrtIfmjZBBR0VR7Tayeh-vlTrnhIrh6O4",
+				"jwt_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDU3MDU3MTAsInVzZXJuYW1lIjoidGVzdDNAdGVhc2FzLmNvbSIsInVzZXJfaWQiOjIsImVtYWlsIjoiIiwib3JpZ19pYXQiOjE1MDUxMDA5MTB9.9A36SSBmQbHfyNaLw-B7OVe0o_3sjJnZKN5Z9tNXmGI",
 				"user_id": 1,
 				"relief_map_id": 2,
 				"organization_id": 4,
 				"team_id": 2,
-				"map_item_template_id": 1,
-				"map_item_id": 1,
+				"map_item_template_id": 4,
+				"map_item_id": 2,
 				"membership_id": 1
 			},
 			"color": "#7d69cb",
@@ -146,7 +146,7 @@
 		{
 			"_id": "req_aa13a3c8a1f94ec597f4bd75c97d72cb",
 			"parentId": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
-			"modified": 1505086690727,
+			"modified": 1505100909004,
 			"created": 1503883162272,
 			"url": "{{ base_url  }}api-token-auth/",
 			"name": "-auth",
@@ -154,7 +154,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"username\": \"test2@teasas.com\",\n\t\"password\": \"password\"\n}"
+				"text": "{\n  \"username\": \"test3@teasas.com\",\n\t\"password\": \"password\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -461,7 +461,7 @@
 		{
 			"_id": "req_3d99e899278f4e5f92c4983e8e46cae0",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1505082184165,
+			"modified": 1505100902324,
 			"created": 1503980688630,
 			"url": "{{ base_url  }}users/",
 			"name": "/",
@@ -469,7 +469,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"username\": \"test2@teasas.com\",\n\t\"password\": \"password\",\n\t\"first_name\": \"LOL\",\n\t\"last_name\": \"TEST\"\n}"
+				"text": "{\n  \"username\": \"test3@teasas.com\",\n\t\"password\": \"password\",\n\t\"first_name\": \"LOL\",\n\t\"last_name\": \"TEST\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -834,7 +834,7 @@
 		{
 			"_id": "req_59007949089c40f4b9376d21ced5c056",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1505084226258,
+			"modified": 1505100811633,
 			"created": 1504080369692,
 			"url": "{{ base_url  }}teams/",
 			"name": "/",
@@ -842,7 +842,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"name\": \"tester121\",\n\t\"parent_organization\": 1\n}"
+				"text": "{\n  \"name\": \"tester121\",\n\t\"parent_organization\": 4\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -1014,7 +1014,7 @@
 		{
 			"_id": "req_8b2a87832a474de6840709d75cc063e3",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1505007126333,
+			"modified": 1505105502082,
 			"created": 1505001066892,
 			"url": "{{ base_url  }}mapitemtemplates/",
 			"name": "/",
@@ -1022,7 +1022,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"name\": \"template 1\",\n\t\"category\": \"cat1\",\n\t\"sub_category\": \"subcat1\",\n\t\"relief_map\": 1\n}"
+				"text": "{\n  \"name\": \"template 1\",\n\t\"category\": \"cat1\",\n\t\"sub_category\": \"subcat1\",\n\t\"relief_map\": 6\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -1074,7 +1074,7 @@
 		{
 			"_id": "req_59843dec2cfe478e8e8be874d5063e94",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1505007306603,
+			"modified": 1505107111429,
 			"created": 1505007142764,
 			"url": "{{ base_url  }}mapitemtemplates/{{map_item_template_id}}/",
 			"name": "/:id",
@@ -1082,7 +1082,7 @@
 			"method": "PUT",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"name\": \"template 1\",\n\t\"category\": \"cat1\",\n\t\"sub_category\": \"subcat2\",\n\t\"relief_map\": 1,\n\t\"mapitem_set\": 1\n}"
+				"text": "{\n  \"name\": \"template 1\",\n\t\"category\": \"cat1\",\n\t\"sub_category\": \"subcat22ew2\",\n\t\"relief_map\": 2\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -1108,7 +1108,7 @@
 		{
 			"_id": "req_bd07eaf7537240bdb70c4416fee3ae8b",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1505007384582,
+			"modified": 1505107240462,
 			"created": 1505007342292,
 			"url": "{{ base_url  }}mapitemtemplates/{{map_item_template_id}}/",
 			"name": "/:id",
@@ -1116,7 +1116,7 @@
 			"method": "PATCH",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"name\": \"template 1\",\n\t\"category\": \"cat1\",\n\t\"sub_category\": \"subcat3\"\n}"
+				"text": "{\n\t\"name\": \"lulul\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -1168,7 +1168,7 @@
 		{
 			"_id": "req_9f6b7d4a856745a482ef82720f0b891f",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1505007417840,
+			"modified": 1505105544180,
 			"created": 1505007399918,
 			"url": "{{ base_url  }}mapitemtemplates/{{map_item_template_id}}/",
 			"name": "/:id",
@@ -1220,7 +1220,7 @@
 		{
 			"_id": "req_8ad9a0fd1ceb4c4bbcbfb0f8384d8dd3",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1505087320183,
+			"modified": 1505108445248,
 			"created": 1505007479228,
 			"url": "{{ base_url  }}mapitems/",
 			"name": "/",
@@ -1228,7 +1228,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"quantity\": 1,\n\t\"point\": {\n\t\t\"type\": \"Point\",\n    \"coordinates\": [0, 0]\n\t}\n}"
+				"text": "{\n\t\"type\": \"Feature\",\n\t\"geometry\": {\n\t\t\"type\": \"Point\",\n\t\t\"coordinates\": [\n\t\t\t0.0,\n\t\t\t0.0\n\t\t]\n\t},\n\t\"properties\": {\n\t\t\"quantity\": 1.0,\n\t\t\"template\": 6\n\t}\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -1306,7 +1306,7 @@
 		{
 			"_id": "req_ec7936ab41374a98964507daf07a9f48",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1505007932947,
+			"modified": 1505108524402,
 			"created": 1505007862412,
 			"url": "{{ base_url  }}mapitems/{{map_item_id}}/",
 			"name": "/:id",
@@ -1314,7 +1314,7 @@
 			"method": "PUT",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"quantity\": 3,\n\t\"template\": 3,\n\t\"point\": {\n\t\t\"type\": \"Point\",\n    \"coordinates\": [0, 0]\n\t}\n}"
+				"text": "{\n\t\"type\": \"Feature\",\n\t\"geometry\": {\n\t\t\"type\": \"Point\",\n\t\t\"coordinates\": [\n\t\t\t1.0,\n\t\t\t1.0\n\t\t]\n\t},\n\t\"properties\": {\n\t\t\"quantity\": 2.0\n\t}\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -1340,7 +1340,7 @@
 		{
 			"_id": "req_8d644c001c1e4291be0c3def00894373",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1505007954740,
+			"modified": 1505108853500,
 			"created": 1505007938831,
 			"url": "{{ base_url  }}mapitems/{{map_item_id}}/",
 			"name": "/:id",
@@ -1348,7 +1348,7 @@
 			"method": "PATCH",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"quantity\": 5\n}"
+				"text": "{\n\t\"properties\": {\n\t\t\"quantity\": 2.120\n\t}\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -2274,7 +2274,7 @@
 		{
 			"_id": "req_635532b47d6d493a8e3699e57ae34231",
 			"parentId": "fld_9ca7ae38598548a283b634cb85ed5d3f",
-			"modified": 1505100085135,
+			"modified": 1505100833844,
 			"created": 1505100055185,
 			"url": "{{base_url}}teams/{{ team_id  }}/admins/",
 			"name": "/",
@@ -2454,7 +2454,7 @@
 		{
 			"_id": "req_61daf97b3af14098ba415618304a01dc",
 			"parentId": "fld_2ee23cbf3c6f4cae866cbc03ec54f558",
-			"modified": 1505100167240,
+			"modified": 1505101121991,
 			"created": 1505100059660,
 			"url": "{{base_url}}teams/{{ team_id  }}/members/",
 			"name": "/",
@@ -2465,8 +2465,13 @@
 			"headers": [
 				{
 					"name": "Authorization",
-					"value": "jwt {{jwt_token}}",
+					"value": "jwt {{jwt_token}} ",
 					"id": "pair_1c124175c55f48fa8ee22617ffc66777"
+				},
+				{
+					"name": "",
+					"value": "",
+					"id": "pair_083323fce20340abb07ce313b9736c0f"
 				}
 			],
 			"authentication": {},
