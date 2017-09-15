@@ -9,6 +9,7 @@ class FilterPreset(models.Model):
     """
 
     name = models.CharField(max_length=120)
+    relief_map = models.ForeignKey('ReliefMap', on_delete=models.CASCADE)
     templates = models.ManyToManyField('MapItemTemplate')
 
     owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
@@ -20,6 +21,7 @@ class FilterPreset(models.Model):
         return {
             'id': self.id,
             'name': self.name,
+            'relief_map': self.relief_map.id,
             'owner': self.owner.id,
             'templates': [x.id for x in self.templates]
         }

@@ -1,4 +1,4 @@
-from web.models import FilterPreset, MapItemTemplate
+from web.models import FilterPreset, MapItemTemplate, ReliefMap
 from web.serializers import FilterPresetSerializer
 
 from rest_framework import viewsets
@@ -11,13 +11,17 @@ class FilterPresetViewSet(viewsets.ModelViewSet):
 
     def create(self, request):
         try:
-            name, templates = (request.data[x] for x in ('name', 'templates'))
+            name, relief_map_id, templates = (request.data[x] for x in ('name', 'relief_map', 'templates'))
         except KeyError:
             return Response({ 'detail': 'name, templates are required fields'}, status=status.HTTP_400_BAD_REQUEST)
 
-        filter_preset = FilterPreset.objects.create()
 
-        filter_preset.name = name
+        try:
+            relief_map = ReliefMap.objects.get(pk=relief_map_id)
+        except ReliefMap.DoesNotExist:
+            raise NotFound()
+
+        filter_preset = FilterPreset.objects.create(relief_map=relief_map, name=name)
         filter_preset.save()
 
         for template_id in templates:
@@ -26,8 +30,6 @@ class FilterPresetViewSet(viewsets.ModelViewSet):
                 filter_preset.templates.add(template)
             except MapItemTemplate.DoesNotExist:
                 raise NotFound()
-
-        filter_preset.save()
 
         serializer = FilterPresetSerializer(filter_preset)
         return Response(serializer.data)
