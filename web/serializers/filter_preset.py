@@ -11,4 +11,4 @@ class FilterPresetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FilterPreset
-        fields = ('id', 'name', 'relief_map', 'templates')
+        fields = ('id', 'name', 'templates')
