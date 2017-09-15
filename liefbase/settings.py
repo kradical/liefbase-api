@@ -23,11 +23,13 @@ ALLOWED_HOSTS = ['192.168.99.100', '35.182.176.4', '127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
+    'web.apps.WebConfig',
+
     'rest_framework',
     'rest_framework_gis',
     'rest_framework_jwt',
     'django.contrib.gis',
-    'web.apps.WebConfig',
+    'corsheaders',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -45,6 +48,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# fix this for production to only allow our site
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'liefbase.urls'
 
