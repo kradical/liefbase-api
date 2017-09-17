@@ -2,6 +2,7 @@ from web.serializers import UserSerializer, OrganizationSerializer, TeamSerializ
 from web.permissions import UserPermission, MembershipPermission, IsAdminOfPermission
 from web.models import User, Organization, Team, Membership, Memberable
 
+from django_filters import rest_framework as filters
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
@@ -29,3 +30,5 @@ class MembershipViewSet(viewsets.ModelViewSet):
     queryset = Membership.objects.all()
     serializer_class = MembershipSerializer
     permission_classes = (MembershipPermission,)
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = ('type', 'memberable', 'user')
