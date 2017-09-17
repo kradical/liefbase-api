@@ -77,13 +77,13 @@ class ItemReliefMapPermission(permissions.BasePermission):
 
 class MembershipPermission(permissions.BasePermission):
     def has_permission(self, request, view):
-        if request.method != 'POST':
+        if request.method in permissions.SAFE_METHODS:
             return request.user.is_authenticated()
 
         try:
             memberable_id = request.data['memberable']
         except KeyError:
-            raise NotFound()
+            raise request.user.is_authenticated()
 
         return is_admin_of(memberable_id, request.user)
 

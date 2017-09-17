@@ -20,9 +20,9 @@ class OrganizationSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = self.context['request'].user
         org = Organization.objects.create(owner=user, **validated_data)
-        
+
         Membership.objects.create(type='admin', memberable=org, user=user)
-        
+
         return org
 
     class Meta:
