@@ -18,6 +18,7 @@ class MapItemTemplate(models.Model):
 
     # utility method for printing
     def to_dict(self):
+        return {}
         return {
             'id': self.id,
             'name': self.name,

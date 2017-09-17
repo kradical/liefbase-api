@@ -5,9 +5,17 @@ from rest_framework import serializers
 
 
 class FilterPresetSerializer(serializers.ModelSerializer):
+    templates = serializers.PrimaryKeyRelatedField(many=True, queryset=MapItemTemplate.objects.all())
+
     def create(self, validated_data):
         user = self.context['request'].user
-        return FilterPreset.objects.create(owner=user, **validated_data)
+        templates = validated_data.pop('templates', [])
+
+        preset = FilterPreset.objects.create(owner=user, **validated_data)
+        preset.templates = templates
+        preset.save()
+
+        return preset
 
     class Meta:
         model = FilterPreset
