@@ -1,6 +1,6 @@
 from web.models import MapItemTemplate
 from web.serializers import MapItemTemplateSerializer
-from web.permissions import TemplateReliefMapPermission
+from web.permissions import ObjectReliefMapPermission
 
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -8,7 +8,7 @@ from rest_framework.response import Response
 class MapItemTemplateViewSet(viewsets.ModelViewSet):
     queryset = MapItemTemplate.objects.all()
     serializer_class = MapItemTemplateSerializer
-    permission_classes = (TemplateReliefMapPermission,)
+    permission_classes = (ObjectReliefMapPermission,)
 
     def update(self, request, pk=None):
         try:
@@ -20,7 +20,7 @@ class MapItemTemplateViewSet(viewsets.ModelViewSet):
             name, category, sub_category = (request.data[x] for x in ('name', 'category', 'sub_category'))
         except KeyError:
             return Response({ 'detail': 'name, category, sub_category are required fields'}, status=status.HTTP_400_BAD_REQUEST)
-        
+
         template.name = name
         template.category = category
         template.sub_category = sub_category

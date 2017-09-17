@@ -13,7 +13,7 @@ class UserPermission(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
             return request.user.is_authenticated()
-        
+
         return obj == request.user
 
 class OrganizationPermission(permissions.BasePermission):
@@ -23,7 +23,7 @@ class OrganizationPermission(permissions.BasePermission):
 
         admin_memberships = Membership.objects.filter(user=request.user, memberable=obj, type='admin')
         is_admin = len(admin_memberships) > 0
-        
+
         return is_admin
 
 def is_admin_of(pk, user):
@@ -31,7 +31,7 @@ def is_admin_of(pk, user):
         memberable = Memberable.objects.get(pk=pk)
     except Memberable.DoesNotExist:
         raise NotFound()
-    
+
     is_admin = Membership.objects.filter(user=user, memberable=memberable, type='admin').exists()
     return is_admin
 
@@ -45,7 +45,7 @@ class IsAdminOfPermission(permissions.BasePermission):
 
         return is_admin_of(memberable_id, request.user)
 
-class TemplateReliefMapPermission(permissions.BasePermission):
+class ObjectReliefMapPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.method != 'POST':
             return request.user.is_authenticated()
@@ -105,7 +105,7 @@ class MembershipPermission(permissions.BasePermission):
             memberable = Memberable.objects.get(id=request.data['memberable'])
         else:
             memberable = obj.memberable
-        
+
         is_admin = Membership.objects.filter(user=request.user, memberable=memberable, type='admin').exists()
         is_remove = request.method == 'DELETE' or memberable != obj.memberable
         is_last_admin = Membership.objects.filter(type='admin', memberable=memberable).count() == 1
