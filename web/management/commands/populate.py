@@ -3,7 +3,7 @@ from django.db.utils import IntegrityError
 
 from django.contrib.gis.geos import GEOSGeometry
 
-from web.models import User, Organization, Membership, Team, MapItemTemplate, MapItem, ReliefMap
+from web.models import User, Organization, Membership, Team, MapItemTemplate, MapItem, ReliefMap, FilterPreset, TemplatePreset
 
 class Command(BaseCommand):
     help = "Populates a basic set of test data"
@@ -23,7 +23,7 @@ class Command(BaseCommand):
             created = True
         print("Test User{} Created".format('' if created else ' Not'))
         print(user)
-        print()        
+        print()
 
         organization_data = {
             'name': 'Liefbase',
@@ -35,8 +35,8 @@ class Command(BaseCommand):
         print()
 
         membership_data = {
-            'type': 'admin', 
-            'memberable': liefbase, 
+            'type': 'admin',
+            'memberable': liefbase,
             'user': user,
         }
         membership, created = Membership.objects.get_or_create(**membership_data)
@@ -115,6 +115,38 @@ class Command(BaseCommand):
             map_item_data['point'] = GEOSGeometry("POINT({} {})".format(lat - 0.01 * i, lng - 0.01 * i))
             self.create_map_item(**map_item_data)
 
+        self.create_filter_preset(relief_map=relief_map, owner=user)
+
+        self.create_template_preset(relief_map=relief_map, owner=user)
+
+    def create_filter_preset(self, relief_map, owner):
+        map_templates = MapItemTemplate.objects.filter(relief_map=relief_map)[:5]
+        filter_preset, created = FilterPreset.objects.get_or_create(name="Random Filter", relief_map=relief_map, owner=owner)
+        print("Test Filter Preset{} Created".format('' if created else ' Not'))
+        if created:
+            print("Test Filter Preset Created")
+            for template in map_templates:
+                filter_preset.templates.add(template)
+                print("Test Template {} added to Filter Preset".format(template))
+        else:
+            print("Test Filter Preset Not Created")
+        print(filter_preset)
+        print()
+
+    def create_template_preset(self, relief_map, owner):
+        map_templates = MapItemTemplate.objects.filter(relief_map=relief_map)[:5]
+        templates_json = []
+        for template in map_templates:
+            templates_json.append({
+                'name': template.name,
+                'category': template.category,
+                'sub_category': template.sub_category
+            })
+        template_preset, created = TemplatePreset.objects.get_or_create(name="Random Templates", owner=owner, raw_templates=templates_json)
+        print("Test Template Preset{} Created".format('' if created else ' Not'))
+        print(template_preset)
+        print()
+
     def create_map_item(self, **kwargs):
         map_item, created = MapItem.objects.get_or_create(**kwargs)
         print("Test Map Item{} Created".format('' if created else ' Not'))
@@ -123,7 +155,6 @@ class Command(BaseCommand):
 
     def create_map_item_template(self, **kwargs):
         template, created = MapItemTemplate.objects.get_or_create(**kwargs)
-
         print("Test Template{} Created".format('' if created else ' Not'))
         print(template)
         print()
