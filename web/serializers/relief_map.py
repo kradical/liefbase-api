@@ -18,4 +18,4 @@ class ReliefMapSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ReliefMap
-        fields = ('id', 'name', 'description', 'map_item_templates')
+        fields = ('id', 'name', 'description', 'map_item_templates', 'public')

@@ -3,6 +3,15 @@ from web.models import ReliefMap, Membership, Memberable, MapItemTemplate
 from rest_framework import permissions
 from rest_framework.exceptions import NotFound
 
+def is_admin_of(pk, user):
+    try:
+        memberable = Memberable.objects.get(pk=pk)
+    except Memberable.DoesNotExist:
+        raise NotFound()
+
+    is_admin = Membership.objects.filter(user=user, memberable=memberable, type='admin').exists()
+    return is_admin
+
 class UserPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.method == 'POST':
@@ -16,45 +25,27 @@ class UserPermission(permissions.BasePermission):
 
         return obj == request.user
 
-class OrganizationPermission(permissions.BasePermission):
+class IsAdminOfPermission(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
             return request.user.is_authenticated()
 
-        admin_memberships = Membership.objects.filter(user=request.user, memberable=obj, type='admin')
-        is_admin = len(admin_memberships) > 0
+        is_admin = Membership.objects.filter(user=request.user, memberable=obj, type='admin').exists()
 
         return is_admin
 
-def is_admin_of(pk, user):
-    try:
-        memberable = Memberable.objects.get(pk=pk)
-    except Memberable.DoesNotExist:
-        raise NotFound()
-
-    is_admin = Membership.objects.filter(user=user, memberable=memberable, type='admin').exists()
-    return is_admin
-
-class IsAdminOfPermission(permissions.BasePermission):
-    def has_permission(self, request, view):
-        if request.method in permissions.SAFE_METHODS:
-            return request.user.is_authenticated()
-
-        # this permission works for urls like "../memberable/{memberable_pk}/membertype..."
-        memberable_id = request.resolver_match.kwargs['memberable_pk']
-
-        return is_admin_of(memberable_id, request.user)
-
 class ObjectReliefMapPermission(permissions.BasePermission):
     def has_permission(self, request, view):
-        if request.method != 'POST':
+        if request.method in permissions.SAFE_METHODS:
             return request.user.is_authenticated()
 
         try:
             relief_map_id = request.data['relief_map']
             relief_map = ReliefMap.objects.get(id=relief_map_id)
-        except (ReliefMap.DoesNotExist, KeyError):
+        except ReliefMap.DoesNotExist:
             raise NotFound()
+        except KeyError:
+            return request.user.is_authenticated()
 
         # has any sort of membership to the relief map
         is_member_or_admin = Membership.objects.filter(user=request.user, memberable=relief_map).exists()

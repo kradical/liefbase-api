@@ -11,6 +11,7 @@ class ReliefMap(Memberable):
 
     name = models.CharField(max_length=120, null=False, blank=False)
     description = models.CharField(max_length=1000, default="")
+    public = models.BooleanField(default=False)
 
     owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
