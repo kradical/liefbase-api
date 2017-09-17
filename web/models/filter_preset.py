@@ -23,7 +23,7 @@ class FilterPreset(models.Model):
             'name': self.name,
             'relief_map': self.relief_map.id,
             'owner': self.owner.id,
-            'templates': [x.id for x in self.templates]
+            'templates': [x.id for x in self.templates.all()]
         }
 
     def __str__(self):
