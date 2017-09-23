@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-09-17T08:07:35.875Z",
+	"__export_date": "2017-09-23T07:17:36.809Z",
 	"__export_source": "insomnia.desktop.app:v5.7.14",
 	"resources": [
 		{
@@ -147,12 +147,12 @@
 		{
 			"_id": "env_c99f81ae1b18421aa20b6525f1c5aa8d",
 			"parentId": "env_c767bab7aa9547b0915c5374d7ce2263",
-			"modified": 1505635255134,
+			"modified": 1506136566269,
 			"created": 1503883451119,
 			"name": "liefbase_dev",
 			"data": {
-				"base_url": "http://localhost:8000/",
-				"jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsImV4cCI6MTUwNjI0MDA0MSwib3JpZ19pYXQiOjE1MDU2MzUyNDEsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoidGVzdDJAdGVhc2FzLmNvbSJ9.0-bxM9SIOYo7oosYXTi5QF5_Bp7A-J65McADASfovUQ",
+				"base_url": "http://localhost:8000/api/",
+				"jwt_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmlnX2lhdCI6MTUwNjEzNjU1NCwiZW1haWwiOiIiLCJ1c2VybmFtZSI6InRlc3QzQHRlYXNhcy5jb20iLCJleHAiOjE1MDY3NDEzNTQsInVzZXJfaWQiOjJ9.tKIZGOvhd9vzgvX6LEEm6QEyPYdn7PBBNLqjgUEyySs",
 				"user_id": 1,
 				"relief_map_id": 2,
 				"organization_id": 4,
@@ -170,15 +170,15 @@
 		{
 			"_id": "req_aa13a3c8a1f94ec597f4bd75c97d72cb",
 			"parentId": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
-			"modified": 1505635240306,
+			"modified": 1506136553164,
 			"created": 1503883162272,
-			"url": "{{ base_url  }}api-token-auth/",
+			"url": "{{ base_url  }}token-auth/",
 			"name": "-auth",
 			"description": "",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"username\": \"test2@teasas.com\",\n\t\"password\": \"password\"\n}"
+				"text": "{\n  \"username\": \"test3@teasas.com\",\n\t\"password\": \"password\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -283,7 +283,7 @@
 		{
 			"_id": "req_1d2e846844474c25bcf1d474e83dd0d6",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1505635210120,
+			"modified": 1505718799303,
 			"created": 1503886792726,
 			"url": "{{ base_url  }}reliefmaps/",
 			"name": "/",
@@ -291,7 +291,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"name\": \"Test Relief Map\",\n\t\"description\": \"Test description.\",\n\t\"public\": true\n}"
+				"text": "{\n\t\"name\": \"Test Relief Map\",\n\t\"description\": \"Test description.\",\n\t\"public\": false\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -492,9 +492,9 @@
 		{
 			"_id": "req_cac3271c3d0a46298b745eb2212af607",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1505274339811,
+			"modified": 1506136481292,
 			"created": 1504080534426,
-			"url": "{{ base_url  }}users/{{user_id}}/",
+			"url": "{{ base_url  }}users/2",
 			"name": "/:id",
 			"description": "",
 			"method": "GET",
@@ -972,7 +972,7 @@
 		{
 			"_id": "req_8b2a87832a474de6840709d75cc063e3",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1505631123862,
+			"modified": 1506136591302,
 			"created": 1505001066892,
 			"url": "{{ base_url  }}mapitemtemplates/",
 			"name": "/",
@@ -980,7 +980,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"name\": \"template 2\",\n\t\"category\": \"cat1\",\n\t\"sub_category\": \"subcat1\",\n\t\"relief_map\": 9\n}"
+				"text": "{\n  \"name\": \"template 2\",\n\t\"category\": \"hazard\",\n\t\"sub_category\": \"subcat2\",\n\t\"relief_map\": 12\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -1100,9 +1100,9 @@
 		{
 			"_id": "req_3132bab5e94b43b388e70cd5e48c614a",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1505274339687,
+			"modified": 1505718851087,
 			"created": 1505007344268,
-			"url": "{{ base_url  }}mapitemtemplates/{{map_item_template_id}}/",
+			"url": "{{ base_url  }}mapitemtemplates/42",
 			"name": "/:id",
 			"description": "",
 			"method": "DELETE",
@@ -1178,7 +1178,7 @@
 		{
 			"_id": "req_8ad9a0fd1ceb4c4bbcbfb0f8384d8dd3",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1505274339685,
+			"modified": 1506136645389,
 			"created": 1505007479228,
 			"url": "{{ base_url  }}mapitems/",
 			"name": "/",
@@ -1186,7 +1186,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"type\": \"Feature\",\n\t\"geometry\": {\n\t\t\"type\": \"Point\",\n\t\t\"coordinates\": [\n\t\t\t0.0,\n\t\t\t0.0\n\t\t]\n\t},\n\t\"properties\": {\n\t\t\"quantity\": 1.0,\n\t\t\"template\": 6\n\t}\n}"
+				"text": "{\n\t\"type\": \"Feature\",\n\t\"geometry\": {\n\t\t\"type\": \"Point\",\n\t\t\"coordinates\": [\n\t\t\t0.0,\n\t\t\t0.0\n\t\t]\n\t},\n\t\"properties\": {\n\t\t\"quantity\": 4.0,\n\t\t\"template\": 46\n\t}\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -1332,9 +1332,9 @@
 		{
 			"_id": "req_8c3b9fc98315422f9fa831d314cf53fb",
 			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
-			"modified": 1505274339636,
+			"modified": 1506136467266,
 			"created": 1505074064147,
-			"url": "{{ base_url  }}memberships/",
+			"url": "{{ base_url  }}memberships?memberable=12&type=admin",
 			"name": "/",
 			"description": "",
 			"method": "GET",

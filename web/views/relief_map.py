@@ -12,11 +12,16 @@ class ReliefMapViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        memberships = Membership.objects.filter(user=user)
 
-        memberables = (x.memberable.cast() for x in memberships)
-        relief_maps = [x for x in memberables if x.get_instance_name() == 'reliefmap']
-        ids = (x.id for x in relief_maps)
+        ids = []
+        relief_maps = []
+
+        if user.is_authenticated():
+            memberships = Membership.objects.filter(user=user)
+
+            memberables = (x.memberable.cast() for x in memberships)
+            relief_maps = [x for x in memberables if x.get_instance_name() == 'reliefmap']
+            ids = (x.id for x in relief_maps)
 
         public_maps = ReliefMap.objects.filter(public=True).exclude(id__in=ids)
 

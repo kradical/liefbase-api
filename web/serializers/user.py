@@ -8,13 +8,15 @@ from django.contrib.contenttypes.models import ContentType
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(required=True, write_only=True)
+    firstName = serializers.CharField(required=False, source="first_name")
+    lastName = serializers.CharField(required=False, source="last_name")
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'password')
+        fields = ('id', 'username', 'firstName', 'lastName', 'password')
 
 class OrganizationSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
