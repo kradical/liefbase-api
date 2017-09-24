@@ -16,6 +16,13 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = (UserPermission,)
 
+    def get_object(self):
+        if self.kwargs.get('pk', None) == 'me':
+            self.kwargs['pk'] = self.request.user.pk
+
+        return super(UserViewSet, self).get_object()
+
+
 class OrganizationViewSet(viewsets.ModelViewSet):
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer

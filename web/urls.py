@@ -20,5 +20,6 @@ router.register(r'templatepresets', views.TemplatePresetViewSet)
 
 # Additionally, we include the login URLs for the browsable API.
 urlpatterns = [
+    url(r'users/me/$', views.UserViewSet.as_view({'get': 'retrieve'}), kwargs={'pk': 'me'}),
     url(r'^', include(router.urls))
 ]
