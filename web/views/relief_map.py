@@ -5,6 +5,7 @@ from web.permissions import IsAdminOfPermission
 from rest_framework import viewsets
 
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Q
 
 class ReliefMapViewSet(viewsets.ModelViewSet):
     serializer_class = ReliefMapSerializer
@@ -14,15 +15,10 @@ class ReliefMapViewSet(viewsets.ModelViewSet):
         user = self.request.user
 
         ids = []
-        relief_maps = []
-
         if user.is_authenticated():
             memberships = Membership.objects.filter(user=user)
 
             memberables = (x.memberable.cast() for x in memberships)
-            relief_maps = [x for x in memberables if x.get_instance_name() == 'reliefmap']
-            ids = (x.id for x in relief_maps)
+            ids = (x.id for x in memberables if x.get_instance_name() == 'reliefmap')
 
-        public_maps = ReliefMap.objects.filter(public=True).exclude(id__in=ids)
-
-        return relief_maps + list(public_maps)
+        return ReliefMap.objects.filter(Q(public=True) | Q(id__in=ids))

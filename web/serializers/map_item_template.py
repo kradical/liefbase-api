@@ -5,7 +5,9 @@ from rest_framework import serializers
 
 
 class MapItemTemplateSerializer(serializers.ModelSerializer):
-    map_items = MapItemSerializer(read_only=True, many=True, source='mapitem_set')
+    mapItems = MapItemSerializer(read_only=True, many=True, source='mapitem_set')
+    reliefMap = serializers.PrimaryKeyRelatedField(queryset=ReliefMap.objects.all(), source='relief_map')
+    subCategory = serializers.CharField(source="sub_category")
 
     def create(self, validated_data):
         user = self.context['request'].user
@@ -13,4 +15,4 @@ class MapItemTemplateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MapItemTemplate
-        fields = ('id', 'name', 'category', 'sub_category', 'relief_map', 'map_items')
+        fields = ('id', 'name', 'category', 'subCategory', 'reliefMap', 'mapItems')

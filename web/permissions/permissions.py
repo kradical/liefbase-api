@@ -27,10 +27,13 @@ class UserPermission(permissions.BasePermission):
 
 class IsAdminOfPermission(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
+        print('we in')
         if request.method in permissions.SAFE_METHODS:
             return request.user.is_authenticated()
 
         is_admin = Membership.objects.filter(user=request.user, memberable=obj, type='admin').exists()
+
+        print(is_admin)
 
         return is_admin
 

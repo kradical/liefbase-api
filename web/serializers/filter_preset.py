@@ -1,11 +1,10 @@
 from web.models import FilterPreset, MapItemTemplate, ReliefMap
-from web.serializers import MapItemTemplateSerializer
 
 from rest_framework import serializers
 
-
 class FilterPresetSerializer(serializers.ModelSerializer):
-    templates = serializers.PrimaryKeyRelatedField(many=True, queryset=MapItemTemplate.objects.all())
+    mapItemTemplates = serializers.PrimaryKeyRelatedField(many=True, queryset=MapItemTemplate.objects.all(), source='templates')
+    reliefMap = serializers.PrimaryKeyRelatedField(queryset=ReliefMap.objects.all(), source='relief_map')
 
     def create(self, validated_data):
         user = self.context['request'].user
@@ -19,4 +18,4 @@ class FilterPresetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FilterPreset
-        fields = ('id', 'name', 'relief_map', 'templates')
+        fields = ('id', 'name', 'reliefMap', 'mapItemTemplates')
