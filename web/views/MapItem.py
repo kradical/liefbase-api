@@ -1,11 +1,10 @@
-from rest_framework import viewsets
-from rest_framework.response import Response
+from dynamic_rest.viewsets import DynamicModelViewSet
 
 from web.models import MapItem
-from web.serializers import MapItemSerializer
+from web.serializers import DynamicMapItemSerializer
 from web.permissions import ItemReliefMapPermission
 
-class MapItemViewSet(viewsets.ModelViewSet):
+class MapItemViewSet(DynamicModelViewSet):
     queryset = MapItem.objects.all()
-    serializer_class = MapItemSerializer
+    serializer_class = DynamicMapItemSerializer
     permission_classes = (ItemReliefMapPermission,)

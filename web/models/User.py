@@ -110,7 +110,7 @@ class Membership(models.Model):
         return {
             'id': self.id,
             'type': self.type,
-            'memberable_type': self.memberable.get_instance_name(),
+            'memberableType': self.memberable.get_instance_name(),
             'memberable': self.memberable.cast().to_dict(),
             'user': self.user.to_dict(),
             'createdAt': self.createdAt.isoformat(),

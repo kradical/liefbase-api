@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-10-01T08:44:11.029Z",
+	"__export_date": "2017-10-01T22:14:45.264Z",
 	"__export_source": "insomnia.desktop.app:v5.7.14",
 	"resources": [
 		{
@@ -248,9 +248,9 @@
 		{
 			"_id": "req_6341f3f68803426ea85ed725b4001df2",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1506658456017,
+			"modified": 1506895820329,
 			"created": 1503884460897,
-			"url": "{{ base_url  }}reliefmaps/",
+			"url": "{{ base_url  }}reliefmaps/?include[]=mapItemTemplates.*&include[]=mapItemTemplates.mapItems.*",
 			"name": "/",
 			"description": "",
 			"method": "GET",
@@ -308,9 +308,9 @@
 		{
 			"_id": "req_7e81242e33ac4c94ab52deb2ec0a3934",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1506845619369,
+			"modified": 1506894839114,
 			"created": 1503887035029,
-			"url": "{{ base_url  }}reliefmaps/6/",
+			"url": "{{ base_url  }}reliefmaps/9/",
 			"name": "/:id",
 			"description": "",
 			"method": "GET",
@@ -439,7 +439,7 @@
 		{
 			"_id": "req_f109b748602a4509ae544669b79b13d2",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1505274339819,
+			"modified": 1506882556612,
 			"created": 1503980672904,
 			"url": "{{ base_url  }}users/",
 			"name": "/",
@@ -465,7 +465,7 @@
 		{
 			"_id": "req_3d99e899278f4e5f92c4983e8e46cae0",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1506844658562,
+			"modified": 1506892807033,
 			"created": 1503980688630,
 			"url": "{{ base_url  }}users/",
 			"name": "/",
@@ -473,7 +473,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"username\": \"test@liefbase.io\",\n\t\"password\": \"password\",\n\t\"firstName\": \"liefbase\",\n\t\"lastName\": \"testeroni\"\n}"
+				"text": "{\n  \"username\": \"test1@liefbase.io\",\n\t\"password\": \"password\",\n\t\"firstName\": \"liefbase\",\n\t\"lastName\": \"testeroni\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -494,9 +494,9 @@
 		{
 			"_id": "req_cac3271c3d0a46298b745eb2212af607",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1506847422477,
+			"modified": 1506892838877,
 			"created": 1504080534426,
-			"url": "{{ base_url  }}users/1/",
+			"url": "{{ base_url  }}users/2/",
 			"name": "/:id",
 			"description": "",
 			"method": "GET",
@@ -614,7 +614,7 @@
 		{
 			"_id": "req_5a8513fea1c64dc1a0a7bbcbeb75c000",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1505274339756,
+			"modified": 1506893627716,
 			"created": 1504067053356,
 			"url": "{{ base_url  }}organizations/",
 			"name": "/",
@@ -640,7 +640,7 @@
 		{
 			"_id": "req_242462312c784d4bbec0d46fc332d1da",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1505274339755,
+			"modified": 1506895698779,
 			"created": 1504067065345,
 			"url": "{{ base_url  }}organizations/",
 			"name": "/",
@@ -648,7 +648,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"name\": \"tester1212\"\n}"
+				"text": "{\n  \"name\": \"te1ster12112111221\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -674,7 +674,7 @@
 		{
 			"_id": "req_2bd001a676e94ef1b0ff2e2b7077c6c9",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1506847217254,
+			"modified": 1506894857672,
 			"created": 1504080551119,
 			"url": "{{ base_url  }}organizations/9/",
 			"name": "/:id",
@@ -828,9 +828,9 @@
 		{
 			"_id": "req_2710fb23257648469af63f5b09f305d5",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1505274339741,
+			"modified": 1506893377452,
 			"created": 1504080378121,
-			"url": "{{ base_url  }}teams/",
+			"url": "{{ base_url  }}teams/?include[]=owner.*",
 			"name": "/",
 			"description": "",
 			"method": "GET",
@@ -854,9 +854,9 @@
 		{
 			"_id": "req_7946bc0afd114f408624e98952c298bc",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1506847293948,
+			"modified": 1506880763210,
 			"created": 1504080570167,
-			"url": "{{ base_url  }}teams/10/",
+			"url": "{{ base_url  }}teams/10/?include[]=owner.*",
 			"name": "/:id",
 			"description": "",
 			"method": "GET",
@@ -1008,9 +1008,9 @@
 		{
 			"_id": "req_9f3b7de3972e41f792e7de379b026767",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1505274339688,
+			"modified": 1506895918167,
 			"created": 1505001129829,
-			"url": "{{ base_url  }}mapitemtemplates/",
+			"url": "{{ base_url  }}mapitemtemplates/?include[]=mapItems.*",
 			"name": "/",
 			"description": "",
 			"method": "GET",
@@ -1154,9 +1154,9 @@
 		{
 			"_id": "req_fad87f8802204bcca047e7e20988052a",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1505274339686,
+			"modified": 1506895945602,
 			"created": 1505007456192,
-			"url": "{{ base_url  }}mapitems/",
+			"url": "{{ base_url  }}mapitems/?include[]=mapItemTemplate.*",
 			"name": "/",
 			"description": "",
 			"method": "GET",
@@ -1334,9 +1334,9 @@
 		{
 			"_id": "req_8c3b9fc98315422f9fa831d314cf53fb",
 			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
-			"modified": 1506847122714,
+			"modified": 1506894363296,
 			"created": 1505074064147,
-			"url": "{{ base_url  }}memberships",
+			"url": "{{ base_url  }}memberships/?include[]=memberable.*",
 			"name": "/",
 			"description": "",
 			"method": "GET",
@@ -1548,7 +1548,7 @@
 		{
 			"_id": "req_2d5d0a01c1f843bb9c534aacdc15d604",
 			"parentId": "fld_870a1bf67d204a8991cda23dc0af3e4d",
-			"modified": 1505504914885,
+			"modified": 1506896061163,
 			"created": 1505448642593,
 			"url": "{{ base_url  }}filterpresets/",
 			"name": "/",
@@ -1694,9 +1694,9 @@
 		{
 			"_id": "req_6fa8bd4c18564b77ad62da55e1b975a4",
 			"parentId": "fld_bc22471effe343eda42e36c55c3cca37",
-			"modified": 1505505378866,
+			"modified": 1506895783446,
 			"created": 1505505010785,
-			"url": "{{ base_url  }}templatepresets/",
+			"url": "{{ base_url  }}templatepresets/?include[]=owner.*",
 			"name": "/",
 			"description": "",
 			"method": "GET",

@@ -1,12 +1,12 @@
-from rest_framework import serializers
+from rest_framework.serializers import CurrentUserDefault
+from dynamic_rest.serializers import DynamicModelSerializer, DynamicRelationField
 
 from web.models import TemplatePreset
 
-class TemplatePresetSerializer(serializers.ModelSerializer):
-    def create(self, validated_data):
-        user = self.context['request'].user
-        return TemplatePreset.objects.create(owner=user, **validated_data)
+class TemplatePresetSerializer(DynamicModelSerializer):
+    owner = DynamicRelationField('web.serializers.UserSerializer', read_only=True, default=CurrentUserDefault())
 
     class Meta:
         model = TemplatePreset
+        name = 'templatePreset'
         fields = ('id', 'name', 'rawTemplates', 'owner', 'createdAt', 'updatedAt')

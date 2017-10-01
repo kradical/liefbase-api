@@ -1,13 +1,13 @@
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
 
-from rest_framework import viewsets
+from dynamic_rest.viewsets import DynamicModelViewSet
 
 from web.models import ReliefMap, Membership
 from web.serializers import ReliefMapSerializer
 from web.permissions import IsAdminOfPermission
 
-class ReliefMapViewSet(viewsets.ModelViewSet):
+class ReliefMapViewSet(DynamicModelViewSet):
     serializer_class = ReliefMapSerializer
     permission_classes = (IsAdminOfPermission,)
 

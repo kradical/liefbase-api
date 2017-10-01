@@ -1,24 +1,24 @@
 from web import views
 
 from rest_framework import routers
+from dynamic_rest.routers import DynamicRouter
 
 from django.conf.urls import url, include
 
-# Create a router and register our viewsets with it.
-router = routers.DefaultRouter()
+router = DynamicRouter()
+router.register('users', views.UserViewSet)
+router.register('teams', views.TeamViewSet)
+router.register('organizations', views.OrganizationViewSet)
+router.register('memberships', views.MembershipViewSet)
 
-router.register(r'reliefmaps', views.ReliefMapViewSet, base_name='reliefmaps')
-router.register(r'organizations', views.OrganizationViewSet)
-router.register(r'teams', views.TeamViewSet)
-router.register(r'users', views.UserViewSet)
-router.register(r'memberships', views.MembershipViewSet)
+router.register('reliefmaps', views.ReliefMapViewSet)
 
-router.register(r'mapitemtemplates', views.MapItemTemplateViewSet)
-router.register(r'mapitems', views.MapItemViewSet)
-router.register(r'filterpresets', views.FilterPresetViewSet)
-router.register(r'templatepresets', views.TemplatePresetViewSet)
+router.register('mapitemtemplates', views.MapItemTemplateViewSet)
+router.register('filterpresets', views.FilterPresetViewSet)
+router.register('templatepresets', views.TemplatePresetViewSet)
 
-# Additionally, we include the login URLs for the browsable API.
+router.register('mapitems', views.MapItemViewSet)
+
 urlpatterns = [
     url(r'users/me/$', views.UserViewSet.as_view({'get': 'retrieve'}), kwargs={'pk': 'me'}),
     url(r'^', include(router.urls))

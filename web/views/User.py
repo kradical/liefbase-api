@@ -1,10 +1,10 @@
-from rest_framework import viewsets
+from dynamic_rest.viewsets import DynamicModelViewSet
 
 from web.serializers import UserSerializer, MembershipSerializer, OrganizationSerializer, TeamSerializer
 from web.permissions import UserPermission, MembershipPermission, IsAdminOfPermission
 from web.models import User, Membership, Organization, Team
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserViewSet(DynamicModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = (UserPermission,)
@@ -15,18 +15,17 @@ class UserViewSet(viewsets.ModelViewSet):
 
         return super(UserViewSet, self).get_object()
 
-
-class OrganizationViewSet(viewsets.ModelViewSet):
+class OrganizationViewSet(DynamicModelViewSet):
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
     permission_classes = (IsAdminOfPermission,)
 
-class TeamViewSet(viewsets.ModelViewSet):
+class TeamViewSet(DynamicModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
     permission_classes = (IsAdminOfPermission,)
 
-class MembershipViewSet(viewsets.ModelViewSet):
+class MembershipViewSet(DynamicModelViewSet):
     queryset = Membership.objects.all()
     serializer_class = MembershipSerializer
     permission_classes = (MembershipPermission,)

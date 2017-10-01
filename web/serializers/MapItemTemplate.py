@@ -1,15 +1,14 @@
-from rest_framework import serializers
+from rest_framework.serializers import CurrentUserDefault
+from dynamic_rest.serializers import DynamicModelSerializer, DynamicRelationField
 
-from web.serializers import MapItemSerializer
-from web.models import MapItemTemplate, ReliefMap, MapItem
+from web.models import MapItemTemplate
 
-class MapItemTemplateSerializer(serializers.ModelSerializer):
-    mapItems = serializers.PrimaryKeyRelatedField(queryset=MapItem.objects.all(), many=True, source='mapitem_set')
-
-    def create(self, validated_data):
-        user = self.context['request'].user
-        return MapItemTemplate.objects.create(owner=user, **validated_data)
+class MapItemTemplateSerializer(DynamicModelSerializer):
+    mapItems = DynamicRelationField('web.serializers.DynamicMapItemSerializer', many=True, source='mapitem_set')
+    reliefMap = DynamicRelationField('web.serializers.ReliefMapSerializer')
+    owner = DynamicRelationField('web.serializers.UserSerializer', read_only=True, default=CurrentUserDefault())
 
     class Meta:
         model = MapItemTemplate
+        name = 'mapItemTemplate'
         fields = ('id', 'name', 'category', 'subCategory', 'reliefMap', 'mapItems', 'owner', 'createdAt', 'updatedAt')

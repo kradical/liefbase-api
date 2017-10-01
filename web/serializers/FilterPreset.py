@@ -1,13 +1,18 @@
-from rest_framework import serializers
+from rest_framework.serializers import CurrentUserDefault
+from dynamic_rest.serializers import DynamicModelSerializer, DynamicRelationField
 
 from web.models import FilterPreset, MapItemTemplate, ReliefMap
 
-class FilterPresetSerializer(serializers.ModelSerializer):
+class FilterPresetSerializer(DynamicModelSerializer):
+    mapItemTemplates = DynamicRelationField('web.serializers.MapItemTemplateSerializer', many=True)
+    reliefMap = DynamicRelationField('web.serializers.ReliefMapSerializer')
+    owner = DynamicRelationField('web.serializers.UserSerializer', read_only=True, default=CurrentUserDefault())
+
     def create(self, validated_data):
-        user = self.context['request'].user
         mapItemTemplates = validated_data.pop('mapItemTemplates', [])
 
-        preset = FilterPreset.objects.create(owner=user, **validated_data)
+        preset = FilterPreset.objects.create(**validated_data)
+
         preset.mapItemTemplates = mapItemTemplates
         preset.save()
 
@@ -15,4 +20,5 @@ class FilterPresetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FilterPreset
+        name = 'filterPreset'
         fields = ('id', 'name', 'reliefMap', 'mapItemTemplates', 'owner', 'createdAt', 'updatedAt')
