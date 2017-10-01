@@ -1,7 +1,7 @@
-from web.models import ReliefMap, Membership, Memberable, MapItemTemplate
-
 from rest_framework import permissions
 from rest_framework.exceptions import NotFound
+
+from web.models import ReliefMap, Membership, Memberable, MapItemTemplate
 
 def is_admin_of(pk, user):
     try:
@@ -9,8 +9,8 @@ def is_admin_of(pk, user):
     except Memberable.DoesNotExist:
         raise NotFound()
 
-    is_admin = Membership.objects.filter(user=user, memberable=memberable, type='admin').exists()
-    return is_admin
+    isAdmin = Membership.objects.filter(user=user, memberable=memberable, type='admin').exists()
+    return isAdmin
 
 class UserPermission(permissions.BasePermission):
     def has_permission(self, request, view):
@@ -30,9 +30,9 @@ class IsAdminOfPermission(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return request.user.is_authenticated()
 
-        is_admin = Membership.objects.filter(user=request.user, memberable=obj, type='admin').exists()
+        isAdmin = Membership.objects.filter(user=request.user, memberable=obj, type='admin').exists()
 
-        return is_admin
+        return isAdmin
 
 class ObjectReliefMapPermission(permissions.BasePermission):
     def has_permission(self, request, view):
@@ -40,20 +40,20 @@ class ObjectReliefMapPermission(permissions.BasePermission):
             return request.user.is_authenticated()
 
         try:
-            relief_map_id = request.data['reliefMap']
-            relief_map = ReliefMap.objects.get(id=relief_map_id)
+            pk = request.data['reliefMap']
+            reliefMap = ReliefMap.objects.get(id=pk)
         except ReliefMap.DoesNotExist:
             raise NotFound()
         except KeyError:
             return request.user.is_authenticated()
 
         # has any sort of membership to the relief map
-        is_member_or_admin = Membership.objects.filter(user=request.user, memberable=relief_map).exists()
-        return is_member_or_admin
+        isMemberOrAdmin = Membership.objects.filter(user=request.user, memberable=reliefMap).exists()
+        return isMemberOrAdmin
 
     def has_object_permission(self, request, view, obj):
-        is_member_or_admin = Membership.objects.filter(user=request.user, memberable=obj.relief_map).exists()
-        return is_member_or_admin
+        isMemberOrAdmin = Membership.objects.filter(user=request.user, memberable=obj.reliefMap).exists()
+        return isMemberOrAdmin
 
 class ItemReliefMapPermission(permissions.BasePermission):
     def has_permission(self, request, view):
@@ -61,18 +61,18 @@ class ItemReliefMapPermission(permissions.BasePermission):
             return request.user.is_authenticated()
 
         try:
-            template_id = request.data['properties']['mapItemTemplate']
-            template = MapItemTemplate.objects.get(id=template_id)
+            pk = request.data['properties']['mapItemTemplate']
+            mapItemTemplate = MapItemTemplate.objects.get(id=pk)
         except (MapItemTemplate.DoesNotExist, KeyError):
             raise NotFound()
 
         # has any sort of membership to the relief map
-        is_member_or_admin = Membership.objects.filter(user=request.user, memberable=template.relief_map).exists()
-        return is_member_or_admin
+        isMemberOrAdmin = Membership.objects.filter(user=request.user, memberable=mapItemTemplate.reliefMap).exists()
+        return isMemberOrAdmin
 
     def has_object_permission(self, request, view, obj):
-        is_member_or_admin = Membership.objects.filter(user=request.user, memberable=obj.template.relief_map).exists()
-        return is_member_or_admin
+        isMemberOrAdmin = Membership.objects.filter(user=request.user, memberable=obj.mapItemTemplate.reliefMap).exists()
+        return isMemberOrAdmin
 
 
 class MembershipPermission(permissions.BasePermission):
@@ -81,11 +81,11 @@ class MembershipPermission(permissions.BasePermission):
             return request.user.is_authenticated()
 
         try:
-            memberable_id = request.data['memberable']
+            pk = request.data['memberable']
         except KeyError:
             raise request.user.is_authenticated()
 
-        return is_admin_of(memberable_id, request.user)
+        return is_admin_of(pk, request.user)
 
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
@@ -97,8 +97,8 @@ class MembershipPermission(permissions.BasePermission):
         else:
             memberable = obj.memberable
 
-        is_admin = Membership.objects.filter(user=request.user, memberable=memberable, type='admin').exists()
-        is_remove = request.method == 'DELETE' or memberable != obj.memberable
-        is_last_admin = Membership.objects.filter(type='admin', memberable=memberable).count() == 1
+        isAdmin = Membership.objects.filter(user=request.user, memberable=memberable, type='admin').exists()
+        isRemove = request.method == 'DELETE' or memberable != obj.memberable
+        isLastAdmin = Membership.objects.filter(type='admin', memberable=memberable).count() == 1
 
-        return is_admin and (not is_remove or not is_last_admin)
+        return isAdmin and (not isRemove or not isLastAdmin)

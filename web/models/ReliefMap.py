@@ -1,8 +1,8 @@
-from web.models import MapItemTemplate, Memberable
+import json
 
 from django.db import models
 
-import json
+from web.models import MapItemTemplate, Memberable
 
 class ReliefMap(Memberable):
     """
@@ -14,8 +14,8 @@ class ReliefMap(Memberable):
     public = models.BooleanField(default=False)
 
     owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
 
     # utility method for printing
     def to_dict(self):
@@ -23,8 +23,10 @@ class ReliefMap(Memberable):
             'id': self.id,
             'name': self.name,
             'description': self.description,
-            'templates': [x.to_dict() for x in self.mapitemtemplate_set.all()],
+            'mapItemTemplates': [x.to_dict() for x in self.mapitemtemplate_set.all()],
             'owner': self.owner.id,
+            'createdAt': self.createdAt.isoformat(),
+            'updatedAt': self.updatedAt.isoformat(),
         }
 
     def __str__(self):

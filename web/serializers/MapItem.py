@@ -1,11 +1,9 @@
-from web.models import MapItem, MapItemTemplate, ReliefMap
-
 from rest_framework import serializers
 from rest_framework_gis.serializers import GeoFeatureModelSerializer
 
-class MapItemSerializer(GeoFeatureModelSerializer):
-    mapItemTemplate = serializers.PrimaryKeyRelatedField(queryset=MapItemTemplate.objects.all(), source='template')
+from web.models import MapItem, MapItemTemplate, ReliefMap
 
+class MapItemSerializer(GeoFeatureModelSerializer):
     def create(self, validated_data):
         user = self.context['request'].user
         return MapItem.objects.create(owner=user, **validated_data)
@@ -13,4 +11,4 @@ class MapItemSerializer(GeoFeatureModelSerializer):
     class Meta:
         model = MapItem
         geo_field = "point"
-        fields = ('id', 'quantity', 'mapItemTemplate')
+        fields = ('id', 'quantity', 'mapItemTemplate', 'owner', 'createdAt', 'updatedAt')

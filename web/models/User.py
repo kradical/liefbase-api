@@ -1,7 +1,7 @@
-from django.contrib.auth.models import AbstractUser
-from django.db import models
-
 import json
+
+from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     username = models.EmailField(unique=True)
@@ -11,8 +11,10 @@ class User(AbstractUser):
         return {
             'id': self.id,
             'username': self.username,
-            'first_name': self.first_name,
-            'last_name': self.last_name,
+            'firstName': self.first_name,
+            'lastName': self.last_name,
+            'createdAt': self.date_joined.isoformat(),
+            'lastLogin': self.last_login.isoformat() if self.last_login else None,
         }
 
     def __str__(self):
@@ -30,7 +32,7 @@ class Memberable(models.Model):
                     return attr
             except:
                 pass
-        
+
         return self
 
     def get_instance_name(self):
@@ -41,15 +43,15 @@ class Memberable(models.Model):
                     return name
             except:
                 pass
-        
+
         return 'Memberable'
 
 class Organization(Memberable):
     name = models.CharField(max_length=100, unique=True)
 
     owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
 
     # utility method for printing
     def to_dict(self):
@@ -57,6 +59,8 @@ class Organization(Memberable):
             'id': self.id,
             'name': self.name,
             'owner': self.owner.id,
+            'createdAt': self.createdAt.isoformat(),
+            'updatedAt': self.updatedAt.isoformat(),
         }
 
     def __str__(self):
@@ -64,11 +68,11 @@ class Organization(Memberable):
 
 class Team(Memberable):
     name = models.CharField(max_length=100, null=False, blank=False)
-    parent_organization = models.ForeignKey(Organization, on_delete=models.CASCADE, null=False)
+    parent = models.ForeignKey(Organization, on_delete=models.CASCADE, null=False)
 
     owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
 
     # utility method for printing
     def to_dict(self):
@@ -76,7 +80,9 @@ class Team(Memberable):
             'id': self.id,
             'name': self.name,
             'owner': self.owner.id,
-            'parent_organization': self.parent_organization.id,
+            'organization': self.parent.id,
+            'createdAt': self.createdAt.isoformat(),
+            'updatedAt': self.updatedAt.isoformat(),
         }
 
     def __str__(self):
@@ -86,14 +92,15 @@ class Membership(models.Model):
     MEMBERSHIP_TYPES = (
         ('admin', 'admin'),
         ('member', 'member'),
+        ('viewer','viewer'),
     )
 
     type = models.CharField(max_length=32, choices=MEMBERSHIP_TYPES, null=False, blank=False)
     memberable = models.ForeignKey(Memberable, on_delete=models.CASCADE)
     user = models.ForeignKey('User', on_delete=models.CASCADE)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
 
     class Meta:
         unique_together = ('type', 'memberable', 'user')
@@ -106,6 +113,8 @@ class Membership(models.Model):
             'memberable_type': self.memberable.get_instance_name(),
             'memberable': self.memberable.cast().to_dict(),
             'user': self.user.to_dict(),
+            'createdAt': self.createdAt.isoformat(),
+            'updatedAt': self.updatedAt.isoformat(),
         }
 
     def __str__(self):

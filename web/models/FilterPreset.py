@@ -1,7 +1,6 @@
-from django.db import models
-
 import json
 
+from django.db import models
 
 class FilterPreset(models.Model):
     """
@@ -9,21 +8,23 @@ class FilterPreset(models.Model):
     """
 
     name = models.CharField(max_length=120)
-    relief_map = models.ForeignKey('ReliefMap', on_delete=models.CASCADE)
-    templates = models.ManyToManyField('MapItemTemplate')
+    reliefMap = models.ForeignKey('ReliefMap', on_delete=models.CASCADE)
+    mapItemTemplates = models.ManyToManyField('MapItemTemplate')
 
     owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
 
     # utility method for printing
     def to_dict(self):
         return {
             'id': self.id,
             'name': self.name,
-            'relief_map': self.relief_map.id,
+            'reliefMap': self.reliefMap.id,
+            'mapItemTemplates': [x.id for x in self.mapItemTemplates.all()],
             'owner': self.owner.id,
-            'templates': [x.id for x in self.templates.all()]
+            'createdAt': self.createdAt.isoformat(),
+            'updatedAt': self.updatedAt.isoformat(),
         }
 
     def __str__(self):

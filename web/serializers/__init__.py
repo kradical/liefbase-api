@@ -1,6 +1,6 @@
-from .map_item import MapItemSerializer
-from .map_item_template import MapItemTemplateSerializer
-from .relief_map import ReliefMapSerializer
-from .user import UserSerializer, OrganizationSerializer, TeamSerializer, MembershipSerializer
-from .filter_preset import FilterPresetSerializer
-from .template_preset import TemplatePresetSerializer
+from .User import UserSerializer, OrganizationSerializer, TeamSerializer, MembershipSerializer
+from .MapItem import MapItemSerializer
+from .MapItemTemplate import MapItemTemplateSerializer
+from .ReliefMap import ReliefMapSerializer
+from .FilterPreset import FilterPresetSerializer
+from .TemplatePreset import TemplatePresetSerializer

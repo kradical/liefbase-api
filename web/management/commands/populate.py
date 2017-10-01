@@ -9,154 +9,154 @@ class Command(BaseCommand):
     help = "Populates a basic set of test data"
 
     def handle(self, *args, **options):
-        user_data = {
+        userData = {
             'username': 'test@liefbase.io',
             'password': 'password',
             'first_name': 'tester',
             'last_name': 'liefbase',
         }
         try:
-            user = User.objects.get(username=user_data['username'])
+            user = User.objects.get(username=userData['username'])
             created = False
         except User.DoesNotExist:
-            user = User.objects.create_user(**user_data)
+            user = User.objects.create_user(**userData)
             created = True
         print("Test User{} Created".format('' if created else ' Not'))
         print(user)
         print()
 
-        organization_data = {
+        organizationData = {
             'name': 'Liefbase',
             'owner': user,
         }
-        liefbase, created = Organization.objects.get_or_create(**organization_data)
+        liefbase, created = Organization.objects.get_or_create(**organizationData)
         print("Test Organization{} Created".format('' if created else ' Not'))
         print(liefbase)
         print()
 
-        membership_data = {
+        membershipData = {
             'type': 'admin',
             'memberable': liefbase,
             'user': user,
         }
-        membership, created = Membership.objects.get_or_create(**membership_data)
+        membership, created = Membership.objects.get_or_create(**membershipData)
         print("Test Organization Admin{} Created".format('' if created else ' Not'))
         print(membership)
         print()
 
-        map_data = {
+        mapData = {
             'name': 'TestMap',
             'description': 'Test description.',
             'owner': user,
         }
-        relief_map, created = ReliefMap.objects.get_or_create(**map_data)
+        reliefMap, created = ReliefMap.objects.get_or_create(**mapData)
         print("Test Relief Map{} Created".format('' if created else ' Not'))
-        print(relief_map)
+        print(reliefMap)
         print()
 
-        template_data = {
+        templateData = {
             'category': 'Resource',
-            'relief_map': relief_map,
+            'reliefMap': reliefMap,
             'owner': user,
         }
 
         for name in ['Water Well', 'Resevoir', 'Water Main', 'Water Purification Pill', 'Soap', 'Toothbrush']:
-            self.create_map_item_template(name=name, sub_category='Water, Sanitation, and Hygiene', **template_data)
+            self.create_map_item_template(name=name, subCategory='Water, Sanitation, and Hygiene', **templateData)
 
         for name in ['Evacuation Bus', 'ADRA Management Tent', 'Check In Tent']:
-            self.create_map_item_template(name=name, sub_category='Logistics', **template_data)
+            self.create_map_item_template(name=name, subCategory='Logistics', **templateData)
 
         for name in ['Malaria Kit', 'Vaccination Tent']:
-            self.create_map_item_template(name=name, sub_category='Health', **template_data)
+            self.create_map_item_template(name=name, subCategory='Health', **templateData)
 
         for name in ['Vitamins']:
-            self.create_map_item_template(name=name, sub_category='Nutrition', **template_data)
+            self.create_map_item_template(name=name, subCategory='Nutrition', **templateData)
 
         for name in ['Evacuation Safe Zone', 'Missing Person Tent']:
-            self.create_map_item_template(name=name, sub_category='Protection', **template_data)
+            self.create_map_item_template(name=name, subCategory='Protection', **templateData)
 
         for name in ['Blanket', 'Mosquito Net']:
-            self.create_map_item_template(name=name, sub_category='Shelter', **template_data)
+            self.create_map_item_template(name=name, subCategory='Shelter', **templateData)
 
         for name in ['Refugee Camp', 'Camp Washroom', 'Camp Showers']:
-            self.create_map_item_template(name=name, sub_category='Camp Coordination and Camp Management', **template_data)
+            self.create_map_item_template(name=name, subCategory='Camp Coordination and Camp Management', **templateData)
 
         for name in ['Debris Dump', 'Field Hospital']:
-            self.create_map_item_template(name=name, sub_category='Early Recovery', **template_data)
+            self.create_map_item_template(name=name, subCategory='Early Recovery', **templateData)
 
         for name in ['School']:
-            self.create_map_item_template(name=name, sub_category='Education', **template_data)
+            self.create_map_item_template(name=name, subCategory='Education', **templateData)
 
         for name in ['Food Rations', 'Community Farm']:
-            self.create_map_item_template(name=name, sub_category='Food & Security', **template_data)
+            self.create_map_item_template(name=name, subCategory='Food & Security', **templateData)
 
         for name in ['Wireless Tower', 'Public Phone']:
-            resource_template = self.create_map_item_template(name=name, sub_category='Emergency Telecommunications', **template_data)
+            resourceTemplate = self.create_map_item_template(name=name, subCategory='Emergency Telecommunications', **templateData)
 
-        template_data['category'] = 'Hazard'
+        templateData['category'] = 'Hazard'
         for name in ['Sinkhole', 'Collapsed Powerline', 'Gas leak', 'Oil Spill', 'Collapsed Road', 'Blocked Road', 'Flooded Area']:
-            hazard_template = self.create_map_item_template(name=name, **template_data)
+            hazardTemplate = self.create_map_item_template(name=name, **templateData)
 
-        map_item_data = {
+        mapItemData = {
             'quantity': 3,
             'owner': user,
-            'template': resource_template,
+            'mapItemTemplate': resourceTemplate,
         }
 
         lat = 48.4284210
         lng = -123.3656440
 
         for i in range(3):
-            map_item_data['point'] = GEOSGeometry("POINT({} {})".format(lat + 0.01 * i, lng + 0.01 * i))
-            self.create_map_item(**map_item_data)
+            mapItemData['point'] = GEOSGeometry("POINT({} {})".format(lat + 0.01 * i, lng + 0.01 * i))
+            self.create_map_item(**mapItemData)
 
-        map_item_data['template'] = hazard_template
+        mapItemData['mapItemTemplate'] = hazardTemplate
         for i in range(3):
-            map_item_data['point'] = GEOSGeometry("POINT({} {})".format(lat - 0.01 * i, lng - 0.01 * i))
-            self.create_map_item(**map_item_data)
+            mapItemData['point'] = GEOSGeometry("POINT({} {})".format(lat - 0.01 * i, lng - 0.01 * i))
+            self.create_map_item(**mapItemData)
 
-        self.create_filter_preset(relief_map=relief_map, owner=user)
+        self.create_filter_preset(reliefMap=reliefMap, owner=user)
 
-        self.create_template_preset(relief_map=relief_map, owner=user)
+        self.create_template_preset(reliefMap=reliefMap, owner=user)
 
-    def create_filter_preset(self, relief_map, owner):
-        map_templates = MapItemTemplate.objects.filter(relief_map=relief_map)[:5]
-        filter_preset, created = FilterPreset.objects.get_or_create(name="Random Filter", relief_map=relief_map, owner=owner)
+    def create_filter_preset(self, reliefMap, owner):
+        mapItemTemplates = MapItemTemplate.objects.filter(reliefMap=reliefMap)[:5]
+        filterPreset, created = FilterPreset.objects.get_or_create(name="Random Filter", reliefMap=reliefMap, owner=owner)
         print("Test Filter Preset{} Created".format('' if created else ' Not'))
         if created:
             print("Test Filter Preset Created")
-            for template in map_templates:
-                filter_preset.templates.add(template)
+            for template in mapItemTemplates:
+                filterPreset.mapItemTemplates.add(template)
                 print("Test Template {} added to Filter Preset".format(template))
         else:
             print("Test Filter Preset Not Created")
-        print(filter_preset)
+        print(filterPreset)
         print()
 
-    def create_template_preset(self, relief_map, owner):
-        map_templates = MapItemTemplate.objects.filter(relief_map=relief_map)[:5]
-        templates_json = []
-        for template in map_templates:
-            templates_json.append({
+    def create_template_preset(self, reliefMap, owner):
+        mapItemTemplates = MapItemTemplate.objects.filter(reliefMap=reliefMap)[:5]
+        templatesJson = []
+        for template in mapItemTemplates:
+            templatesJson.append({
                 'name': template.name,
                 'category': template.category,
-                'sub_category': template.sub_category
+                'subCategory': template.subCategory
             })
-        template_preset, created = TemplatePreset.objects.get_or_create(name="Random Templates", owner=owner, raw_templates=templates_json)
+        templatePreset, created = TemplatePreset.objects.get_or_create(name="Random Templates", owner=owner, rawTemplates=templatesJson)
         print("Test Template Preset{} Created".format('' if created else ' Not'))
-        print(template_preset)
+        print(templatePreset)
         print()
 
     def create_map_item(self, **kwargs):
-        map_item, created = MapItem.objects.get_or_create(**kwargs)
+        mapItem, created = MapItem.objects.get_or_create(**kwargs)
         print("Test Map Item{} Created".format('' if created else ' Not'))
-        print(map_item)
+        print(mapItem)
         print()
 
     def create_map_item_template(self, **kwargs):
-        template, created = MapItemTemplate.objects.get_or_create(**kwargs)
+        mapItemTemplate, created = MapItemTemplate.objects.get_or_create(**kwargs)
         print("Test Template{} Created".format('' if created else ' Not'))
-        print(template)
+        print(mapItemTemplate)
         print()
 
-        return template
+        return mapItemTemplate

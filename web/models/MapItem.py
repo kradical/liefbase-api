@@ -1,20 +1,19 @@
-from django.contrib.gis.db import models
-
 import json
 
+from django.contrib.gis.db import models
 
 class MapItem(models.Model):
     """
-    A map item instance. Defined by its template, is specific to one map.
+    A map item instance. Defined by its mapItemTemplate, is specific to one map.
     """
 
     quantity = models.FloatField()
     point = models.PointField()
-    template = models.ForeignKey('MapItemTemplate', on_delete=models.CASCADE)
+    mapItemTemplate = models.ForeignKey('MapItemTemplate', on_delete=models.CASCADE)
 
     owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
 
     # utility method for printing
     def to_dict(self):
@@ -23,8 +22,10 @@ class MapItem(models.Model):
             'type': 'Feature',
             'properties': {
                 'quantity': self.quantity,
-                'template': self.template.id,
+                'mapItemTemplate': self.mapItemTemplate.id,
                 'owner': self.owner.id,
+                'createdAt': self.createdAt.isoformat(),
+                'updatedAt': self.updatedAt.isoformat(),
             },
             'point': {
                 'type': 'Point',

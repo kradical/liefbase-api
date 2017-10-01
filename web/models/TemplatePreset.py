@@ -1,7 +1,7 @@
-from django.db import models
-from django.contrib.postgres.fields import JSONField
-
 import json
+
+from django.contrib.postgres.fields import JSONField
+from django.db import models
 
 class TemplatePreset(models.Model):
     """
@@ -9,19 +9,21 @@ class TemplatePreset(models.Model):
     """
 
     name = models.CharField(max_length=120)
-    raw_templates = JSONField()
+    rawTemplates = JSONField()
 
     owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
 
     # utility method for printing
     def to_dict(self):
         return {
             'id': self.id,
             'name': self.name,
-            'raw_templates': self.raw_templates,
+            'rawTemplates': self.rawTemplates,
             'owner': self.owner.id,
+            'createdAt': self.createdAt.isoformat(),
+            'updatedAt': self.updatedAt.isoformat(),
         }
 
     def __str__(self):

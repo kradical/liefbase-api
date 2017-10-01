@@ -27,19 +27,17 @@
   * `<database_name>=# create user <username> password <password> with superuser;`
 * Create secret_settings.py under /liefbase, example below
     ```python
-    SECRET_KEY = '<secret_key>'  
-
-    DATABASES = {  
-        'default': {  
-            'ENGINE': 'django.contrib.gis.db.backends.postgis',  
-            'NAME': '<database_name>',  
-            'USER': '<username>',  
-            'PASSWORD': '<password>',  
-            'HOST': 'localhost',  
-            'PORT': '',  
-        }  
-    }  
-
+    SECRET_KEY = '<secret_key>'
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.contrib.gis.db.backends.postgis',
+            'NAME': '<database_name>',
+            'USER': '<username>',
+            'PASSWORD': '<password>',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
     DEBUG = True
     ```
 

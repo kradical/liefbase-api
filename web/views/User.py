@@ -1,15 +1,9 @@
-from web.serializers import UserSerializer, OrganizationSerializer, TeamSerializer, MembershipSerializer
-from web.permissions import UserPermission, MembershipPermission, IsAdminOfPermission
-from web.models import User, Organization, Team, Membership, Memberable
-
-from django_filters import rest_framework as filters
 from rest_framework import viewsets
-from rest_framework.decorators import detail_route
-from rest_framework.response import Response
-from rest_framework.exceptions import NotFound
-from rest_framework import status
+from django_filters import rest_framework as filters
 
-from django.db.utils import IntegrityError
+from web.serializers import UserSerializer, MembershipSerializer, OrganizationSerializer, TeamSerializer
+from web.permissions import UserPermission, MembershipPermission, IsAdminOfPermission
+from web.models import User, Membership, Organization, Team
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
