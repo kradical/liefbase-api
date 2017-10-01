@@ -1,13 +1,14 @@
 appdirs==1.4.3
 certifi==2017.4.17
 chardet==3.0.3
-Django==1.11.1
+Django==1.11
 django-cors-headers==2.1.0
-django-filter==1.0.4
-djangorestframework==3.6.4
+djangorestframework==3.6.2
 djangorestframework-gis==0.11.2
 djangorestframework-jwt==1.11.0
+dynamic-rest==1.6.7
 idna==2.5
+inflection==0.3.1
 packaging==16.8
 psycopg2==2.7.1
 PyJWT==1.5.2

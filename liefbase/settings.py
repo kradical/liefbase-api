@@ -26,11 +26,11 @@ INSTALLED_APPS = [
     'web.apps.WebConfig',
 
     'rest_framework',
+    'dynamic_rest',
     'rest_framework_gis',
     'rest_framework_jwt',
     'django.contrib.gis',
     'corsheaders',
-    'django_filters',
 
     'django.contrib.admin',
     'django.contrib.auth',

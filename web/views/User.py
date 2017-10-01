@@ -1,5 +1,4 @@
 from rest_framework import viewsets
-from django_filters import rest_framework as filters
 
 from web.serializers import UserSerializer, MembershipSerializer, OrganizationSerializer, TeamSerializer
 from web.permissions import UserPermission, MembershipPermission, IsAdminOfPermission
@@ -31,5 +30,3 @@ class MembershipViewSet(viewsets.ModelViewSet):
     queryset = Membership.objects.all()
     serializer_class = MembershipSerializer
     permission_classes = (MembershipPermission,)
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_fields = ('type', 'memberable', 'user')
