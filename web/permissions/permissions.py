@@ -27,13 +27,10 @@ class UserPermission(permissions.BasePermission):
 
 class IsAdminOfPermission(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
-        print('we in')
         if request.method in permissions.SAFE_METHODS:
             return request.user.is_authenticated()
 
         is_admin = Membership.objects.filter(user=request.user, memberable=obj, type='admin').exists()
-
-        print(is_admin)
 
         return is_admin
 
@@ -43,7 +40,7 @@ class ObjectReliefMapPermission(permissions.BasePermission):
             return request.user.is_authenticated()
 
         try:
-            relief_map_id = request.data['relief_map']
+            relief_map_id = request.data['reliefMap']
             relief_map = ReliefMap.objects.get(id=relief_map_id)
         except ReliefMap.DoesNotExist:
             raise NotFound()
@@ -64,7 +61,7 @@ class ItemReliefMapPermission(permissions.BasePermission):
             return request.user.is_authenticated()
 
         try:
-            template_id = request.data['properties']['template']
+            template_id = request.data['properties']['mapItemTemplate']
             template = MapItemTemplate.objects.get(id=template_id)
         except (MapItemTemplate.DoesNotExist, KeyError):
             raise NotFound()
