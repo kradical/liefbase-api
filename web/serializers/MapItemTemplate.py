@@ -4,7 +4,7 @@ from dynamic_rest.serializers import DynamicModelSerializer, DynamicRelationFiel
 from web.models import MapItemTemplate
 
 class MapItemTemplateSerializer(DynamicModelSerializer):
-    mapItems = DynamicRelationField('web.serializers.DynamicMapItemSerializer', many=True, source='mapitem_set')
+    mapItems = DynamicRelationField('web.serializers.MapItemSerializer', many=True, source='mapitem_set')
     reliefMap = DynamicRelationField('web.serializers.ReliefMapSerializer')
     owner = DynamicRelationField('web.serializers.UserSerializer', read_only=True, default=CurrentUserDefault())
 

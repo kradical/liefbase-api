@@ -1,5 +1,5 @@
 from .User import UserSerializer, OrganizationSerializer, TeamSerializer, MembershipSerializer
-from .MapItem import DynamicMapItemSerializer
+from .MapItem import MapItemSerializer
 from .MapItemTemplate import MapItemTemplateSerializer
 from .ReliefMap import ReliefMapSerializer
 from .FilterPreset import FilterPresetSerializer
