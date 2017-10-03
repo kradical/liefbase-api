@@ -29,7 +29,12 @@ class Command(BaseCommand):
             'name': 'Liefbase',
             'owner': user,
         }
-        liefbase, created = Organization.objects.get_or_create(**organizationData)
+        try:
+            liefbase = Organization.objects.get(name=organizationData['name'])
+            created = False
+        except Organization.DoesNotExist:
+            liefbase = Organization.objects.create(**organizationData)
+            created = True
         print("Test Organization{} Created".format('' if created else ' Not'))
         print(liefbase)
         print()
