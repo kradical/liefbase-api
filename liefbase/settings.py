@@ -91,3 +91,6 @@ JWT_AUTH = {
 }
 
 AUTH_USER_MODEL = 'web.User'
+
+USE_TZ = True
+TIME_ZONE = 'UTC'
