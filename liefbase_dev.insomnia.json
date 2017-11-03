@@ -1,13 +1,13 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-10-01T22:14:45.264Z",
-	"__export_source": "insomnia.desktop.app:v5.7.14",
+	"__export_date": "2017-10-31T17:49:33.702Z",
+	"__export_source": "insomnia.desktop.app:v5.3.3",
 	"resources": [
 		{
 			"_id": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
 			"parentId": null,
-			"modified": 1505630705270,
+			"modified": 1509387726705,
 			"created": 1503883059159,
 			"name": "Liefbase",
 			"description": "",
@@ -17,18 +17,16 @@
 		{
 			"_id": "env_c767bab7aa9547b0915c5374d7ce2263",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505274340572,
+			"modified": 1509387726704,
 			"created": 1503883137796,
 			"name": "Base Environment",
 			"data": {},
-			"color": null,
-			"isPrivate": false,
 			"_type": "environment"
 		},
 		{
 			"_id": "jar_2fd427cf438a4601b1f9497e201ec6f7",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505274340518,
+			"modified": 1509387726703,
 			"created": 1503883227530,
 			"name": "Default Jar",
 			"cookies": [],
@@ -37,7 +35,7 @@
 		{
 			"_id": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505274340513,
+			"modified": 1509387726702,
 			"created": 1503884042603,
 			"name": "api-token",
 			"description": "",
@@ -48,7 +46,7 @@
 		{
 			"_id": "fld_e24e310b8ef64a509ec21c8e097624d4",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505274340401,
+			"modified": 1509387726701,
 			"created": 1503884061371,
 			"name": "reliefmaps",
 			"description": "",
@@ -59,7 +57,7 @@
 		{
 			"_id": "fld_c9bc810d685b43b4a393f4de361cb015",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505274340400,
+			"modified": 1509387726700,
 			"created": 1503980583038,
 			"name": "users",
 			"description": "",
@@ -70,7 +68,7 @@
 		{
 			"_id": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505274340320,
+			"modified": 1509387726699,
 			"created": 1504067045555,
 			"name": "organizations",
 			"description": "",
@@ -81,7 +79,7 @@
 		{
 			"_id": "fld_de2f613615c241d79c98656617ce6556",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505634137723,
+			"modified": 1509387726699,
 			"created": 1504080366440,
 			"name": "teams",
 			"description": "",
@@ -92,7 +90,7 @@
 		{
 			"_id": "fld_e311062fa7384c1b87a2ea9da387cc61",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505274340204,
+			"modified": 1509387726698,
 			"created": 1505001028351,
 			"name": "mapitemtemplates",
 			"description": "",
@@ -103,7 +101,7 @@
 		{
 			"_id": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505274340202,
+			"modified": 1509387726697,
 			"created": 1505001039163,
 			"name": "mapitems",
 			"description": "",
@@ -114,7 +112,7 @@
 		{
 			"_id": "fld_47848356c17d4c7faa4e60bcc05f2599",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505274340055,
+			"modified": 1509387726695,
 			"created": 1505074037782,
 			"name": "memberships",
 			"description": "",
@@ -125,7 +123,7 @@
 		{
 			"_id": "fld_870a1bf67d204a8991cda23dc0af3e4d",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505504952617,
+			"modified": 1509387726691,
 			"created": 1505445871174,
 			"name": "filterpresets",
 			"description": "",
@@ -136,7 +134,7 @@
 		{
 			"_id": "fld_bc22471effe343eda42e36c55c3cca37",
 			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
-			"modified": 1505632024089,
+			"modified": 1509387726691,
 			"created": 1505504997182,
 			"name": "templatepresets",
 			"description": "",
@@ -145,23 +143,32 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "fld_071370160f1c445ab2bfa1d3082ff735",
+			"parentId": "wrk_d91846a0b2b54dd09b476ffcc1049f37",
+			"modified": 1509387726690,
+			"created": 1506903587331,
+			"name": "datalayertemplates",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067045573.75,
+			"_type": "request_group"
+		},
+		{
 			"_id": "env_c99f81ae1b18421aa20b6525f1c5aa8d",
 			"parentId": "env_c767bab7aa9547b0915c5374d7ce2263",
-			"modified": 1506844227080,
+			"modified": 1509398063450,
 			"created": 1503883451119,
 			"name": "liefbase_dev",
 			"data": {
 				"base_url": "http://localhost:8000/api/",
-				"jwt_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmlnX2lhdCI6MTUwNjg0NDE5OCwiZW1haWwiOiIiLCJ1c2VybmFtZSI6InRlc3RAbGllZmJhc2UuaW8iLCJ1c2VyX2lkIjoxLCJleHAiOjE1MDc0NDg5OTh9.3KQZLmwDFRPSOy_rrJxeThcEY9k12jqQg0udUljMua0"
+				"jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RAbGllZmJhc2UuaW8iLCJvcmlnX2lhdCI6MTUwOTM5ODA0OSwidXNlcl9pZCI6MiwiZW1haWwiOiIiLCJleHAiOjE1MTAwMDI4NDl9.sO0pqJTkisn-s4Qy_dxOxmEveR3jg0hrftRDX2ZWvKY"
 			},
-			"color": null,
-			"isPrivate": false,
 			"_type": "environment"
 		},
 		{
 			"_id": "req_aa13a3c8a1f94ec597f4bd75c97d72cb",
 			"parentId": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
-			"modified": 1506844196331,
+			"modified": 1509397457187,
 			"created": 1503883162272,
 			"url": "{{ base_url  }}token-auth/",
 			"name": "-auth",
@@ -190,9 +197,9 @@
 		{
 			"_id": "req_b5da2c047d834808818f9fa897c0ab21",
 			"parentId": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
-			"modified": 1505274340006,
+			"modified": 1509398278447,
 			"created": 1503884186212,
-			"url": "{{ base_url  }}api-token-refresh/",
+			"url": "{{ base_url  }}token-refresh/",
 			"name": "-refresh",
 			"description": "",
 			"method": "POST",
@@ -219,9 +226,9 @@
 		{
 			"_id": "req_5ad908e989e542db954de6d6863d4b33",
 			"parentId": "fld_7f3d650420a14ba59d6c94ffa64b87f6",
-			"modified": 1506210214949,
+			"modified": 1509397926877,
 			"created": 1503884205429,
-			"url": "{{ base_url  }}token-verify/",
+			"url": "{{ base_url  }}api-token-verify/",
 			"name": "-verify",
 			"description": "",
 			"method": "POST",
@@ -246,11 +253,33 @@
 			"_type": "request"
 		},
 		{
+			"_id": "fld_8a7bda64bd1744c79c9715f5aacb39b6",
+			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
+			"modified": 1509387726687,
+			"created": 1505086492452,
+			"name": "/:id/admins",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1503884254877,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_b5cc2bebf4724cd593a8cbbc758e0045",
+			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
+			"modified": 1509387726685,
+			"created": 1505098502347,
+			"name": "/:id/members",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1503884254864.5,
+			"_type": "request_group"
+		},
+		{
 			"_id": "req_6341f3f68803426ea85ed725b4001df2",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1506895820329,
+			"modified": 1509470368933,
 			"created": 1503884460897,
-			"url": "{{ base_url  }}reliefmaps/?include[]=mapItemTemplates.*&include[]=mapItemTemplates.mapItems.*",
+			"url": "{{ base_url  }}reliefmaps/?include[]=mapItemTemplates.*&include[]=mapItemTemplates.mapItems.*&include[]=dataLayers.*",
 			"name": "/",
 			"description": "",
 			"method": "GET",
@@ -274,7 +303,7 @@
 		{
 			"_id": "req_1d2e846844474c25bcf1d474e83dd0d6",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1506845022990,
+			"modified": 1509467416202,
 			"created": 1503886792726,
 			"url": "{{ base_url  }}reliefmaps/",
 			"name": "/",
@@ -308,7 +337,7 @@
 		{
 			"_id": "req_7e81242e33ac4c94ab52deb2ec0a3934",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1506894839114,
+			"modified": 1509387726682,
 			"created": 1503887035029,
 			"url": "{{ base_url  }}reliefmaps/9/",
 			"name": "/:id",
@@ -334,7 +363,7 @@
 		{
 			"_id": "req_e4473cc00b764ceba94e28e26f946824",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1506845064418,
+			"modified": 1509387726682,
 			"created": 1503887094832,
 			"url": "{{ base_url  }}reliefmaps/6/",
 			"name": "/:id",
@@ -368,7 +397,7 @@
 		{
 			"_id": "req_acf13ed25f4f4f218068cd4fb8d4703b",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1506845610259,
+			"modified": 1509387726681,
 			"created": 1503887096908,
 			"url": "{{ base_url  }}reliefmaps/5/",
 			"name": "/:id",
@@ -394,7 +423,7 @@
 		{
 			"_id": "req_6c1a7819ae314ce3baab7ab7293f7199",
 			"parentId": "fld_e24e310b8ef64a509ec21c8e097624d4",
-			"modified": 1506847262314,
+			"modified": 1509387726680,
 			"created": 1504080866007,
 			"url": "{{ base_url  }}reliefmaps/6/",
 			"name": "/:id",
@@ -428,7 +457,7 @@
 		{
 			"_id": "fld_3509b9e10b7f4057a5b9627878a6344f",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1506221320256,
+			"modified": 1509387726680,
 			"created": 1506221320256,
 			"name": "/me",
 			"description": "",
@@ -439,7 +468,7 @@
 		{
 			"_id": "req_f109b748602a4509ae544669b79b13d2",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1506882556612,
+			"modified": 1509387726677,
 			"created": 1503980672904,
 			"url": "{{ base_url  }}users/",
 			"name": "/",
@@ -465,7 +494,7 @@
 		{
 			"_id": "req_3d99e899278f4e5f92c4983e8e46cae0",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1506892807033,
+			"modified": 1509394825124,
 			"created": 1503980688630,
 			"url": "{{ base_url  }}users/",
 			"name": "/",
@@ -473,7 +502,7 @@
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"username\": \"test1@liefbase.io\",\n\t\"password\": \"password\",\n\t\"firstName\": \"liefbase\",\n\t\"lastName\": \"testeroni\"\n}"
+				"text": "{\n  \"username\": \"test4@liefbase.io\",\n\t\"password\": \"password\",\n\t\"firstName\": \"liefbase\",\n\t\"lastName\": \"testeroni\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -494,7 +523,7 @@
 		{
 			"_id": "req_cac3271c3d0a46298b745eb2212af607",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1506892838877,
+			"modified": 1509387726674,
 			"created": 1504080534426,
 			"url": "{{ base_url  }}users/2/",
 			"name": "/:id",
@@ -520,7 +549,7 @@
 		{
 			"_id": "req_52d39d07867341f2809cf739f30a50da",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1506844581354,
+			"modified": 1509387726674,
 			"created": 1504080541895,
 			"url": "{{ base_url  }}users/1/",
 			"name": "/:id",
@@ -554,7 +583,7 @@
 		{
 			"_id": "req_1b31423a24034d7eae0962fe84c60c24",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1506847429764,
+			"modified": 1509387726673,
 			"created": 1504080546300,
 			"url": "{{ base_url  }}users/1/",
 			"name": "/:id",
@@ -580,7 +609,7 @@
 		{
 			"_id": "req_b8824d84e2024893bf02b9de00811642",
 			"parentId": "fld_c9bc810d685b43b4a393f4de361cb015",
-			"modified": 1506844618443,
+			"modified": 1509387726672,
 			"created": 1504080838799,
 			"url": "{{ base_url  }}users/1/",
 			"name": "/:id",
@@ -612,9 +641,31 @@
 			"_type": "request"
 		},
 		{
+			"_id": "fld_bf4e00c9c29840d6843470b6cd4d88b4",
+			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"modified": 1509387726672,
+			"created": 1505099653343,
+			"name": "/:id/admins",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067053157,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_5ed501a1a95546a48003576af70d73f5",
+			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
+			"modified": 1509387726670,
+			"created": 1505099948991,
+			"name": "/:id/members",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067053107,
+			"_type": "request_group"
+		},
+		{
 			"_id": "req_5a8513fea1c64dc1a0a7bbcbeb75c000",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1506893627716,
+			"modified": 1509387726669,
 			"created": 1504067053356,
 			"url": "{{ base_url  }}organizations/",
 			"name": "/",
@@ -640,7 +691,7 @@
 		{
 			"_id": "req_242462312c784d4bbec0d46fc332d1da",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1506895698779,
+			"modified": 1509387726668,
 			"created": 1504067065345,
 			"url": "{{ base_url  }}organizations/",
 			"name": "/",
@@ -674,7 +725,7 @@
 		{
 			"_id": "req_2bd001a676e94ef1b0ff2e2b7077c6c9",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1506894857672,
+			"modified": 1509387726667,
 			"created": 1504080551119,
 			"url": "{{ base_url  }}organizations/9/",
 			"name": "/:id",
@@ -700,7 +751,7 @@
 		{
 			"_id": "req_90b3a6fdeb2b4b8d8f6d386e1e278e91",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1506847227269,
+			"modified": 1509387726667,
 			"created": 1504080553517,
 			"url": "{{ base_url  }}organizations/9/",
 			"name": "/:id",
@@ -734,7 +785,7 @@
 		{
 			"_id": "req_911460dec07844dcb823a39719f89c34",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1506847242322,
+			"modified": 1509387726666,
 			"created": 1504080556705,
 			"url": "{{ base_url  }}organizations/9/",
 			"name": "/:id",
@@ -760,7 +811,7 @@
 		{
 			"_id": "req_574d4d99cdc548c6a42a41939428727e",
 			"parentId": "fld_9d58d1e75a3842e1b36d8e6099d4936a",
-			"modified": 1506847235953,
+			"modified": 1509387726649,
 			"created": 1504081076161,
 			"url": "{{ base_url  }}organizations/9/",
 			"name": "/:id",
@@ -792,9 +843,31 @@
 			"_type": "request"
 		},
 		{
+			"_id": "fld_9ca7ae38598548a283b634cb85ed5d3f",
+			"parentId": "fld_de2f613615c241d79c98656617ce6556",
+			"modified": 1509387726649,
+			"created": 1505100055179,
+			"name": "/:id/admins",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067059101,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_2ee23cbf3c6f4cae866cbc03ec54f558",
+			"parentId": "fld_de2f613615c241d79c98656617ce6556",
+			"modified": 1509387726628,
+			"created": 1505100059656,
+			"name": "/:id/members",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504067059051,
+			"_type": "request_group"
+		},
+		{
 			"_id": "req_59007949089c40f4b9376d21ced5c056",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1506847282735,
+			"modified": 1509387726540,
 			"created": 1504080369692,
 			"url": "{{ base_url  }}teams/",
 			"name": "/",
@@ -828,7 +901,7 @@
 		{
 			"_id": "req_2710fb23257648469af63f5b09f305d5",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1506893377452,
+			"modified": 1509387726507,
 			"created": 1504080378121,
 			"url": "{{ base_url  }}teams/?include[]=owner.*",
 			"name": "/",
@@ -854,7 +927,7 @@
 		{
 			"_id": "req_7946bc0afd114f408624e98952c298bc",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1506880763210,
+			"modified": 1509387726477,
 			"created": 1504080570167,
 			"url": "{{ base_url  }}teams/10/?include[]=owner.*",
 			"name": "/:id",
@@ -880,7 +953,7 @@
 		{
 			"_id": "req_061e44b848de4ca3bb5db12a7a3d3ef3",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1506847308489,
+			"modified": 1509387726454,
 			"created": 1504080572952,
 			"url": "{{ base_url  }}teams/10/",
 			"name": "/:id",
@@ -914,7 +987,7 @@
 		{
 			"_id": "req_73d9537253f840f0ac4bfae5c54219d3",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1506847325154,
+			"modified": 1509387726442,
 			"created": 1504080575695,
 			"url": "{{ base_url  }}teams/1/",
 			"name": "/:id",
@@ -940,7 +1013,7 @@
 		{
 			"_id": "req_974f02e2fce141949477387ad2c67ad0",
 			"parentId": "fld_de2f613615c241d79c98656617ce6556",
-			"modified": 1506847318949,
+			"modified": 1509387726405,
 			"created": 1504081223554,
 			"url": "{{ base_url  }}teams/10/",
 			"name": "/:id",
@@ -974,7 +1047,7 @@
 		{
 			"_id": "req_8b2a87832a474de6840709d75cc063e3",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1506845638562,
+			"modified": 1509387726382,
 			"created": 1505001066892,
 			"url": "{{ base_url  }}mapitemtemplates/",
 			"name": "/",
@@ -1008,7 +1081,7 @@
 		{
 			"_id": "req_9f3b7de3972e41f792e7de379b026767",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1506895918167,
+			"modified": 1509387726358,
 			"created": 1505001129829,
 			"url": "{{ base_url  }}mapitemtemplates/?include[]=mapItems.*",
 			"name": "/",
@@ -1034,7 +1107,7 @@
 		{
 			"_id": "req_59843dec2cfe478e8e8be874d5063e94",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1506847092784,
+			"modified": 1509387726329,
 			"created": 1505007142764,
 			"url": "{{ base_url  }}mapitemtemplates/1/",
 			"name": "/:id",
@@ -1068,7 +1141,7 @@
 		{
 			"_id": "req_bd07eaf7537240bdb70c4416fee3ae8b",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1506847100086,
+			"modified": 1509387726287,
 			"created": 1505007342292,
 			"url": "{{ base_url  }}mapitemtemplates/1/",
 			"name": "/:id",
@@ -1102,7 +1175,7 @@
 		{
 			"_id": "req_3132bab5e94b43b388e70cd5e48c614a",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1506847106349,
+			"modified": 1509387726286,
 			"created": 1505007344268,
 			"url": "{{ base_url  }}mapitemtemplates/42/",
 			"name": "/:id",
@@ -1128,7 +1201,7 @@
 		{
 			"_id": "req_9f6b7d4a856745a482ef82720f0b891f",
 			"parentId": "fld_e311062fa7384c1b87a2ea9da387cc61",
-			"modified": 1506846403412,
+			"modified": 1509387726275,
 			"created": 1505007399918,
 			"url": "{{ base_url  }}mapitemtemplates/35/",
 			"name": "/:id",
@@ -1154,7 +1227,7 @@
 		{
 			"_id": "req_fad87f8802204bcca047e7e20988052a",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1506895945602,
+			"modified": 1509387726252,
 			"created": 1505007456192,
 			"url": "{{ base_url  }}mapitems/?include[]=mapItemTemplate.*",
 			"name": "/",
@@ -1180,7 +1253,7 @@
 		{
 			"_id": "req_8ad9a0fd1ceb4c4bbcbfb0f8384d8dd3",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1506846667166,
+			"modified": 1509387726221,
 			"created": 1505007479228,
 			"url": "{{ base_url  }}mapitems/",
 			"name": "/",
@@ -1214,7 +1287,7 @@
 		{
 			"_id": "req_29054baf9ee94e998fd521f97f72ccf0",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1506847049770,
+			"modified": 1509387726220,
 			"created": 1505007815608,
 			"url": "{{ base_url  }}mapitems/1/",
 			"name": "/:id",
@@ -1240,7 +1313,7 @@
 		{
 			"_id": "req_5f5850b52c1a40d18f157342370f2d49",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1506847073174,
+			"modified": 1509387726210,
 			"created": 1505007847550,
 			"url": "{{ base_url  }}mapitems/1/",
 			"name": "/:id",
@@ -1266,7 +1339,7 @@
 		{
 			"_id": "req_ec7936ab41374a98964507daf07a9f48",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1506847056506,
+			"modified": 1509387726198,
 			"created": 1505007862412,
 			"url": "{{ base_url  }}mapitems/1/",
 			"name": "/:id",
@@ -1300,7 +1373,7 @@
 		{
 			"_id": "req_8d644c001c1e4291be0c3def00894373",
 			"parentId": "fld_a3113bbbdaa545acac9ca0f3fd5eace3",
-			"modified": 1506847064922,
+			"modified": 1509387726193,
 			"created": 1505007938831,
 			"url": "{{ base_url  }}mapitems/1/",
 			"name": "/:id",
@@ -1334,7 +1407,7 @@
 		{
 			"_id": "req_8c3b9fc98315422f9fa831d314cf53fb",
 			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
-			"modified": 1506894363296,
+			"modified": 1509387726167,
 			"created": 1505074064147,
 			"url": "{{ base_url  }}memberships/?include[]=memberable.*",
 			"name": "/",
@@ -1360,7 +1433,7 @@
 		{
 			"_id": "req_8ad3addff14f4e4ab7c72aa288b25769",
 			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
-			"modified": 1505274339634,
+			"modified": 1509387726160,
 			"created": 1505074117520,
 			"url": "{{ base_url  }}memberships/",
 			"name": "/",
@@ -1394,7 +1467,7 @@
 		{
 			"_id": "req_aa7bf50a9a0e4517a0bfad82b67c0622",
 			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
-			"modified": 1506847156964,
+			"modified": 1509387726134,
 			"created": 1505074239639,
 			"url": "{{ base_url  }}memberships/1/",
 			"name": "/:id",
@@ -1428,7 +1501,7 @@
 		{
 			"_id": "req_9d66438c478f4888ae37cdfdca08b2d3",
 			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
-			"modified": 1506847163556,
+			"modified": 1509387726120,
 			"created": 1505074257016,
 			"url": "{{ base_url  }}memberships/1/",
 			"name": "/:id",
@@ -1462,7 +1535,7 @@
 		{
 			"_id": "req_9e4af398602b480f9d0265fbbc73685d",
 			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
-			"modified": 1506847151340,
+			"modified": 1509387726074,
 			"created": 1505074285612,
 			"url": "{{ base_url  }}memberships/1/",
 			"name": "/:id",
@@ -1488,7 +1561,7 @@
 		{
 			"_id": "req_a0d8dce164c943ba88cd06188453bf3b",
 			"parentId": "fld_47848356c17d4c7faa4e60bcc05f2599",
-			"modified": 1506847170353,
+			"modified": 1509387726073,
 			"created": 1505074672782,
 			"url": "{{ base_url  }}memberships/1/",
 			"name": "/:id",
@@ -1514,7 +1587,7 @@
 		{
 			"_id": "req_bc4e709fae5b421eb4b82d7efb5e552c",
 			"parentId": "fld_870a1bf67d204a8991cda23dc0af3e4d",
-			"modified": 1506846739192,
+			"modified": 1509387726072,
 			"created": 1505445903835,
 			"url": "{{ base_url  }}filterpresets/",
 			"name": "/",
@@ -1548,7 +1621,7 @@
 		{
 			"_id": "req_2d5d0a01c1f843bb9c534aacdc15d604",
 			"parentId": "fld_870a1bf67d204a8991cda23dc0af3e4d",
-			"modified": 1506896061163,
+			"modified": 1509387726072,
 			"created": 1505448642593,
 			"url": "{{ base_url  }}filterpresets/",
 			"name": "/",
@@ -1574,7 +1647,7 @@
 		{
 			"_id": "req_148b38800cbc4220b02a37f470007e89",
 			"parentId": "fld_870a1bf67d204a8991cda23dc0af3e4d",
-			"modified": 1506846909896,
+			"modified": 1509387726071,
 			"created": 1505504414403,
 			"url": "{{ base_url  }}filterpresets/1/",
 			"name": "/:id",
@@ -1600,7 +1673,7 @@
 		{
 			"_id": "req_555fb7e0e7c14780b9d5e5e29919d65c",
 			"parentId": "fld_870a1bf67d204a8991cda23dc0af3e4d",
-			"modified": 1506846931253,
+			"modified": 1509387726071,
 			"created": 1505504545823,
 			"url": "{{ base_url  }}filterpresets/1/",
 			"name": "/:id",
@@ -1634,7 +1707,7 @@
 		{
 			"_id": "req_f426b3ad30dc467ea0f8d9938d6b89fe",
 			"parentId": "fld_870a1bf67d204a8991cda23dc0af3e4d",
-			"modified": 1506846948132,
+			"modified": 1509387726070,
 			"created": 1505504751931,
 			"url": "{{ base_url  }}filterpresets/1/",
 			"name": "/:id",
@@ -1668,7 +1741,7 @@
 		{
 			"_id": "req_4c1b9906bb9045c5a2715ca543a8e6f2",
 			"parentId": "fld_870a1bf67d204a8991cda23dc0af3e4d",
-			"modified": 1506846958223,
+			"modified": 1509387726069,
 			"created": 1505504863852,
 			"url": "{{ base_url  }}filterpresets/1/",
 			"name": "/:id",
@@ -1694,7 +1767,7 @@
 		{
 			"_id": "req_6fa8bd4c18564b77ad62da55e1b975a4",
 			"parentId": "fld_bc22471effe343eda42e36c55c3cca37",
-			"modified": 1506895783446,
+			"modified": 1509387726067,
 			"created": 1505505010785,
 			"url": "{{ base_url  }}templatepresets/?include[]=owner.*",
 			"name": "/",
@@ -1720,7 +1793,7 @@
 		{
 			"_id": "req_1eed219c6335447ea68b73e172142dfe",
 			"parentId": "fld_bc22471effe343eda42e36c55c3cca37",
-			"modified": 1506846884915,
+			"modified": 1509387726067,
 			"created": 1505505020601,
 			"url": "{{ base_url  }}templatepresets/",
 			"name": "/",
@@ -1754,7 +1827,7 @@
 		{
 			"_id": "req_f9a8d18cba684b5dbe574d8c315a8031",
 			"parentId": "fld_bc22471effe343eda42e36c55c3cca37",
-			"modified": 1506847409104,
+			"modified": 1509387726065,
 			"created": 1505505042185,
 			"url": "{{ base_url  }}templatepresets/2/",
 			"name": "/:id",
@@ -1780,7 +1853,7 @@
 		{
 			"_id": "req_2f51929a05f04780bee0fb5986cdbeeb",
 			"parentId": "fld_bc22471effe343eda42e36c55c3cca37",
-			"modified": 1506847399918,
+			"modified": 1509387726064,
 			"created": 1505505053905,
 			"url": "{{ base_url  }}templatepresets/2/",
 			"name": "/:id",
@@ -1814,7 +1887,7 @@
 		{
 			"_id": "req_e9f43b55755d4cfbaff20eaeaf28b139",
 			"parentId": "fld_bc22471effe343eda42e36c55c3cca37",
-			"modified": 1506847373034,
+			"modified": 1509387726063,
 			"created": 1505505072600,
 			"url": "{{ base_url  }}templatepresets/2/",
 			"name": "/:id",
@@ -1848,7 +1921,7 @@
 		{
 			"_id": "req_3f7e74dc20f74ca1b438bf30d31f4ee9",
 			"parentId": "fld_bc22471effe343eda42e36c55c3cca37",
-			"modified": 1506847345928,
+			"modified": 1509387726062,
 			"created": 1505505086018,
 			"url": "{{ base_url  }}templatepresets/2/",
 			"name": "/:id",
@@ -1872,9 +1945,549 @@
 			"_type": "request"
 		},
 		{
+			"_id": "req_7fa89cd6409d4e2f8bfcb6d6e5fab5bf",
+			"parentId": "fld_071370160f1c445ab2bfa1d3082ff735",
+			"modified": 1509469899147,
+			"created": 1506903636017,
+			"url": "{{ base_url  }}datalayers/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_3fb7550d96b1400b8aeb88e8371d2a5e"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1506903763531,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_020700383eb748e4a18c6e2a351c3bbb",
+			"parentId": "fld_071370160f1c445ab2bfa1d3082ff735",
+			"modified": 1509469714085,
+			"created": 1506903675944,
+			"url": "{{ base_url  }}datalayers/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Test-data-layer\",\n\t\"reliefMap\": 3,\n\t\"shapeFile\": {\n\t\t\"type\": \"FeatureCollection\", \n\t\t\"features\": [\n\t\t\t{\n\t\t\t\t\"geometry\": {\n\t\t\t\t\t\"type\": \"Polygon\", \n\t\t\t\t\t\"coordinates\": [\n\t\t\t\t\t\t[\n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0006120230358, \n\t\t\t\t\t\t\t\t27.70604096927096\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00068438862762, \n\t\t\t\t\t\t\t\t27.70605846774695\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00274726020669, \n\t\t\t\t\t\t\t\t27.706043542804583\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00360745314643, \n\t\t\t\t\t\t\t\t27.705852348276302\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00446357811748, \n\t\t\t\t\t\t\t\t27.705559536045488\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00483821163833, \n\t\t\t\t\t\t\t\t27.705493660571648\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00522357792006, \n\t\t\t\t\t\t\t\t27.705495411195578\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00573564124181, \n\t\t\t\t\t\t\t\t27.705561597201378\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0069303819079, \n\t\t\t\t\t\t\t\t27.705846223033372\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00785489766169, \n\t\t\t\t\t\t\t\t27.705753789313583\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00831913906147, \n\t\t\t\t\t\t\t\t27.705858721944796\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00874213405356, \n\t\t\t\t\t\t\t\t27.706090285627987\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00944151801738, \n\t\t\t\t\t\t\t\t27.706396540011053\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00968926817903, \n\t\t\t\t\t\t\t\t27.706462415484893\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00979696454469, \n\t\t\t\t\t\t\t\t27.70652253447251\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01000089476503, \n\t\t\t\t\t\t\t\t27.706642908305476\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01015869934422, \n\t\t\t\t\t\t\t\t27.706711718306344\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01214951198178, \n\t\t\t\t\t\t\t\t27.707200293766913\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0130261359439, \n\t\t\t\t\t\t\t\t27.707487229180366\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01354944828593, \n\t\t\t\t\t\t\t\t27.707528479469712\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01428833579682, \n\t\t\t\t\t\t\t\t27.707446343766073\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0157023391988, \n\t\t\t\t\t\t\t\t27.707104351035966\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0162172671779, \n\t\t\t\t\t\t\t\t27.706929102323873\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01644758096994, \n\t\t\t\t\t\t\t\t27.706751342184546\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01662839208578, \n\t\t\t\t\t\t\t\t27.706635028556967\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01674407300449, \n\t\t\t\t\t\t\t\t27.706537160527866\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01684439035444, \n\t\t\t\t\t\t\t\t27.706414527574886\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01701163898689, \n\t\t\t\t\t\t\t\t27.706273476194976\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01746194914658, \n\t\t\t\t\t\t\t\t27.706033229261834\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01775739701742, \n\t\t\t\t\t\t\t\t27.70576935084647\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0189267128792, \n\t\t\t\t\t\t\t\t27.704397979601065\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01930714946607, \n\t\t\t\t\t\t\t\t27.704142477785346\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.01965414564239, \n\t\t\t\t\t\t\t\t27.704040596130646\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02029594921738, \n\t\t\t\t\t\t\t\t27.704022352377947\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02042563124587, \n\t\t\t\t\t\t\t\t27.703998848990164\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.020624026234, \n\t\t\t\t\t\t\t\t27.70392515199256\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02068345816966, \n\t\t\t\t\t\t\t\t27.7039157157026\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02091657839429, \n\t\t\t\t\t\t\t\t27.703900464701675\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02106396074456, \n\t\t\t\t\t\t\t\t27.70387228392623\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.022779451864, \n\t\t\t\t\t\t\t\t27.703857347338914\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02364339059551, \n\t\t\t\t\t\t\t\t27.70379458882963\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02423994578216, \n\t\t\t\t\t\t\t\t27.703681846319604\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02451433182274, \n\t\t\t\t\t\t\t\t27.703535480961516\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02483601188096, \n\t\t\t\t\t\t\t\t27.703305167169468\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02510788261267, \n\t\t\t\t\t\t\t\t27.70303015618331\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02528632204067, \n\t\t\t\t\t\t\t\t27.702259470199632\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02558145549789, \n\t\t\t\t\t\t\t\t27.70176091113652\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0260221314035, \n\t\t\t\t\t\t\t\t27.701367284704627\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02715990109972, \n\t\t\t\t\t\t\t\t27.701052028776346\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02788095631276, \n\t\t\t\t\t\t\t\t27.700965405885874\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02854946175474, \n\t\t\t\t\t\t\t\t27.700818345712523\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.02993232656434, \n\t\t\t\t\t\t\t\t27.700216915174092\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03082051396035, \n\t\t\t\t\t\t\t\t27.69991022992793\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03105465505881, \n\t\t\t\t\t\t\t\t27.699743784796926\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03134627562322, \n\t\t\t\t\t\t\t\t27.69907154132648\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03149563761473, \n\t\t\t\t\t\t\t\t27.698849293602112\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03197469915234, \n\t\t\t\t\t\t\t\t27.698371908937084\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03226319887055, \n\t\t\t\t\t\t\t\t27.697916214929517\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03260770690954, \n\t\t\t\t\t\t\t\t27.697685784687987\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03301476773039, \n\t\t\t\t\t\t\t\t27.697504480602657\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03344701269327, \n\t\t\t\t\t\t\t\t27.697505780955243\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03422814031413, \n\t\t\t\t\t\t\t\t27.697818102356493\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03475451527763, \n\t\t\t\t\t\t\t\t27.697920228555112\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03491689243995, \n\t\t\t\t\t\t\t\t27.69806791367403\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03494371463806, \n\t\t\t\t\t\t\t\t27.698225652265183\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03475514022321, \n\t\t\t\t\t\t\t\t27.6986579787427\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03477127235857, \n\t\t\t\t\t\t\t\t27.69882259949843\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03493188337036, \n\t\t\t\t\t\t\t\t27.69905828161175\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03512752238733, \n\t\t\t\t\t\t\t\t27.699907415732035\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03548033327462, \n\t\t\t\t\t\t\t\t27.700356029610894\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03574125775471, \n\t\t\t\t\t\t\t\t27.700473662999304\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03662508605832, \n\t\t\t\t\t\t\t\t27.70057534280823\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03704565113782, \n\t\t\t\t\t\t\t\t27.700820402986764\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03720695696487, \n\t\t\t\t\t\t\t\t27.701053841506667\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03723901550818, \n\t\t\t\t\t\t\t\t27.70129502779899\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03710521504955, \n\t\t\t\t\t\t\t\t27.701756276447007\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03673375671801, \n\t\t\t\t\t\t\t\t27.70235697723533\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03664064370956, \n\t\t\t\t\t\t\t\t27.70268715422433\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03661158568131, \n\t\t\t\t\t\t\t\t27.702840731687207\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03665375980324, \n\t\t\t\t\t\t\t\t27.70307503581495\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03688452386663, \n\t\t\t\t\t\t\t\t27.703213226419166\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03710183801448, \n\t\t\t\t\t\t\t\t27.703279284330534\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03723896504673, \n\t\t\t\t\t\t\t\t27.703230849107946\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03820283684489, \n\t\t\t\t\t\t\t\t27.702485847999075\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03863120015825, \n\t\t\t\t\t\t\t\t27.70234953999487\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03883825898808, \n\t\t\t\t\t\t\t\t27.702196793204987\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0391592092962, \n\t\t\t\t\t\t\t\t27.702088347680967\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03975607113316, \n\t\t\t\t\t\t\t\t27.702273413084672\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0404378945146, \n\t\t\t\t\t\t\t\t27.702394605945685\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04082996052338, \n\t\t\t\t\t\t\t\t27.702567653762504\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04096269741004, \n\t\t\t\t\t\t\t\t27.702869040557086\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04103263697093, \n\t\t\t\t\t\t\t\t27.704091294354903\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04096244510282, \n\t\t\t\t\t\t\t\t27.704308476526656\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04068944869276, \n\t\t\t\t\t\t\t\t27.704730225509252\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04057601136748, \n\t\t\t\t\t\t\t\t27.70513040804717\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04064895532507, \n\t\t\t\t\t\t\t\t27.70546603487208\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04081695699753, \n\t\t\t\t\t\t\t\t27.705541474730317\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04137939636662, \n\t\t\t\t\t\t\t\t27.704898727914497\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04166645599287, \n\t\t\t\t\t\t\t\t27.70449716350935\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04187413976827, \n\t\t\t\t\t\t\t\t27.704206854942473\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04229007792155, \n\t\t\t\t\t\t\t\t27.703894669398956\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04283238317464, \n\t\t\t\t\t\t\t\t27.703274595297927\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04331632782734, \n\t\t\t\t\t\t\t\t27.70284228822866\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04405689609247, \n\t\t\t\t\t\t\t\t27.702349342030743\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04412433198941, \n\t\t\t\t\t\t\t\t27.70210966181843\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04390583782012, \n\t\t\t\t\t\t\t\t27.701389282012403\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04397114657314, \n\t\t\t\t\t\t\t\t27.70093079321719\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04412177010073, \n\t\t\t\t\t\t\t\t27.700503213997028\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0440998931241, \n\t\t\t\t\t\t\t\t27.69967535131606\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04415027693474, \n\t\t\t\t\t\t\t\t27.69917409450654\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04390514688652, \n\t\t\t\t\t\t\t\t27.69839072329226\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04380508184379, \n\t\t\t\t\t\t\t\t27.697328843725614\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04364789444686, \n\t\t\t\t\t\t\t\t27.696930660237193\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04285113154177, \n\t\t\t\t\t\t\t\t27.69558065747234\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04262608902977, \n\t\t\t\t\t\t\t\t27.694968657202292\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04251726698574, \n\t\t\t\t\t\t\t\t27.693854845046847\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04255232216246, \n\t\t\t\t\t\t\t\t27.693610918309968\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04293782430193, \n\t\t\t\t\t\t\t\t27.693098098066557\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04341490231666, \n\t\t\t\t\t\t\t\t27.692016030040808\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04336445639962, \n\t\t\t\t\t\t\t\t27.69171635505366\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04342383787383, \n\t\t\t\t\t\t\t\t27.691560223465405\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04349158818438, \n\t\t\t\t\t\t\t\t27.691485222233567\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04488063646166, \n\t\t\t\t\t\t\t\t27.689956283189588\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04497382322145, \n\t\t\t\t\t\t\t\t27.689824718561084\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04537771273465, \n\t\t\t\t\t\t\t\t27.689178656816583\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0457697049921, \n\t\t\t\t\t\t\t\t27.68855298149531\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04582931936528, \n\t\t\t\t\t\t\t\t27.688234414519997\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0457491322497, \n\t\t\t\t\t\t\t\t27.687792791491905\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04577701025649, \n\t\t\t\t\t\t\t\t27.686996102338153\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0456610731489, \n\t\t\t\t\t\t\t\t27.686060655859357\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04575964375657, \n\t\t\t\t\t\t\t\t27.6853694699393\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04581576852684, \n\t\t\t\t\t\t\t\t27.683415168097028\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0460662086716, \n\t\t\t\t\t\t\t\t27.682097841057754\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04649395092105, \n\t\t\t\t\t\t\t\t27.680772471240694\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04664096063294, \n\t\t\t\t\t\t\t\t27.680509656397298\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04733726644871, \n\t\t\t\t\t\t\t\t27.67963571853664\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04809969616389, \n\t\t\t\t\t\t\t\t27.678925982213574\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04859589130244, \n\t\t\t\t\t\t\t\t27.678078358054947\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04918377876572, \n\t\t\t\t\t\t\t\t27.675876340985877\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04918589814636, \n\t\t\t\t\t\t\t\t27.675357411026138\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04918895688617, \n\t\t\t\t\t\t\t\t27.67454967081623\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0496837701575, \n\t\t\t\t\t\t\t\t27.672756670919362\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04987951786066, \n\t\t\t\t\t\t\t\t27.67229491765691\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04960638947452, \n\t\t\t\t\t\t\t\t27.671692345913524\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04961057001104, \n\t\t\t\t\t\t\t\t27.6706025417603\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04935565044275, \n\t\t\t\t\t\t\t\t27.670047163111658\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04850702481855, \n\t\t\t\t\t\t\t\t27.66935865552976\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04837251401807, \n\t\t\t\t\t\t\t\t27.669271656119285\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04803071148879, \n\t\t\t\t\t\t\t\t27.66910504407735\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04765807313579, \n\t\t\t\t\t\t\t\t27.668965727794777\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04665715099306, \n\t\t\t\t\t\t\t\t27.668842407789832\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04622664889081, \n\t\t\t\t\t\t\t\t27.668680973868348\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04541052043632, \n\t\t\t\t\t\t\t\t27.66787259318627\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04474263217662, \n\t\t\t\t\t\t\t\t27.666666036779077\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04445514556893, \n\t\t\t\t\t\t\t\t27.666146974843254\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04415976368614, \n\t\t\t\t\t\t\t\t27.665864907018285\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04374013796583, \n\t\t\t\t\t\t\t\t27.665642480738043\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04365589840815, \n\t\t\t\t\t\t\t\t27.66564535704033\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04328026730339, \n\t\t\t\t\t\t\t\t27.66564821781602\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04267588671132, \n\t\t\t\t\t\t\t\t27.66578584558106\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04195064708011, \n\t\t\t\t\t\t\t\t27.66607335547864\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04179002830503, \n\t\t\t\t\t\t\t\t27.666103911823583\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04166702659535, \n\t\t\t\t\t\t\t\t27.666098035006225\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04150032915712, \n\t\t\t\t\t\t\t\t27.666090341576897\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04136307791208, \n\t\t\t\t\t\t\t\t27.66611385272798\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04097464512724, \n\t\t\t\t\t\t\t\t27.666308532977524\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04027676336177, \n\t\t\t\t\t\t\t\t27.666609356932923\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04010626578868, \n\t\t\t\t\t\t\t\t27.66666703048135\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0397153215766, \n\t\t\t\t\t\t\t\t27.666796351516435\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03934664638776, \n\t\t\t\t\t\t\t\t27.666665982435983\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03926208465317, \n\t\t\t\t\t\t\t\t27.66663728540115\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03887120642912, \n\t\t\t\t\t\t\t\t27.666371726231553\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03879994710742, \n\t\t\t\t\t\t\t\t27.66607216381224\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03883238605238, \n\t\t\t\t\t\t\t\t27.66514911144033\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03903933231437, \n\t\t\t\t\t\t\t\t27.664184168306903\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03938320764449, \n\t\t\t\t\t\t\t\t27.66310085427166\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03973819613717, \n\t\t\t\t\t\t\t\t27.661985846568165\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04010656855733, \n\t\t\t\t\t\t\t\t27.661276855521802\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04010826483818, \n\t\t\t\t\t\t\t\t27.660857159931794\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03975251166055, \n\t\t\t\t\t\t\t\t27.658944294698045\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03975952191956, \n\t\t\t\t\t\t\t\t27.657409979569497\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0395265724875, \n\t\t\t\t\t\t\t\t27.655690152647548\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03955589446791, \n\t\t\t\t\t\t\t\t27.655437286471845\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03979633548353, \n\t\t\t\t\t\t\t\t27.655072228980345\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04019276058472, \n\t\t\t\t\t\t\t\t27.65485940978264\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04059707319772, \n\t\t\t\t\t\t\t\t27.654741283424745\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04069057437113, \n\t\t\t\t\t\t\t\t27.654713541275694\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04151546370856, \n\t\t\t\t\t\t\t\t27.65324978677194\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04146894990248, \n\t\t\t\t\t\t\t\t27.65235210874288\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0415580143505, \n\t\t\t\t\t\t\t\t27.65158885223636\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04166714304483, \n\t\t\t\t\t\t\t\t27.651337600826857\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04175320697777, \n\t\t\t\t\t\t\t\t27.651136096637476\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04194883046814, \n\t\t\t\t\t\t\t\t27.650313334443965\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04192994624327, \n\t\t\t\t\t\t\t\t27.649124466713587\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04178689581387, \n\t\t\t\t\t\t\t\t27.648669781934892\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04166726725761, \n\t\t\t\t\t\t\t\t27.64854660166933\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04138071612746, \n\t\t\t\t\t\t\t\t27.64825091313623\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04123277093802, \n\t\t\t\t\t\t\t\t27.64787747904509\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04107582808501, \n\t\t\t\t\t\t\t\t27.64723109512368\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0411830159546, \n\t\t\t\t\t\t\t\t27.646176590691102\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04086621512981, \n\t\t\t\t\t\t\t\t27.64542991270964\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04079670643203, \n\t\t\t\t\t\t\t\t27.645044600770998\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04077956894945, \n\t\t\t\t\t\t\t\t27.643440536282395\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.04034707944265, \n\t\t\t\t\t\t\t\t27.64191404267761\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03993076865102, \n\t\t\t\t\t\t\t\t27.64128992001614\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0397268229041, \n\t\t\t\t\t\t\t\t27.641162861982718\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0394184491404, \n\t\t\t\t\t\t\t\t27.640971092970307\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03897958208346, \n\t\t\t\t\t\t\t\t27.64057503274417\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03872021414482, \n\t\t\t\t\t\t\t\t27.640139232190343\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03831039735282, \n\t\t\t\t\t\t\t\t27.639266912977533\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03787883167861, \n\t\t\t\t\t\t\t\t27.638981359431305\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03734196073484, \n\t\t\t\t\t\t\t\t27.63840096743322\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03588171136059, \n\t\t\t\t\t\t\t\t27.637229594297185\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03556795374902, \n\t\t\t\t\t\t\t\t27.63673329435409\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03482444707521, \n\t\t\t\t\t\t\t\t27.634392341404094\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03449933563883, \n\t\t\t\t\t\t\t\t27.633697588248136\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.03426221343354, \n\t\t\t\t\t\t\t\t27.633329285697645\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0340516417109, \n\t\t\t\t\t\t\t\t27.633233851462784\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t]\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t]\n\t}\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_bd05f062ce1b4cbb9695225dfe71f02e"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_7ad69f4926434914ba35db6f00fccf1a"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1506903763506,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_a93a3262c6a44ad290210fe364643e3d",
+			"parentId": "fld_071370160f1c445ab2bfa1d3082ff735",
+			"modified": 1509470196484,
+			"created": 1506903702256,
+			"url": "{{ base_url  }}datalayers/1/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_efa72ead82d346e0a89931fe4526490c"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1506903702256,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_388082b92d6048c58384c5c6f483fc60",
+			"parentId": "fld_071370160f1c445ab2bfa1d3082ff735",
+			"modified": 1509470191742,
+			"created": 1506903727503,
+			"url": "{{ base_url  }}datalayers/1/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"map data new name 2\",\n\t\"reliefMap\": 6,\n\t\"shapeFile\": {\n\t\t\"type\": \"FeatureCollection\", \n\t\t\"features\": [\n\t\t\t\t{\n\t\t\t\t\"geometry\": {\n\t\t\t\t\t\"type\": \"Polygon\", \n\t\t\t\t\t\"coordinates\": [\n\t\t\t\t\t\t[\n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0006120230358, \n\t\t\t\t\t\t\t\t27.70604096927096\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00068438862762, \n\t\t\t\t\t\t\t\t27.70605846774695\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00274726020669, \n\t\t\t\t\t\t\t\t27.706043542804583\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00360745314643, \n\t\t\t\t\t\t\t\t27.705852348276302\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00446357811748, \n\t\t\t\t\t\t\t\t27.705559536045488\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00483821163833, \n\t\t\t\t\t\t\t\t27.705493660571648\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00522357792006, \n\t\t\t\t\t\t\t\t27.705495411195578\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00573564124181, \n\t\t\t\t\t\t\t\t27.705561597201378\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0069303819079, \n\t\t\t\t\t\t\t\t27.705846223033372\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00785489766169, \n\t\t\t\t\t\t\t\t27.705753789313583\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00831913906147, \n\t\t\t\t\t\t\t\t27.705858721944796\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00874213405356, \n\t\t\t\t\t\t\t\t27.706090285627987\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00944151801738, \n\t\t\t\t\t\t\t\t27.706396540011053\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t]\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t]\n\t}\n}\n\t"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_91c47de017914a11922979442238d575"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_46971bc3be544b2ab7efdc2d369469ad"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1506903727503,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_bcb594f43ff24cfc94ede4779173d052",
+			"parentId": "fld_071370160f1c445ab2bfa1d3082ff735",
+			"modified": 1509470185960,
+			"created": 1506903745664,
+			"url": "{{ base_url  }}datalayers/1/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"map data new name\",\n\t\"reliefMap\": 6,\n\t\"shapeFile\": {\n\t\t\"type\": \"FeatureCollection\", \n\t\t\"features\": [\n\t\t\t\t{\n\t\t\t\t\"geometry\": {\n\t\t\t\t\t\"type\": \"Polygon\", \n\t\t\t\t\t\"coordinates\": [\n\t\t\t\t\t\t[\n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0006120230358, \n\t\t\t\t\t\t\t\t27.70604096927096\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00068438862762, \n\t\t\t\t\t\t\t\t27.70605846774695\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00274726020669, \n\t\t\t\t\t\t\t\t27.706043542804583\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00360745314643, \n\t\t\t\t\t\t\t\t27.705852348276302\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00446357811748, \n\t\t\t\t\t\t\t\t27.705559536045488\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00483821163833, \n\t\t\t\t\t\t\t\t27.705493660571648\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00522357792006, \n\t\t\t\t\t\t\t\t27.705495411195578\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00573564124181, \n\t\t\t\t\t\t\t\t27.705561597201378\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.0069303819079, \n\t\t\t\t\t\t\t\t27.705846223033372\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00785489766169, \n\t\t\t\t\t\t\t\t27.705753789313583\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00831913906147, \n\t\t\t\t\t\t\t\t27.705858721944796\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00874213405356, \n\t\t\t\t\t\t\t\t27.706090285627987\n\t\t\t\t\t\t\t], \n\t\t\t\t\t\t\t[\n\t\t\t\t\t\t\t\t85.00944151801738, \n\t\t\t\t\t\t\t\t27.706396540011053\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t]\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t]\n\t}\n}\n\t"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b6fa497ba380409d9ecac06693a992c8"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_453340cdf74b452b810cd54ba5758afe"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1506903745664,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_e0163f6e579c491f82402a369399398e",
+			"parentId": "fld_071370160f1c445ab2bfa1d3082ff735",
+			"modified": 1509469401168,
+			"created": 1506903763481,
+			"url": "{{ base_url  }}datalayers/",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_cb7e70f36605495c9226e2070560f7cd"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1506903763481,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_dbec858269034330868e5547c99546d2",
+			"parentId": "fld_8a7bda64bd1744c79c9715f5aacb39b6",
+			"modified": 1509387726054,
+			"created": 1505086492460,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/admins/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{jwt_token}}",
+					"id": "pair_1c124175c55f48fa8ee22617ffc66777"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505079437605,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_827bf037a42b43cd82c5246a3202524c",
+			"parentId": "fld_8a7bda64bd1744c79c9715f5aacb39b6",
+			"modified": 1509387726053,
+			"created": 1505086492461,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/admins/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"user\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b93a228df544404db93182ae3f411288"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505040247540.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_632ae3698d6b4bffb47de314df62412f",
+			"parentId": "fld_8a7bda64bd1744c79c9715f5aacb39b6",
+			"modified": 1509387726052,
+			"created": 1505089288505,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505020652508.25,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_15649e4732e54d109ec6292ae4fdc398",
+			"parentId": "fld_8a7bda64bd1744c79c9715f5aacb39b6",
+			"modified": 1509387726050,
+			"created": 1505096821072,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505010854992.125,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_7277040ac30749e6858df19bed13d907",
+			"parentId": "fld_8a7bda64bd1744c79c9715f5aacb39b6",
+			"modified": 1509387726050,
+			"created": 1505097101212,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"member\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505015753750.1875,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_d8363e90ad0e4ef7a31a6ca0b59386c3",
+			"parentId": "fld_8a7bda64bd1744c79c9715f5aacb39b6",
+			"modified": 1509387726047,
+			"created": 1505098414850,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"member\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505013304371.1562,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_6fdeacf021d647459cc9fb6ea9277e68",
+			"parentId": "fld_b5cc2bebf4724cd593a8cbbc758e0045",
+			"modified": 1509387726047,
+			"created": 1505098502350,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/members/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{jwt_token}}",
+					"id": "pair_1c124175c55f48fa8ee22617ffc66777"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505079437605,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_be507170a67d48f894b06c35efc5986c",
+			"parentId": "fld_b5cc2bebf4724cd593a8cbbc758e0045",
+			"modified": 1509387726046,
+			"created": 1505098502353,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/members/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"user\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b93a228df544404db93182ae3f411288"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505040247540.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_3ccfbfcb2f2d45afa71fd6ce84a6ef25",
+			"parentId": "fld_b5cc2bebf4724cd593a8cbbc758e0045",
+			"modified": 1509387726041,
+			"created": 1505098502354,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/members/{{ user_id  }}",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505020652508.25,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_124e153a101e47488f049a929ef63dd3",
+			"parentId": "fld_b5cc2bebf4724cd593a8cbbc758e0045",
+			"modified": 1509387726040,
+			"created": 1505098502356,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/members/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505010854992.125,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_80e33031542c4c6c9c72af090f317979",
+			"parentId": "fld_b5cc2bebf4724cd593a8cbbc758e0045",
+			"modified": 1509387726039,
+			"created": 1505098502356,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/members/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"admin\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505015753750.1875,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_e1316ee3b7ba4692be97aae2ffaff986",
+			"parentId": "fld_b5cc2bebf4724cd593a8cbbc758e0045",
+			"modified": 1509387726038,
+			"created": 1505098502357,
+			"url": "{{base_url}}reliefmaps/{{ relief_map_id }}/members/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"admin\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505013304371.1562,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
 			"_id": "req_7012fd28fd9c4dba9f5a4f30893c995c",
 			"parentId": "fld_3509b9e10b7f4057a5b9627878a6344f",
-			"modified": 1506221367107,
+			"modified": 1509387726037,
 			"created": 1506221327089,
 			"url": "{{ base_url  }}users/me/",
 			"name": "/",
@@ -1891,6 +2504,731 @@
 			],
 			"authentication": {},
 			"metaSortKey": -1506221327089,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_cc22cfbb2b7d478cb55f1d00997d88b6",
+			"parentId": "fld_bf4e00c9c29840d6843470b6cd4d88b4",
+			"modified": 1509387726035,
+			"created": 1505099653348,
+			"url": "{{base_url}}organizations/{{ organization_id }}/admins/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{jwt_token}}",
+					"id": "pair_1c124175c55f48fa8ee22617ffc66777"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505079437605,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_fbffa17585684f559cb198e5ebc82edd",
+			"parentId": "fld_bf4e00c9c29840d6843470b6cd4d88b4",
+			"modified": 1509387726034,
+			"created": 1505099653350,
+			"url": "{{base_url}}organizations/{{organization_id}}/admins/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"user\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b93a228df544404db93182ae3f411288"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505040247540.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_636618ced2f94d7b82028675876ec58b",
+			"parentId": "fld_bf4e00c9c29840d6843470b6cd4d88b4",
+			"modified": 1509387726033,
+			"created": 1505099653351,
+			"url": "{{base_url}}organizations/{{organization_id}}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505020652508.25,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_b18e0ee91d2d4f82b2b0fd52f8bd33b5",
+			"parentId": "fld_bf4e00c9c29840d6843470b6cd4d88b4",
+			"modified": 1509387726028,
+			"created": 1505099653352,
+			"url": "{{base_url}}organizations/{{organization_id}}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505010854992.125,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_4191021589824005aeff4223e646b41f",
+			"parentId": "fld_bf4e00c9c29840d6843470b6cd4d88b4",
+			"modified": 1509387726022,
+			"created": 1505099653354,
+			"url": "{{base_url}}organizations/{{organization_id}}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"member\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505015753750.1875,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_962ea0fd3166466598fb79adaeda8cc6",
+			"parentId": "fld_bf4e00c9c29840d6843470b6cd4d88b4",
+			"modified": 1509387726020,
+			"created": 1505099653358,
+			"url": "{{base_url}}organizations/{{organization_id}}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"member\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505013304371.1562,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_ee014c9ec6a743888913e2c3951c8b88",
+			"parentId": "fld_5ed501a1a95546a48003576af70d73f5",
+			"modified": 1509387726019,
+			"created": 1505099948995,
+			"url": "{{base_url}}organizations/{{organization_id}}/members/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{jwt_token}}",
+					"id": "pair_1c124175c55f48fa8ee22617ffc66777"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505079437605,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_5d0f0766337d4ba1b0916f73631daf26",
+			"parentId": "fld_5ed501a1a95546a48003576af70d73f5",
+			"modified": 1509387726018,
+			"created": 1505099948996,
+			"url": "{{base_url}}organizations/{{organization_id}}/members/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"user\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b93a228df544404db93182ae3f411288"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505040247540.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_143f48480da14beb9954533183aae047",
+			"parentId": "fld_5ed501a1a95546a48003576af70d73f5",
+			"modified": 1509387726016,
+			"created": 1505099948997,
+			"url": "{{base_url}}organizations/{{organization_id}}/members/{{ user_id  }}",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505020652508.25,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_bc05dac841a240e0b668222559e9184e",
+			"parentId": "fld_5ed501a1a95546a48003576af70d73f5",
+			"modified": 1509387726015,
+			"created": 1505099948999,
+			"url": "{{base_url}}organizations/{{organization_id}}/members/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505010854992.125,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_62204c80f29449a280cd2c9d01698108",
+			"parentId": "fld_5ed501a1a95546a48003576af70d73f5",
+			"modified": 1509387726014,
+			"created": 1505099949002,
+			"url": "{{base_url}}organizations/{{organization_id}}/members/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"admin\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505015753750.1875,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_31a4c55fe9b84d678301773e6523806b",
+			"parentId": "fld_5ed501a1a95546a48003576af70d73f5",
+			"modified": 1509387726014,
+			"created": 1505099949004,
+			"url": "{{base_url}}organizations/{{organization_id}}/members/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"admin\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505013304371.1562,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_635532b47d6d493a8e3699e57ae34231",
+			"parentId": "fld_9ca7ae38598548a283b634cb85ed5d3f",
+			"modified": 1509387726012,
+			"created": 1505100055185,
+			"url": "{{base_url}}teams/{{ team_id  }}/admins/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{jwt_token}}",
+					"id": "pair_1c124175c55f48fa8ee22617ffc66777"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505079437605,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_c397a412da49400f9f0197245111adf8",
+			"parentId": "fld_9ca7ae38598548a283b634cb85ed5d3f",
+			"modified": 1509387726008,
+			"created": 1505100055186,
+			"url": "{{base_url}}teams/{{ team_id  }}/admins/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"user\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b93a228df544404db93182ae3f411288"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505040247540.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_a2b7ee7a17314c52b9ea3b7f5fe0a203",
+			"parentId": "fld_9ca7ae38598548a283b634cb85ed5d3f",
+			"modified": 1509387726007,
+			"created": 1505100055190,
+			"url": "{{base_url}}teams/{{ team_id  }}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505020652508.25,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_b94f7955ebe647298b044c9e738cfb7f",
+			"parentId": "fld_9ca7ae38598548a283b634cb85ed5d3f",
+			"modified": 1509387726005,
+			"created": 1505100055191,
+			"url": "{{base_url}}teams/{{ team_id  }}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505010854992.125,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_644a10527add4dcca622e1787d062711",
+			"parentId": "fld_9ca7ae38598548a283b634cb85ed5d3f",
+			"modified": 1509387726003,
+			"created": 1505100055192,
+			"url": "{{base_url}}teams/{{ team_id  }}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"member\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505015753750.1875,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_0fdcdd34b5484e07997ed5f3f890df1b",
+			"parentId": "fld_9ca7ae38598548a283b634cb85ed5d3f",
+			"modified": 1509387726002,
+			"created": 1505100055193,
+			"url": "{{base_url}}teams/{{ team_id  }}/admins/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"member\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505013304371.1562,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_61daf97b3af14098ba415618304a01dc",
+			"parentId": "fld_2ee23cbf3c6f4cae866cbc03ec54f558",
+			"modified": 1509387726001,
+			"created": 1505100059660,
+			"url": "{{base_url}}teams/{{ team_id  }}/members/",
+			"name": "/",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{jwt_token}} ",
+					"id": "pair_1c124175c55f48fa8ee22617ffc66777"
+				},
+				{
+					"name": "",
+					"value": "",
+					"id": "pair_083323fce20340abb07ce313b9736c0f"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505079437605,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_1064b93cffca403ba610716ee1802fc6",
+			"parentId": "fld_2ee23cbf3c6f4cae866cbc03ec54f558",
+			"modified": 1509387725997,
+			"created": 1505100059661,
+			"url": "{{base_url}}teams/{{ team_id  }}/members/",
+			"name": "/",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"user\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_b93a228df544404db93182ae3f411288"
+				},
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505040247540.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_029b382bfabf4dbfb7f488bd17dc280f",
+			"parentId": "fld_2ee23cbf3c6f4cae866cbc03ec54f558",
+			"modified": 1509387725992,
+			"created": 1505100059663,
+			"url": "{{base_url}}teams/{{ team_id  }}/members/{{ user_id  }}",
+			"name": "/:id",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505020652508.25,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_4a50c5b150b742b3b298d34d0fe40332",
+			"parentId": "fld_2ee23cbf3c6f4cae866cbc03ec54f558",
+			"modified": 1509387725991,
+			"created": 1505100059664,
+			"url": "{{base_url}}teams/{{ team_id  }}/members/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505010854992.125,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_f46cf5e045904a7f90159ac89b7bae2a",
+			"parentId": "fld_2ee23cbf3c6f4cae866cbc03ec54f558",
+			"modified": 1509387725988,
+			"created": 1505100059668,
+			"url": "{{base_url}}teams/{{ team_id  }}/members/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"admin\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505015753750.1875,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_a7860990d2d6443ba3cd47a3ef7bd1a3",
+			"parentId": "fld_2ee23cbf3c6f4cae866cbc03ec54f558",
+			"modified": 1509387725980,
+			"created": 1505100059669,
+			"url": "{{base_url}}teams/{{ team_id  }}/members/{{user_id}}/",
+			"name": "/:id",
+			"description": "",
+			"method": "PATCH",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"admin\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "jwt {{ jwt_token  }}",
+					"id": "pair_51d65a6f8de2414ea69275d921d1f1d2"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_811f623ceaac48a8901f10cff4082d21"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1505013304371.1562,
 			"settingStoreCookies": true,
 			"settingSendCookies": true,
 			"settingDisableRenderRequestBody": false,

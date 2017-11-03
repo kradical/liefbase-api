@@ -24,6 +24,7 @@ class ReliefMap(Memberable):
             'name': self.name,
             'description': self.description,
             'mapItemTemplates': [x.to_dict() for x in self.mapitemtemplate_set.all()],
+            'dataLayers': [x.to_dict() for x in self.datalayer_set.all()],
             'owner': self.owner.id,
             'createdAt': self.createdAt.isoformat(),
             'updatedAt': self.updatedAt.isoformat(),
@@ -31,4 +32,3 @@ class ReliefMap(Memberable):
 
     def __str__(self):
         return json.dumps(self.to_dict(), sort_keys=True, indent=2)
-

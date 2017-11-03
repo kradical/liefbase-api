@@ -1,3 +1,8 @@
 .DS_Store
 *.pyc
 /venv
+pyshp-demo.json
+npl_popu_pop_py_s1_wfp_2011adm4.shp
+npl_popu_pop_py_s1_wfp_2011adm4.shx
+npl_popu_pop_py_s1_wfp_2011adm4.dbf
+npl_popu_pop_py_s1_wfp_2011adm4.prj
