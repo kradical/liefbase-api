@@ -1,4 +1,8 @@
+from django.db import models
+from django.contrib.gis.db import models
+
 import json
+from django.contrib.postgres.fields import JSONField
 
 from django.db import models
 
@@ -33,3 +37,31 @@ class MapItemTemplate(models.Model):
     def __str__(self):
         return json.dumps(self.to_dict(), sort_keys=True, indent=2)
 
+class DataLayer(models.Model):
+    """
+    A polygon (shapefile) map layer. Ex. Groundwater, heat map, etc
+    """
+
+    name = models.CharField(max_length=120)
+    shapeFile = JSONField()
+    reliefMap = models.ForeignKey('ReliefMap', on_delete=models.CASCADE)
+
+    owner = models.ForeignKey('User', null=True, on_delete=models.SET_NULL)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+
+    # utility method for printing
+    def to_dict(self):
+        return {}
+        return {
+            'id': self.id,
+            'name': self.name,
+            'shapeFile': self.shapeFile,
+            'reliefMap': self.reliefMap.id,
+            'owner': self.owner.id,
+            'createdAt': self.createdAt.isoformat(),
+            'updatedAt': self.updatedAt.isoformat(),
+        }
+
+    def __str__(self):
+        return json.dumps(self.to_dict(), sort_keys=True, indent=2)

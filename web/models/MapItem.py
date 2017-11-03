@@ -35,4 +35,3 @@ class MapItem(models.Model):
 
     def __str__(self):
         return json.dumps(self.to_dict(), sort_keys=True, indent=2)
-
