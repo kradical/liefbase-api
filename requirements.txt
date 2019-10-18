@@ -3,7 +3,7 @@ certifi==2017.4.17
 chardet==3.0.3
 Django==1.11.23
 django-cors-headers==2.1.0
-djangorestframework==3.6.2
+djangorestframework==3.9.1
 djangorestframework-gis==0.11.2
 djangorestframework-jwt==1.11.0
 dynamic-rest==1.6.7
